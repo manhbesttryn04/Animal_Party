@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Main/Scenes/All Main Scenes Project/MainMenuGame.unity
+    path: Assets/Main/Scenes/All Main Scenes Project/Main Menu Game Scene.unity
     guid: a5df9867bdacd604dbe1d73079151448
   - enabled: 1
-    path: Assets/Main/Scenes/All Main Scenes Project/ChooseCharacterScene.unity
+    path: Assets/Main/Scenes/All Main Scenes Project/Choose Character Scene.unity
     guid: a6886fdad72a80b4398e3bf849f697bc
   - enabled: 1
     path: Assets/Main/Scenes/All Main Scenes Project/CutScene 1.unity
@@ -18,10 +18,10 @@ EditorBuildSettings:
     path: Assets/Main/Scenes/All Main Scenes Project/CutScene 2.unity
     guid: f4a50791003b0024aaad77207fbc0336
   - enabled: 1
-    path: Assets/Main/Scenes/All Main Scenes Project/MainScene.unity
+    path: Assets/Main/Scenes/All Main Scenes Project/Main Scene.unity
     guid: 14f126fce0b9dfd4688932e253f84da9
   - enabled: 1
-    path: Assets/Main/Scenes/All Main Scenes Project/CutScene3.unity
+    path: Assets/Main/Scenes/All Main Scenes Project/CutScene 3.unity
     guid: ac7c0ac6163006743bc58f6f1b2f4e05
   - enabled: 1
     path: Assets/Main/Scenes/All Main Scenes Project/CutScene 4.unity

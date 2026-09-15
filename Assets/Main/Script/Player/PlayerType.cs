@@ -12,7 +12,7 @@ public class PlayerType : MonoBehaviour
 
     private void SetupPlayerType()
     {
-        gameObject.tag = isPlayer2 ? "Player2" : "Player1";
+        gameObject.tag = isPlayer2 ? "Player 2" : "Player 1";
     }
 
     // Nếu bạn muốn thay đổi trong runtime:

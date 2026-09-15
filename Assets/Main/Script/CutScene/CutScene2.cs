@@ -642,7 +642,7 @@ public class CutScene2 : MonoBehaviour
             );
         }
 
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("Main Scene");
     }
 
     private IEnumerator ShowSubtitleWithVoice(

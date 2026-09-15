@@ -16,26 +16,26 @@ public class PlayerVFX : MonoBehaviour
 
     private Material respawnMat;
 
-    private void Awake()
-    {
-        SetupVFX();
-    }
+   private void Awake()
+{
+    SetupVFX();
+}
 
-    private void SetupVFX()
-    {
-        respawnMat = respawnRenderer.material;
+private void SetupVFX()
+{
+    respawnMat = respawnRenderer.material;
 
-        respawnRenderer.enabled = false;
-        normalRenderer.gameObject.SetActive(true);
+    respawnRenderer.enabled = false;
+   // normalRenderer.gameObject.SetActive(true);
 
-        respawnMat.SetFloat("_Speed", 0f);
-        respawnMat.SetFloat("_Progress", 1f);
+    respawnMat.SetFloat("_Speed", 0f);
+    respawnMat.SetFloat("_Progress", 1f);
 
-        if (circleEffect != null)
-            circleEffect.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
-    }
+    if (circleEffect != null)
+        circleEffect.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+}
 
-    // Hiện -> Ẩn
+    // Hiện -> Ẩn , Hannah em không hiểu cũng không sao
     public IEnumerator DissolveOutRoutine()
     {
         AudioManager.Instance.PlaySFX(AudioManager.Instance.startLeteClip);
