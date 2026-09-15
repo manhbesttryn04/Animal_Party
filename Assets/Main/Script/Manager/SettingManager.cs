@@ -2226,19 +2226,27 @@ public class SettingManager : MonoBehaviour
                 AudioManager.Instance.clickButton
             );
         }
+
         if(MiniGameManager.Instance != null)
         {
             MiniGameManager.Instance.ExitStopMiniGame();
+            MiniGameManager.Instance.DestroyAllPlayerMiniGame();
         }
-        if(MapManager.Instance != null)
+
+        if(MapAndCharacterManager.Instance != null)
         {
-            if(MapManager.Instance.mainMap.gameObject.activeSelf == true)
+            var mainmap = MapAndCharacterManager.Instance.mainMap;
+            if( mainmap != null && mainmap.gameObject.activeSelf == true)
             {
-                MapManager.Instance.mainMap.gameObject.SetActive(false);
+                mainmap.SetActive(false);
             }
-            
+
+            var maincharacter = MapAndCharacterManager.Instance.mainCharacters;
+            if(maincharacter != null && maincharacter.gameObject.activeSelf == true)
+            {
+                maincharacter.SetActive(false);
+            } 
         }
-        
 
         if(MapMiniGameList.Instance != null)
         {

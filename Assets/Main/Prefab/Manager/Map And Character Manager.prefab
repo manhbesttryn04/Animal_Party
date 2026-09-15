@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1407231548830340688}
   - component: {fileID: 5230582875465729336}
   m_Layer: 0
-  m_Name: Map Manager
+  m_Name: Map And Character Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapManager
   mainMap: {fileID: 0}
+  mainCharacters: {fileID: 0}

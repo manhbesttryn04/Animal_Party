@@ -39,8 +39,6 @@ public class MiniGameManager : MonoBehaviour
     public MapMiniGameList mapMiniGameList;
     public TimeMinigame timeMinigame;
     public InstructInputMinigame inputMinigame;
-    public GameObject playersMain;
-
     // =========================================================
     // CAMERA
     // =========================================================
@@ -121,7 +119,7 @@ public class MiniGameManager : MonoBehaviour
         var character = CharacterManager.Instance;
         var gameManager = GameManager.Instance;
         var volume = VolumeManager.Instance;
-        var mainmap = MapManager.Instance;
+        var maincharacterandmap = MapAndCharacterManager.Instance;
 
         // =====================================================
         // CHECK SINGLETON
@@ -221,9 +219,13 @@ public class MiniGameManager : MonoBehaviour
 
         // Tắt map chính
        
-        if(mainmap != null)
+        if(maincharacterandmap != null)
         {
-            mainmap.mainMap.SetActive(false);
+            var mainmap = maincharacterandmap.mainMap;
+            if(mainmap != null)
+            {
+                mainmap.SetActive(false);
+            }
         }
 
         // Bật map minigame
@@ -446,7 +448,14 @@ public class MiniGameManager : MonoBehaviour
             );
         }
 
-        playersMain.SetActive(false);
+        if(maincharacterandmap != null)
+        {
+            var maincharacter = maincharacterandmap.mainCharacters;
+            if(maincharacter != null)
+            {
+                maincharacter.SetActive(false);
+            }
+        }
 
         // =====================================================
         // SHOW INSTRUCTION
@@ -699,12 +708,23 @@ public class MiniGameManager : MonoBehaviour
 
         audio.SetupMainGameAudio();
 
-        playersMain.SetActive(true);
+        if (maincharacterandmap != null)
+        {
+            var maincharacter = maincharacterandmap.mainCharacters;
+            if (maincharacter != null)
+            {
+                maincharacter.SetActive(true);
+            }
+        }
 
         // Bật lại map chính
-        if (mainmap != null)
+        if (maincharacterandmap != null)
         {
-            mainmap.mainMap.SetActive(true);
+            var mainmap = maincharacterandmap.mainMap;
+            if (mainmap != null)
+            {
+                mainmap.SetActive(true);
+            }
         }
 
         // Reset light
@@ -1003,6 +1023,14 @@ public class MiniGameManager : MonoBehaviour
         if (indexMiniGame > 7)
         {
             indexMiniGame = 1;
+        }
+    }
+    public void DestroyAllPlayerMiniGame()
+    {
+        if(currentPlayer1 != null && currentPlayer2 != null)
+        {
+            Destroy(currentPlayer1);
+            Destroy(currentPlayer2);
         }
     }
 

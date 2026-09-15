@@ -1328,12 +1328,22 @@ public class MainMenuController : MonoBehaviour
           
         }
 
-        var mainmap = MapManager.Instance;
-        if(mainmap != null)
+        var maincharacterandmap = MapAndCharacterManager.Instance;
+        if (maincharacterandmap != null)
         {
-            mainmap.mainMap.SetActive(false);
-        }
+            var mainmap = maincharacterandmap.mainMap;
+            if (mainmap != null)
+            {
+                mainmap.SetActive(false);
+            }
 
+            var maincharacter = maincharacterandmap.mainCharacters;
+            if (maincharacter != null)
+            {
+                maincharacter.SetActive(false);
+            }
+
+        }
         StartCoroutine(StartLoadScene());
     }
 

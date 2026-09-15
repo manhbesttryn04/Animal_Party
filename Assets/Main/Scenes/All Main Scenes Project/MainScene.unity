@@ -1047,7 +1047,6 @@ MonoBehaviour:
   mapMiniGameList: {fileID: 288627993}
   timeMinigame: {fileID: 288627994}
   inputMinigame: {fileID: 288627995}
-  playersMain: {fileID: 754339472}
   miniGameCamera: {fileID: 288627988}
   videoIntrucs: {fileID: 834109747}
   spawnPoint: {fileID: 288627992}
@@ -9941,9 +9940,13 @@ PrefabInstance:
       propertyPath: mainMap
       value: 
       objectReference: {fileID: 2004911891}
+    - target: {fileID: 5230582875465729336, guid: 0e9cab61898551a4d84fd037f6a66f3b, type: 3}
+      propertyPath: mainCharacters
+      value: 
+      objectReference: {fileID: 754339472}
     - target: {fileID: 6920936870792758646, guid: 0e9cab61898551a4d84fd037f6a66f3b, type: 3}
       propertyPath: m_Name
-      value: Map Manager
+      value: Map And Character Manager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

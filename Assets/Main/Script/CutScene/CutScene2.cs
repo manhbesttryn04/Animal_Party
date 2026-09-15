@@ -361,10 +361,21 @@ public class CutScene2 : MonoBehaviour
             if (audio.specialSource != null)
                 audio.specialSource.Stop();
         }
-        var mainmap = MapManager.Instance;
-        if (mainmap != null)
+        var maincharacterandmap = MapAndCharacterManager.Instance;
+        if (maincharacterandmap != null)
         {
-            mainmap.mainMap.SetActive(false);
+            var map = maincharacterandmap.mainMap;
+            if (map != null)
+            {
+                map.SetActive(false);
+            }
+
+            var characters = maincharacterandmap.mainCharacters;
+            if (characters != null)
+            {
+                characters.SetActive(false);
+            }
+
         }
         if (LoadingManager.Instance != null)
         {
@@ -586,10 +597,21 @@ public class CutScene2 : MonoBehaviour
             setting.canOpenSettingByEsc = false;
             setting.canOpenSettingByController = false;
         }
-        var mainmap = MapManager.Instance;
-        if (mainmap != null)
+        var maincharacterandmap = MapAndCharacterManager.Instance;
+        if (maincharacterandmap != null)
         {
-            mainmap.mainMap.SetActive(false);
+            var mainmap = maincharacterandmap.mainMap;
+            if (mainmap != null)
+            {
+                mainmap.SetActive(false);
+            }
+
+            var maincharacter = maincharacterandmap.mainCharacters;
+            if (maincharacter != null)
+            {
+                maincharacter.SetActive(false);
+            }
+
         }
         if (LoadingManager.Instance != null)
         {

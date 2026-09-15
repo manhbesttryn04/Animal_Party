@@ -1,10 +1,11 @@
 using NUnit.Framework;
 using UnityEngine;
 
-public class MapManager : MonoBehaviour
+public class MapAndCharacterManager : MonoBehaviour
 {
-    public static MapManager Instance { get; private set; }
+    public static MapAndCharacterManager Instance { get; private set; }
     public GameObject mainMap;
+    public GameObject mainCharacters;
 
     private void Awake()
     {

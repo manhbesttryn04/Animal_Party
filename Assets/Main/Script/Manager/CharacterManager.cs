@@ -15,7 +15,7 @@ public class CharacterManager : MonoBehaviour
     public List<GameObject> player1List;
     public List<GameObject> player2List;
     public List<GameObject> playerPlaylist;
-
+    
     private void Awake()
     {
         if (Instance == null)
