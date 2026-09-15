@@ -51,6 +51,7 @@ public class VolumeManager : MonoBehaviour
         SetupVolumeComponents();
     }
 
+
     private void SetupSingleton()
     {
         if (Instance == null)

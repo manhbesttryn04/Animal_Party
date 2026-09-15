@@ -10197,7 +10197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3227384075747728264, guid: 6cd3bb2139fa5a343b8190b7e4583736, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3487529755233756913, guid: 6cd3bb2139fa5a343b8190b7e4583736, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10272,17 +10272,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2133488384}
     m_Modifications:
-    - target: {fileID: 1246650126989244324, guid: 8bf137949f257d34bb43024206c0cfd5, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
     - target: {fileID: 3169112915747235281, guid: 8bf137949f257d34bb43024206c0cfd5, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3488836789206203871, guid: 8bf137949f257d34bb43024206c0cfd5, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 3
+    - target: {fileID: 3485368243700155909, guid: 8bf137949f257d34bb43024206c0cfd5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3932859448801043115, guid: 8bf137949f257d34bb43024206c0cfd5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4779576814512428424, guid: 8bf137949f257d34bb43024206c0cfd5, type: 3}
       propertyPath: manager
@@ -10335,10 +10335,6 @@ PrefabInstance:
     - target: {fileID: 8343005598665273476, guid: 8bf137949f257d34bb43024206c0cfd5, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8956652117830955137, guid: 8bf137949f257d34bb43024206c0cfd5, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
