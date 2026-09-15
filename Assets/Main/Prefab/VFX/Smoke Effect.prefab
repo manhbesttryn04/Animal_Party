@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1307615080427424359}
   - component: {fileID: 1307437395348171309}
   m_Layer: 0
-  m_Name: SmokeEffect
+  m_Name: Smoke Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

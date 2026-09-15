@@ -4,22 +4,21 @@ public class PlayerType : MonoBehaviour
 {
     [Header("Type Player")]
     public bool isPlayer2 = false;
+
     private void Awake()
     {
-        if (!isPlayer2)
-        {
-            gameObject.tag = "Player 1";
-
-        }
-        else gameObject.tag = "Player 2";
+        SetupPlayerType();
     }
-    public void Update()
-    {
-        if (!isPlayer2)
-        {
-            gameObject.tag = "Player 1";
 
-        }
-        else gameObject.tag = "Player 2";
+    private void SetupPlayerType()
+    {
+        gameObject.tag = isPlayer2 ? "Player2" : "Player1";
+    }
+
+    // Nếu bạn muốn thay đổi trong runtime:
+    public void SetPlayerType(bool player2)
+    {
+        isPlayer2 = player2;
+        SetupPlayerType();
     }
 }

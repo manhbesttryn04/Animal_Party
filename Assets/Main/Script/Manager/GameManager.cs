@@ -85,10 +85,15 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        // Tìm Player 1 và Player 2 theo Tag
+        SetupPlayers();
+    }
+
+    private void SetupPlayers()
+    {
         player1Main = GameObject.FindGameObjectWithTag("Player 1");
         player2Main = GameObject.FindGameObjectWithTag("Player 2");
     }
+
 
     private void Update()
     {

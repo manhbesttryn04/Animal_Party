@@ -154,24 +154,32 @@ public class ShopManager : MonoBehaviour
 
     public void Open()
     {
-        /*  var cursor = CursorManager.Instance;
-          if (cursor != null)
-          {
-              cursor.HideGameCursor();
-          }*/
-
-
-        SettingManager.Instance.canOpenSettingByController = true;
-        ui.openSettingPanelButton.SetActive(true);
-        // ui.notifiPlay.SetActive(false);
-        AudioManager.Instance.PlaySFX(AudioManager.Instance.openShopClip);
-
+        SetupAudio();
+        SetupSetting();
         SetupPlayers();
-
         SetupUI();
-
         OpenShop();
     }
+
+    private void SetupAudio()
+    {
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.openShopClip);
+    }
+
+    private void SetupSetting()
+    {
+        var setting = SettingManager.Instance;
+        if (setting != null)
+        {
+            setting.canOpenSettingByController = true;
+        }
+
+        if (ui != null && ui.openSettingPanelButton != null)
+        {
+            ui.openSettingPanelButton.SetActive(true);
+        }
+    }
+
 
     #endregion
 

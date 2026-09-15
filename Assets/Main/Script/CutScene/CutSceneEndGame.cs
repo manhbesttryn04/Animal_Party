@@ -119,8 +119,12 @@ public class CutSceneEndGame : MonoBehaviour
 
     private void Awake()
     {
+        SetupTeleport();
         FindPlayerWinner();
+    }
 
+    private void SetupTeleport()
+    {
         if (teleport != null)
         {
             teleportOriginalScale = teleport.transform.localScale;
@@ -130,8 +134,17 @@ public class CutSceneEndGame : MonoBehaviour
 
     private void Start()
     {
+        SetupSubtitleUI();
+        SetupSkipUI();
+        SetupSceneUI();
+
+        PlayCutScene();
+        StartCoroutine(EnableSkipAfterDelay());
+    }
+
+    private void SetupSubtitleUI()
+    {
         canSkip = false;
-        UpdateSkipHintText(true);
 
         if (subtitlePanel != null)
             subtitlePanel.SetActive(false);
@@ -141,16 +154,25 @@ public class CutSceneEndGame : MonoBehaviour
             subtitleText.text = "";
             subtitleText.alpha = 1f;
         }
+    }
+
+    private void SetupSkipUI()
+    {
+        UpdateSkipHintText(true);
 
         if (skipHintObject != null)
             skipHintObject.SetActive(false);
+    }
 
+    private void SetupSceneUI()
+    {
         var ui = UIManager.Instance;
         if (ui != null)
         {
             ui.canvasNotifi.SetActive(false);
             ui.openSettingPanelButton.SetActive(false);
         }
+
         var setting = SettingManager.Instance;
         if (setting != null)
         {
@@ -159,18 +181,13 @@ public class CutSceneEndGame : MonoBehaviour
             setting.isOpenExitButton = false;
             setting.canOpenSettingByController = true;
         }
+
         var cursor = CursorManager.Instance;
         if (cursor != null)
         {
             cursor.SetSceneCursorVisible(false);
         }
-
-
-
-        PlayCutScene();
-        StartCoroutine(EnableSkipAfterDelay());
     }
-
     private void Update()
     {
         // Luôn cập nhật trước mọi lệnh return.

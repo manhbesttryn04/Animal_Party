@@ -30,6 +30,12 @@ public class PauseGameManager : MonoBehaviour
 
     private void Awake()
     {
+        SetupSingleton();
+        SetupPausePanel();
+    }
+
+    private void SetupSingleton()
+    {
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -38,6 +44,10 @@ public class PauseGameManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void SetupPausePanel()
+    {
         if (pausePanel != null)
         {
             pausePanel.SetActive(false);

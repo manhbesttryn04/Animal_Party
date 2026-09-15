@@ -66,17 +66,16 @@ public class PlayerMove : MonoBehaviour
 
     private void Start()
     {
-        controller =
-            GetComponent<CharacterController>();
+        SetupPlayerMove();
+    }
 
-        manager =
-            GetComponent<PlayerManager>();
+    private void SetupPlayerMove()
+    {
+        controller = GetComponent<CharacterController>();
+        manager = GetComponent<PlayerManager>();
 
-        normalHeight =
-            controller.height;
-
-        normalCenter =
-            controller.center;
+        normalHeight = controller.height;
+        normalCenter = controller.center;
     }
 
     private void Update()
@@ -85,19 +84,10 @@ public class PlayerMove : MonoBehaviour
 
         if (isJumpAndMove)
         {
-            if (isMove)
-            {
-                Move();
-            }
-            else
-            {
-                StopMoveAnimation();
-            }
+            if (isMove) Move();
+            else StopMoveAnimation();
 
-            if (isJump)
-            {
-                JumpInput();
-            }
+            if (isJump) JumpInput();
         }
         else
         {
@@ -106,7 +96,6 @@ public class PlayerMove : MonoBehaviour
 
         ApplyGravity();
     }
-
     // =========================================================
     // INPUT DEVICE
     // =========================================================

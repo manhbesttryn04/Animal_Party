@@ -12,10 +12,30 @@ public class LoadingManager : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        SetupSingleton();
+        SetupUI();
+    }
 
+    private void SetupSingleton()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // giữ lại khi đổi scene
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void SetupUI()
+    {
         if (loadingPanel != null)
             loadingPanel.SetActive(false);
+
+        if (slider != null)
+            slider.value = 0f;
     }
 
     public IEnumerator ShowLoading()

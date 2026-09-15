@@ -25,41 +25,32 @@ public class PlayerDefense : MonoBehaviour
 
     private void Start()
     {
+        SetupDefense();
+    }
+
+    private void SetupDefense()
+    {
         if (playerManager == null)
-        {
             playerManager = GetComponent<PlayerManager>();
-        }
 
         if (playerMove == null)
-        {
             playerMove = GetComponent<PlayerMove>();
-        }
 
         if (shield != null)
-        {
             shield.SetActive(false);
-        }
     }
 
     private void Update()
     {
-        if (!hasDefense)
+        if (!hasDefense || !canDefense || isDefending)
             return;
 
-        if (!canDefense || isDefending)
+        if (playerManager == null || playerManager.playerType == null || playerMove == null)
             return;
-
-        if (playerManager == null ||
-            playerManager.playerType == null ||
-            playerMove == null)
-        {
-            return;
-        }
 
         if (!IsDefensePressed())
             return;
 
-        // Đang ở trên không thì không được Defense.
         if (!playerMove.isGround)
             return;
 

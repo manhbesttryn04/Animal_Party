@@ -5,18 +5,27 @@ public class MapMiniGameList : MonoBehaviour
 {
     public static MapMiniGameList Instance { get; private set; }
 
+    [Header("MiniGame Maps")]
     public List<GameObject> mapMiniGameList;
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
+        SetupSingleton();
+    }
+
+    private void SetupSingleton()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // giữ lại khi đổi scene nếu cần
+        }
+        else
         {
             Destroy(gameObject);
-            return;
         }
-
-        Instance = this;
     }
+
     public void DisableActiveMapMiniGame()
     {
         foreach (GameObject miniGame in mapMiniGameList)

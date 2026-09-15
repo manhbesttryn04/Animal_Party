@@ -33,6 +33,12 @@ public class CutSceneToIndex : MonoBehaviour
 
     private void Awake()
     {
+        SetupSingleton();
+        SetupTeleport();
+    }
+
+    private void SetupSingleton()
+    {
         if (Instance == null)
         {
             Instance = this;
@@ -42,18 +48,19 @@ public class CutSceneToIndex : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+    }
 
+    private void SetupTeleport()
+    {
         if (teleport != null)
         {
             teleportOriginalScale = teleport.transform.localScale;
-
             teleportParticle = teleport.GetComponent<ParticleSystem>();
 
             if (teleportParticle != null)
                 teleportParticle.Play();
         }
     }
-
     public void PlayCutScene(GameObject player)
     {
         StartCoroutine(CutSceneRoutine(player));

@@ -9,7 +9,7 @@ public class CutScene2 : MonoBehaviour
 {
     [Header("References")]
     public ShipPatrol ship;
-    public SetUpPlayerCutScene set;
+    public SetUpPlayerCutScene2 set;
     public Camera cam;
     public GameObject teleport;
 
@@ -131,6 +131,10 @@ public class CutScene2 : MonoBehaviour
 
     private void Start()
     {
+        SetupAudio();
+        SetupSetting();
+        SetupUI();
+
         canSkip = false;
         UpdateSkipHintText(true);
 
@@ -146,14 +150,27 @@ public class CutScene2 : MonoBehaviour
         if (skipHintObject != null)
             skipHintObject.SetActive(false);
 
+        StartCoroutine(CutScene());
+        StartCoroutine(CheckShipStop());
+        StartCoroutine(EnableSkipAfterDelay());
+        StartCoroutine(ShowSkipHint());
+    }
+
+    private void SetupAudio()
+    {
         var audio = AudioManager.Instance;
         if (audio != null)
         {
             audio.SetupMainGameAudio();
-           // audio.PlayEnvironment(audio.theNightClip);
-           // audio.PlaySFX(audio.seaGullClip);
             audio.PlayMusic(audio.musicCutScene2Clip);
+            // Nếu muốn thêm hiệu ứng môi trường:
+            // audio.PlayEnvironment(audio.theNightClip);
+            // audio.PlaySFX(audio.seaGullClip);
         }
+    }
+
+    private void SetupSetting()
+    {
         var setting = SettingManager.Instance;
         if (setting != null)
         {
@@ -161,11 +178,16 @@ public class CutScene2 : MonoBehaviour
             setting.canOpenSettingByEsc = true;
             setting.canOpenSettingByController = true;
         }
+    }
 
-        StartCoroutine(CutScene());
-        StartCoroutine(CheckShipStop());
-        StartCoroutine(EnableSkipAfterDelay());
-        StartCoroutine(ShowSkipHint());
+    private void SetupUI()
+    {
+        // Nếu có UIManager thì có thể cấu hình ở đây
+        var ui = UIManager.Instance;
+        if (ui != null)
+        {
+            ui.isShowKeyBoard = false;
+        }
     }
 
     private void Update()

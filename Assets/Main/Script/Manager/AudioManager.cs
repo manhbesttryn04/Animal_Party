@@ -165,6 +165,13 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
+        SetupSingleton();
+        SetupAudioSources();
+        CacheExtraAudioSourceVolumes();
+    }
+
+    private void SetupSingleton()
+    {
         if (Instance == null)
         {
             Instance = this;
@@ -174,7 +181,10 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
 
+    private void SetupAudioSources()
+    {
         if (musicSource != null)
             musicSource.loop = true;
 
@@ -183,8 +193,6 @@ public class AudioManager : MonoBehaviour
 
         if (environmentSource != null)
             environmentSource.loop = true;
-
-        CacheExtraAudioSourceVolumes();
     }
     private void Start()
     {

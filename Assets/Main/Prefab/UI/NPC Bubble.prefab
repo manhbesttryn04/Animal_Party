@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 8666148340416992088}
   - component: {fileID: 6134822946691795973}
   m_Layer: 5
-  m_Name: NPCBubble
+  m_Name: NPC Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

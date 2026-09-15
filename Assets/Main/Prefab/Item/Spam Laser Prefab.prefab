@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8351912362384593854}
   - component: {fileID: -1968484127701247495}
   m_Layer: 0
-  m_Name: SpamLaserPrefab
+  m_Name: Spam Laser Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -63,6 +63,11 @@ public class InputChooseItem : MonoBehaviour
 
     private void Start()
     {
+        SetupUI();
+    }
+
+    private void SetupUI()
+    {
         ui = UIManager.Instance;
         InitHighlight();
     }

@@ -34,16 +34,25 @@ public class CutScenePowerCoin : MonoBehaviour
 
     private void Awake()
     {
+        SetupSingleton();
+        SetupTeleport();
+    }
+
+    private void SetupSingleton()
+    {
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject); // giữ lại khi đổi scene
         }
         else
         {
             Destroy(gameObject);
-            return;
         }
+    }
 
+    private void SetupTeleport()
+    {
         if (teleport != null)
         {
             teleportOriginalScale = teleport.transform.localScale;

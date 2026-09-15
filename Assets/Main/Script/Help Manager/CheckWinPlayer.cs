@@ -3,7 +3,13 @@ using UnityEngine;
 public class CheckWinPlayer : MonoBehaviour
 {
     public static CheckWinPlayer Instance { get; private set; }
+
     private void Awake()
+    {
+        SetupSingleton();
+    }
+
+    private void SetupSingleton()
     {
         if (Instance == null)
         {
@@ -18,31 +24,11 @@ public class CheckWinPlayer : MonoBehaviour
 
     public bool CheckWinnerByIndex(int index)
     {
-        if (index >= 32)
-        {
-          
-            return true;
-        }
-
-        else
-        {
-          
-            return false;
-        }
-
+        return index >= 32;
     }
+
     public bool CheckWinnerByCoinPower(int coin)
     {
-        if (coin >= 4)
-        {
-           
-            return true;
-        }
-        else
-        {
-           
-            return false;
-        }
-
+        return coin >= 4;
     }
 }

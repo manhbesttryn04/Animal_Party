@@ -10,6 +10,11 @@ public class SendPlayerWinner : MonoBehaviour
 
     private void Awake()
     {
+        SetupSingleton();
+    }
+
+    private void SetupSingleton()
+    {
         if (Instance == null)
         {
             Instance = this;
@@ -20,6 +25,7 @@ public class SendPlayerWinner : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 
     /// <summary>
     /// Lưu thông tin người chiến thắng.

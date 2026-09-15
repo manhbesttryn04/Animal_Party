@@ -23,6 +23,11 @@ public class PlayerDebuff : MonoBehaviour
 
     private void Awake()
     {
+        SetupDebuff();
+    }
+
+    private void SetupDebuff()
+    {
         manager = GetComponent<PlayerManager>();
 
         if (playerRenderer != null)

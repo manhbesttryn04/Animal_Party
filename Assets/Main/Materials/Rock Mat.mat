@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-6190928809433008894
+--- !u!114 &-800013096631176250
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Material Minigame 2
+  m_Name: Rock Mat
   m_Shader: {fileID: 4800000, guid: 8d2bb70cbf9db8d4da26e15b26e74248, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -39,7 +39,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 99f701799de29b144b56bd497c187078, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -62,8 +62,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _IceRefraction_Texture:
+        m_Texture: {fileID: 2800000, guid: c701d8bbcea7c2c4abbf9c22ee81138a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 99f701799de29b144b56bd497c187078, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -76,6 +80,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_418dd7684adf4f2182c221d7809597e7_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 2a1bcd71cf85fdc4e8c0def85e4f5d9e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_8c97e0f1cd174b9aacb626ec0e589357_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 78e71b9e097c52e4cba00d81ed4dbe74, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_fa2d06cb22734338a65c6a92900d3bdd_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 78e71b9e097c52e4cba00d81ed4dbe74, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -101,7 +117,6 @@ Material:
     - _AlphaToMask: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
-    - _BlendOp: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
@@ -109,19 +124,25 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _Disstortion: 1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
+    - _Frost_middle_stregth: 1
+    - _Frost_strength: 0.2
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossinessSource: 0
     - _GlossyReflections: 0
+    - _Inner_Fog_Noise_Size: 10
+    - _Inner_Fog_Power: 2
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _SampleGI: 0
+    - _Refreact_strength: -1
     - _Shininess: 0
     - _Smoothness: 0.5
     - _SmoothnessSource: 0
@@ -134,10 +155,15 @@ Material:
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
+    - _middle: 5
     m_Colors:
-    - _BaseColor: {r: 0.22352943, g: 0.23137257, b: 0.23529413, a: 1}
-    - _Color: {r: 0.2235294, g: 0.23137254, b: 0.2352941, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Frost_tile: {r: 1, g: 1, b: 0, a: 0}
+    - _Ice_tile: {r: 1, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _inner_frost_position: {r: 0, g: 0, b: 0, a: 0}
+    - _middle_placement: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

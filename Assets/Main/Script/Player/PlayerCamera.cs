@@ -22,54 +22,57 @@ public class PlayerCamera : MonoBehaviour
     public bool isFllow3 = false;
     private void Start()
     {
+        SetupCamera();
+    }
+
+    private void SetupCamera()
+    {
         cameraMain = Camera.main;
         player = gameObject;
     }
 
     private void LateUpdate()
     {
+        HandleCameraFollow();
+    }
+
+    private void HandleCameraFollow()
+    {
         Transform target = null;
 
+        if (isFollow) target = transFollow;
+        else if (isFllow2) target = transFollow2;
+        else if (isFllow3) target = transFollow3;
+
+        if (target == null) return;
+
+        // Di chuyển camera
+        cameraMain.transform.position = Vector3.SmoothDamp(
+            cameraMain.transform.position,
+            target.position,
+            ref velocity,
+            smoothTime
+        );
+
+        // Xoay camera
         if (isFollow)
-            target = transFollow;
-        else if (isFllow2)
-            target = transFollow2;
-        else if (isFllow3)
-            target = transFollow3;
-
-        if (target != null)
         {
-            cameraMain.transform.position = Vector3.SmoothDamp(
-                cameraMain.transform.position,
-                target.position,
-                ref velocity,
-                smoothTime
+            var moveAI = player.GetComponent<PlayerMoveAI>();
+            Transform targetPoint = moveAI.pointCheck[moveAI.currentIndex].transform;
+
+            Vector3 lookPos = targetPoint.position;
+            lookPos.y += 4f;
+
+            Quaternion targetRot = Quaternion.LookRotation(lookPos - cameraMain.transform.position);
+            cameraMain.transform.rotation = Quaternion.Slerp(
+                cameraMain.transform.rotation,
+                targetRot,
+                100f * Time.deltaTime
             );
-
-            if (isFollow)
-            {
-                Transform targetPoint = player.GetComponent<PlayerMoveAI>()
-                    .pointCheck[player.GetComponent<PlayerMoveAI>().currentIndex]
-                    .transform;
-
-                Vector3 lookPos = targetPoint.position;
-                lookPos.y += 4f;
-
-                Quaternion targetRot = Quaternion.LookRotation(
-                    lookPos - cameraMain.transform.position
-                );
-
-                cameraMain.transform.rotation = Quaternion.Slerp(
-                    cameraMain.transform.rotation,
-                    targetRot,
-                    100f * Time.deltaTime
-                );
-            }
-            else
-            {
-                // Camera 2 và 3 giữ nguyên
-                cameraMain.transform.LookAt(player.transform);
-            }
+        }
+        else
+        {
+            cameraMain.transform.LookAt(player.transform);
         }
     }
 

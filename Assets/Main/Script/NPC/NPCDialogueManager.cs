@@ -118,13 +118,55 @@ public class NPCDialogueManager : MonoBehaviour
 
     void Awake()
     {
+        SetupSingleton();
+    }
+
+    private void SetupSingleton()
+    {
         if (instance != null && instance != this)
         {
-          //  Debug.LogWarning("[NPCDialogueManager] Phát hiện nhiều hơn 1 Manager trong Scene, huỷ bản thừa để tránh conflict.");
             Destroy(gameObject);
             return;
         }
         instance = this;
+    }
+
+    void Start()
+    {
+        SetupCamera();
+        SetupGroups();
+        SetupSoloNPCs();
+        SetupDistanceCheck();
+    }
+
+    private void SetupCamera()
+    {
+        cachedCamera = Camera.main;
+    }
+
+    private void SetupGroups()
+    {
+        foreach (var group in groups)
+        {
+            if (group.npcA == null || group.npcB == null) continue;
+            FaceEachOther(group);
+            StartCoroutine(RunGroup(group));
+        }
+    }
+
+    private void SetupSoloNPCs()
+    {
+        foreach (var solo in soloNpcs)
+        {
+            if (solo.npc == null) continue;
+            StartCoroutine(RunSolo(solo));
+        }
+    }
+
+    private void SetupDistanceCheck()
+    {
+        if (useDistanceLimit)
+            StartCoroutine(DistanceCheckLoop());
     }
 
     void OnEnable()
@@ -145,28 +187,7 @@ public class NPCDialogueManager : MonoBehaviour
         activeBubbles.Clear();
     }
 
-    void Start()
-    {
-        cachedCamera = Camera.main;
-
-        foreach (var group in groups)
-        {
-            if (group.npcA == null || group.npcB == null) continue;
-
-            FaceEachOther(group);
-            StartCoroutine(RunGroup(group));
-        }
-
-        foreach (var solo in soloNpcs)
-        {
-            if (solo.npc == null) continue;
-            StartCoroutine(RunSolo(solo));
-        }
-
-        if (useDistanceLimit)
-            StartCoroutine(DistanceCheckLoop());
-    }
-
+   
     void OnDisable()
     {
         StopAllCoroutines();

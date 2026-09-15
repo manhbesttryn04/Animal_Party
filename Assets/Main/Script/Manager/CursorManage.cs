@@ -32,6 +32,13 @@ public class CursorManager : MonoBehaviour
 
     private void Awake()
     {
+        SetupSingleton();
+        SetupCursorReferences();
+        SetupCursorDefaults();
+    }
+
+    private void SetupSingleton()
+    {
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -44,9 +51,15 @@ public class CursorManager : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
         }
+    }
 
+    private void SetupCursorReferences()
+    {
         FindReferences();
+    }
 
+    private void SetupCursorDefaults()
+    {
         Cursor.lockState = CursorLockMode.None;
 
         if (cursorImage != null && normalSprite != null)
@@ -54,6 +67,7 @@ public class CursorManager : MonoBehaviour
             cursorImage.sprite = normalSprite;
         }
     }
+
 
     private void Start()
     {

@@ -314,30 +314,37 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        // Thiết lập Singleton
+        SetupSingleton();
+    }
+
+    private void SetupSingleton()
+    {
         if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-
         else
+        {
             Destroy(gameObject);
+        }
     }
 
-    public void Start()
+    private void Start()
     {
-        // Tìm Player 1 theo Tag
-        playerManager1 =
-            GameObject.FindGameObjectWithTag("Player 1")
-            .GetComponent<PlayerManager>();
-
-        // Tìm Player 2 theo Tag
-        playerManager2 =
-            GameObject.FindGameObjectWithTag("Player 2")
-            .GetComponent<PlayerManager>();
+        SetupPlayers();
         UpdateAllPlayMainUI();
+        SetupControllerUI();
+    }
 
+    private void SetupPlayers()
+    {
+        playerManager1 = GameObject.FindGameObjectWithTag("Player 1")?.GetComponent<PlayerManager>();
+        playerManager2 = GameObject.FindGameObjectWithTag("Player 2")?.GetComponent<PlayerManager>();
+    }
+
+    private void SetupControllerUI()
+    {
         // UIManager quản lý toàn bộ UI kết nối tay cầm ngoài minigame.
         UpdateControllerConnectionUI(true, true);
     }

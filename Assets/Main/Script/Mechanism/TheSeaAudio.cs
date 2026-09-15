@@ -1,20 +1,21 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class TheSeaAudio : MonoBehaviour
 {
     private void Start()
     {
-        var audio = AudioManager.Instance;
-        if (audio != null)
-        {
-            audio.PlayEnvironment(audio.theNightClip);
-        }
+        SetupSeaAudio();
     }
+
     private void OnEnable()
     {
+        SetupSeaAudio();
+    }
+
+    private void SetupSeaAudio()
+    {
         var audio = AudioManager.Instance;
-        if(audio != null)
+        if (audio != null)
         {
             audio.PlayEnvironment(audio.theNightClip);
         }

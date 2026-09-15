@@ -18,10 +18,15 @@ public class PlayerVFX : MonoBehaviour
 
     private void Awake()
     {
+        SetupVFX();
+    }
+
+    private void SetupVFX()
+    {
         respawnMat = respawnRenderer.material;
 
-       // normalRenderer.gameObject.SetActive(true);
         respawnRenderer.enabled = false;
+        normalRenderer.gameObject.SetActive(true);
 
         respawnMat.SetFloat("_Speed", 0f);
         respawnMat.SetFloat("_Progress", 1f);

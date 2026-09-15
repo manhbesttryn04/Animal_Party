@@ -75,24 +75,11 @@ public class CreditScroll : MonoBehaviour
         {
             volume.ResetVignette();
         }
-        var audio = AudioManager.Instance;
-        if (audio != null)
-        {
-            audio.ZeroAllAudio();
-            audio.PauseAudio();
-            audio.SetupMainGameAudio();
-        }
-        var cursor = CursorManager.Instance;
-        if (cursor != null)
-        {
-            cursor.SetSceneCursorVisible(false);
-            cursor.SetSettingCursorActive(false);
-        }
-        var setting = SettingManager.Instance;
-        if(setting != null)
-        {
-            setting.ResetSetting();
-        }
+
+        SetupAudio();
+        SetupCursor();
+        SetupSetting();
+
         SetupCredit();
         SetupIntroPanel();
         SetupOutroPanel();
@@ -103,6 +90,37 @@ public class CreditScroll : MonoBehaviour
         introCoroutine = StartCoroutine(IntroRoutine());
         StartCoroutine(EnableSkipAfterDelay());
     }
+
+    private void SetupAudio()
+    {
+        var audio = AudioManager.Instance;
+        if (audio != null)
+        {
+            audio.ZeroAllAudio();
+            audio.PauseAudio();
+            audio.SetupMainGameAudio();
+        }
+    }
+
+    private void SetupCursor()
+    {
+        var cursor = CursorManager.Instance;
+        if (cursor != null)
+        {
+            cursor.SetSceneCursorVisible(false);
+            cursor.SetSettingCursorActive(false);
+        }
+    }
+
+    private void SetupSetting()
+    {
+        var setting = SettingManager.Instance;
+        if (setting != null)
+        {
+            setting.ResetSetting();
+        }
+    }
+
 
     private IEnumerator EnableSkipAfterDelay()
     {

@@ -10,6 +10,11 @@ public class MiniGameManager : MonoBehaviour
 
     private void Awake()
     {
+        SetupSingleton();
+    }
+
+    private void SetupSingleton()
+    {
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -17,6 +22,7 @@ public class MiniGameManager : MonoBehaviour
         }
 
         Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     #region INSPECTOR / STATE

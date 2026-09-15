@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class SetUpPlayerCutScene : MonoBehaviour
+public class SetUpPlayerCutScene2 : MonoBehaviour
 {
     public int indexP1;
     public int indexP2;
@@ -13,10 +13,18 @@ public class SetUpPlayerCutScene : MonoBehaviour
 
     private void Start()
     {
-        indexP1 = SendIndexCharacter.Instance.player1Index;
-        indexP2 = SendIndexCharacter.Instance.player2Index;
+        SetupIndexes();
         SetupCharacter();
         EndCutScene();
+    }
+
+    private void SetupIndexes()
+    {
+        if (SendIndexCharacter.Instance != null)
+        {
+            indexP1 = SendIndexCharacter.Instance.player1Index;
+            indexP2 = SendIndexCharacter.Instance.player2Index;
+        }
     }
 
     void SetupCharacter()
@@ -70,8 +78,8 @@ public class SetUpPlayerCutScene : MonoBehaviour
     }
     public void StartMovePlayer()
     {
-        PlayerCutScene p1 = player1List[indexP1].GetComponent<PlayerCutScene>();
-        PlayerCutScene p2 = player2List[indexP2].GetComponent<PlayerCutScene>();
+        PlayerCutSceneEndGame p1 = player1List[indexP1].GetComponent<PlayerCutSceneEndGame>();
+        PlayerCutSceneEndGame p2 = player2List[indexP2].GetComponent<PlayerCutSceneEndGame>();
         p1.startCutscene = true;
         p2.startCutscene = true;
     }

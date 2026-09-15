@@ -46,6 +46,13 @@ public class VolumeManager : MonoBehaviour
 
     private void Awake()
     {
+        SetupSingleton();
+        SetupVolumeProfile();
+        SetupVolumeComponents();
+    }
+
+    private void SetupSingleton()
+    {
         if (Instance == null)
         {
             Instance = this;
@@ -56,37 +63,17 @@ public class VolumeManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+    }
 
-        if (volume == null)
-        {
-           
+    private void SetupVolumeProfile()
+    {
+        if (volume == null) return;
 
-
-
-            return;
-        }
-
-        /*
-         * Tạo Profile riêng lúc runtime.
-         * Không chỉnh trực tiếp Profile Asset gốc.
-         */
         if (volume.sharedProfile != null)
         {
-            volume.profile = Instantiate(
-                volume.sharedProfile
-            );
+            // Tạo bản copy runtime để không chỉnh trực tiếp asset gốc
+            volume.profile = Instantiate(volume.sharedProfile);
         }
-        else
-        { 
-
-            return;
-        }
-
-        SetupVolumeComponents();
-
-        // Mặc định đầu game là High
-        // currentQuality = 2;
-        // SetGraphicsQuality(currentQuality);
     }
 
     private void OnEnable()

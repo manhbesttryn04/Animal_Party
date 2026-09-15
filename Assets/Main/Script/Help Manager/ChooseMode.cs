@@ -139,42 +139,49 @@ public class ChooseMode : MonoBehaviour
 
     private void Start()
     {
+        SetupCursor();
+        SetupAudio();
+        SetupUI();
+        SetupSetting();
+
         UpdatePlayer1();
         UpdatePlayer2();
         CheckStartButton();
         UpdateInputInstructionUI(true);
+    }
 
-        CursorManager cursor =
-            CursorManager.Instance;
-
+    private void SetupCursor()
+    {
+        CursorManager cursor = CursorManager.Instance;
         if (cursor != null)
         {
             cursor.UpdateCursorByControllerState();
             cursor.SetSceneCursorVisible(true);
         }
+    }
 
+    private void SetupAudio()
+    {
         var audio = AudioManager.Instance;
         if (audio != null)
         {
-          //  audio.SetupMainGameAudio();
-            audio.PlayMusic(
-                audio.musicChooseSceneClip
-            );
-
-            audio.PlayEnvironment(
-                audio.theSeaClip
-            );
+            audio.PlayMusic(audio.musicChooseSceneClip);
+            audio.PlayEnvironment(audio.theSeaClip);
         }
+    }
 
+    private void SetupUI()
+    {
         var ui = UIManager.Instance;
-        if (ui != null &&
-            ui.openSettingPanelButton != null)
+        if (ui != null && ui.openSettingPanelButton != null)
         {
-            ui.openSettingPanelButton
-                .SetActive(true);
+            ui.openSettingPanelButton.SetActive(true);
             ui.isShowKeyBoard = true;
         }
+    }
 
+    private void SetupSetting()
+    {
         var setting = SettingManager.Instance;
         if (setting != null)
         {

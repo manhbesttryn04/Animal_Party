@@ -3,48 +3,53 @@ using System.Collections;
 
 public class BubblePopAnimation : MonoBehaviour
 {
+    [Header("Animation Settings")]
     public float popInDuration = 0.15f;
     public float popOutDuration = 0.15f;
     public float displayDuration = 2f;
+    public bool autoDestroy = true;
 
-    Vector3 targetScale;
-    bool started = false;
+    private Vector3 targetScale;
+    private bool isStarted = false;
 
-    // Gọi hàm này từ bên ngoài (NPCDialogueManager) SAU khi đã set scale mong muốn
     public void Init(Vector3 finalScale)
+    {
+        SetupAnimation(finalScale);
+    }
+
+    private void Start()
+    {
+        if (!isStarted)
+        {
+            SetupAnimation(transform.localScale);
+        }
+    }
+
+    private void SetupAnimation(Vector3 finalScale)
     {
         targetScale = finalScale;
         transform.localScale = Vector3.zero;
 
-        if (!started)
+        if (!isStarted)
         {
-            started = true;
+            isStarted = true;
             StartCoroutine(PlayAnimation());
         }
     }
 
-    void Start()
-    {
-        // Fallback: nếu không ai gọi Init() (trường hợp dùng prefab này chỗ khác),
-        // tự lấy scale hiện tại làm targetScale như cũ
-        if (!started)
-        {
-            targetScale = transform.localScale;
-            transform.localScale = Vector3.zero;
-            started = true;
-            StartCoroutine(PlayAnimation());
-        }
-    }
-
-    IEnumerator PlayAnimation()
+    private IEnumerator PlayAnimation()
     {
         yield return StartCoroutine(ScaleTo(Vector3.zero, targetScale, popInDuration));
         yield return new WaitForSeconds(displayDuration);
         yield return StartCoroutine(ScaleTo(targetScale, Vector3.zero, popOutDuration));
-        Destroy(gameObject);
+
+        if (autoDestroy)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    IEnumerator ScaleTo(Vector3 from, Vector3 to, float duration)
+    private IEnumerator ScaleTo(Vector3 from, Vector3 to, float duration)
     {
         float t = 0;
         while (t < duration)
@@ -58,7 +63,7 @@ public class BubblePopAnimation : MonoBehaviour
         transform.localScale = to;
     }
 
-    float EaseOutBack(float x)
+    private float EaseOutBack(float x)
     {
         float c1 = 1.70158f;
         float c3 = c1 + 1f;

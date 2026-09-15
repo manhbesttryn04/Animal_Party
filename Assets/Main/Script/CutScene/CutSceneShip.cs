@@ -107,13 +107,29 @@ public class CutSceneShip : MonoBehaviour
         canSkip = false;
         UpdateSkipHintText(true);
 
-        // Cutscene không cho hiện chuột.
+        SetupCursor();
+        SetupSubtitleUI();
+        SetupSkipHintUI();
+        SetupAudio();
+        SetupSetting();
+
+        StartCoroutine(CutScene());
+        StartCoroutine(EnableSkipAfterDelay());
+        StartCoroutine(ShowSkipHint());
+    }
+
+    private void SetupCursor()
+    {
         var cursor = CursorManager.Instance;
-        if (cursor!= null)
+        if (cursor != null)
         {
             cursor.SetSceneCursorVisible(false);
             cursor.SetSettingCursorActive(false);
         }
+    }
+
+    private void SetupSubtitleUI()
+    {
         if (subtitlePanel != null)
             subtitlePanel.SetActive(false);
 
@@ -122,33 +138,39 @@ public class CutSceneShip : MonoBehaviour
             subtitleText.text = "";
             subtitleText.alpha = 1f;
         }
+    }
 
+    private void SetupSkipHintUI()
+    {
         if (skipHintObject != null)
             skipHintObject.SetActive(false);
+    }
 
-        StartCoroutine(CutScene());
-        StartCoroutine(EnableSkipAfterDelay());
-        StartCoroutine(ShowSkipHint());
-
+    private void SetupAudio()
+    {
         AudioManager audio = AudioManager.Instance;
-
         if (audio != null)
         {
+            audio.SetupMainGameAudio();
             audio.PlayMusic(audio.musicCutScene1Clip);
+            // Có thể thêm hiệu ứng môi trường nếu muốn:
+            // audio.PlayEnvironment(audio.theNightClip);
+            // audio.PlaySFX(audio.seaGullClip);
         }
+    }
 
-         var setting = SettingManager.Instance;
-
+    private void SetupSetting()
+    {
+        var setting = SettingManager.Instance;
         if (setting != null)
         {
             setting.enableSettingMusic = false;
             setting.ResetSetting();
             setting.canOpenSettingByEsc = true;
-
-            // Không cho nút Menu của tay cầm mở Setting.
             setting.canOpenSettingByController = true;
         }
     }
+
 
     private void Update()
     {

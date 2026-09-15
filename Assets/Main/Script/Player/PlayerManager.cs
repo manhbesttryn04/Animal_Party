@@ -15,7 +15,6 @@ public class PlayerManager : MonoBehaviour
     public PlayerCoin playerCoin;
     public PlayerBuff playerBuff;
     public PlayerDebuff playerDebuff;
-    public PlayerFunnyItem playerFunnyItem;
     public PlayerMiniGame playerMiniGame;
     public PlayerVFX playerVFX;
     public PlayerTrapState playerTrapState;
@@ -34,7 +33,6 @@ public class PlayerManager : MonoBehaviour
         playerBuff = GetComponent<PlayerBuff>();
         playerDebuff= GetComponent<PlayerDebuff>();
         playerAttack = GetComponent<PlayerAttack>();
-        playerFunnyItem = GetComponent<PlayerFunnyItem>();
         playerMiniGame = GetComponent<PlayerMiniGame>();
         playerVFX = GetComponent<PlayerVFX>();
         playerTrapState = GetComponent<PlayerTrapState>();

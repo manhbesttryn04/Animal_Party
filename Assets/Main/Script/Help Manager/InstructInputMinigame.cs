@@ -59,20 +59,18 @@ public class InstructInputMinigame : MonoBehaviour
     {
         if (!isInstructionShowing)
             return;
-        ControllerManager controllerManager =
-            ControllerManager.Instance;
 
-        bool p1Controller =
-            controllerManager != null &&
-            controllerManager.IsConsole1Connected();
+        UpdateControllerState();
+    }
 
-        bool p2Controller =
-            controllerManager != null &&
-            controllerManager.IsConsole2Connected();
+    private void UpdateControllerState()
+    {
+        ControllerManager controllerManager = ControllerManager.Instance;
 
-        // Chỉ refresh khi trạng thái tay cầm thay đổi.
-        if (p1Controller != lastP1Controller ||
-            p2Controller != lastP2Controller)
+        bool p1Controller = controllerManager != null && controllerManager.IsConsole1Connected();
+        bool p2Controller = controllerManager != null && controllerManager.IsConsole2Connected();
+
+        if (p1Controller != lastP1Controller || p2Controller != lastP2Controller)
         {
             lastP1Controller = p1Controller;
             lastP2Controller = p2Controller;
@@ -80,6 +78,7 @@ public class InstructInputMinigame : MonoBehaviour
             RefreshCurrentInput();
         }
     }
+
 
     // =========================================================
     // SHOW INPUT

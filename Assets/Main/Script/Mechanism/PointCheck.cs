@@ -13,7 +13,11 @@ public class PointCheck : MonoBehaviour
 
     private void Awake()
     {
-        // Singleton chỉ dùng trong Scene hiện tại
+        SetupSingleton();
+        SetUpBoard();
+    }
+    private void SetupSingleton()
+    {
         if (Instance == null)
         {
             Instance = this;
@@ -21,8 +25,10 @@ public class PointCheck : MonoBehaviour
         else
         {
             Destroy(gameObject);
-            return;
         }
+    }
+   private void SetUpBoard()
+    {
 
         LoadPoints();
         FindAllTraps();

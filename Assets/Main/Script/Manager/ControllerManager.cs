@@ -77,8 +77,12 @@ public class ControllerManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null &&
-            Instance != this)
+        SetupSingleton();
+    }
+
+    private void SetupSingleton()
+    {
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
@@ -87,6 +91,34 @@ public class ControllerManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
+
+    private IEnumerator Start()
+    {
+        SetupInitialControllerState();
+        yield return SetupAudioDelay();
+    }
+
+    private void SetupInitialControllerState()
+    {
+        InitializeControllerState();
+        hasInitialized = true;
+    }
+
+    private IEnumerator SetupAudioDelay()
+    {
+        float waitTimer = 0f;
+        const float maxWaitTime = 2f;
+
+        while (AudioManager.Instance == null && waitTimer < maxWaitTime)
+        {
+            waitTimer += Time.unscaledDeltaTime;
+            yield return null;
+        }
+
+        allowControllerSounds = true;
+        PlayInitialConnectedSound();
+    }
+
 
     private void OnEnable()
     {
@@ -100,25 +132,6 @@ public class ControllerManager : MonoBehaviour
     {
         InputSystem.onDeviceChange -=
             HandleInputDeviceChange;
-    }
-
-    private IEnumerator Start()
-    {
-        InitializeControllerState();
-        hasInitialized = true;
-
-        float waitTimer = 0f;
-        const float maxWaitTime = 2f;
-
-        while (AudioManager.Instance == null &&
-               waitTimer < maxWaitTime)
-        {
-            waitTimer += Time.unscaledDeltaTime;
-            yield return null;
-        }
-
-        allowControllerSounds = true;
-        PlayInitialConnectedSound();
     }
 
     private void Update()

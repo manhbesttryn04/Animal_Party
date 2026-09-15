@@ -15,11 +15,16 @@ public class StartGame : MonoBehaviour
 
     void Start()
     {
-        player1 = GameObject.FindGameObjectWithTag("Player 1");
-        player2 = GameObject.FindGameObjectWithTag("Player 2");
-
+        SetupPlayers();
         StartCoroutine(FistRoundPlayer1());
     }
+
+    private void SetupPlayers()
+    {
+        player1 = GameObject.FindGameObjectWithTag("Player 1");
+        player2 = GameObject.FindGameObjectWithTag("Player 2");
+    }
+
 
     private void Update()
     {

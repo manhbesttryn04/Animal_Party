@@ -106,9 +106,22 @@ public class DebuffManager : MonoBehaviour
 
     private void Start()
     {
+        SetupUI();
+        SetupDebuffState();
+    }
+
+    private void SetupUI()
+    {
         ui = UIManager.Instance;
         HideDebuffRandomColors();
-        if (isOpen) Open(0);
+    }
+
+    private void SetupDebuffState()
+    {
+        if (isOpen)
+        {
+            Open(0);
+        }
     }
 
     private void Update()

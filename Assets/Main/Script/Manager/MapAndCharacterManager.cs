@@ -9,6 +9,11 @@ public class MapAndCharacterManager : MonoBehaviour
 
     private void Awake()
     {
+        SetupSingleton();
+    }
+
+    private void SetupSingleton()
+    {
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -16,5 +21,6 @@ public class MapAndCharacterManager : MonoBehaviour
         }
 
         Instance = this;
+        DontDestroyOnLoad(gameObject); // giữ lại khi đổi scene
     }
 }

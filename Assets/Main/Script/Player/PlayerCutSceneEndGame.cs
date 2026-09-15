@@ -2,7 +2,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerCutScene : MonoBehaviour
+public class PlayerCutSceneEndGame : MonoBehaviour
 {
     public bool startCutscene = false;
 
@@ -34,6 +34,7 @@ public class PlayerCutScene : MonoBehaviour
     {
         isMoving = true;
         startCutscene = false;
+
 
         // Chạy animation Run
         anim.SetFloat("Run", 1f);

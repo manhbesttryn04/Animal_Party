@@ -32,24 +32,26 @@ public class PlayerMoveAI : MonoBehaviour
 
     private void Start()
     {
+        SetupPlayerAI();
+        FindPoint();
+    }
+
+    private void SetupPlayerAI()
+    {
         playerTrapState = GetComponent<PlayerTrapState>();
         navMeshAgent = GetComponent<NavMeshAgent>();
 
-        navMeshAgent.obstacleAvoidanceType =
-            ObstacleAvoidanceType.NoObstacleAvoidance;
-
+        navMeshAgent.obstacleAvoidanceType = ObstacleAvoidanceType.NoObstacleAvoidance;
         navMeshAgent.avoidancePriority = 50;
         navMeshAgent.updateRotation = false;
 
         PointCheck boardPoint = FindAnyObjectByType<PointCheck>();
-
         if (boardPoint != null)
         {
-            pointCheck = boardPoint.point.ToList();
+            pointCheck = boardPoint.point.ToList(); // sửa lại đúng tên list trong PointCheck
         }
-
-        FindPoint();
     }
+
 
     #endregion
 

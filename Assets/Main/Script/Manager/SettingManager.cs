@@ -164,6 +164,11 @@ public class SettingManager : MonoBehaviour
 
     private void Awake()
     {
+        SetupSingleton();
+    }
+
+    private void SetupSingleton()
+    {
         if (Instance == null)
         {
             Instance = this;
@@ -179,23 +184,22 @@ public class SettingManager : MonoBehaviour
     private void Start()
     {
         SetupDefaultValue();
-
         SetupResolutionDropdown();
         SetupDisplayModeDropdown();
         SetupControllerSettingItems();
-
         AddListeners();
         ApplySettings();
         ResetSetting();
+        SetupBackToMainMenuButton();
+        isOpenAudioClick = true;
+    }
 
+    private void SetupBackToMainMenuButton()
+    {
         if (backToMainMenuButton != null)
         {
-            backToMainMenuButton.onClick.AddListener(
-                OnClickBackToMainMenu
-            );
+            backToMainMenuButton.onClick.AddListener(OnClickBackToMainMenu);
         }
-
-        isOpenAudioClick = true;
     }
 
     private void Update()
@@ -740,11 +744,6 @@ public class SettingManager : MonoBehaviour
 
             yield return null;
             yield return new WaitForEndOfFrame();
-
-            Debug.Log(
-                $"Windowed: {Screen.width} x {Screen.height}"
-            );
-
             displayApplyCoroutine = null;
             yield break;
         }

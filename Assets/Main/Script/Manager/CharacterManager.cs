@@ -15,27 +15,37 @@ public class CharacterManager : MonoBehaviour
     public List<GameObject> player1List;
     public List<GameObject> player2List;
     public List<GameObject> playerPlaylist;
-    
+
     private void Awake()
+    {
+        SetupSingleton();
+        SetupIndexFromSend();
+        SetUpPlayer();
+    }
+
+    private void SetupSingleton()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Giữ lại khi chuyển scene
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(gameObject);
         }
+    }
+
+    private void SetupIndexFromSend()
+    {
         var send = SendIndexCharacter.Instance;
         if (send != null)
         {
             indexPlayer1 = send.player1Index;
             indexPlayer2 = send.player2Index;
         }
-
-        SetUpPlayer();
     }
+
 
     public void SetUpPlayer()
     {
