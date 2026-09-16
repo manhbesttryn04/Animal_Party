@@ -545,6 +545,10 @@ public class MainMenuController : MonoBehaviour
         if (ui != null)
         {
             ui.isShowKeyBoard = false;
+            if(ui.instructKeyBoardPanel.gameObject.activeSelf == true)
+            {
+                ui.instructKeyBoardPanel.gameObject.SetActive(false);
+            }
         }
     }
     private void SetupCursor()

@@ -765,7 +765,7 @@ MonoBehaviour:
   skipKey: 32
   controllerSkipButtonIndex: 1
   skipEnableDelay: 2
-  loadSceneName: MainMenuGame
+  loadSceneName: Main Menu Game Scene
 --- !u!4 &200945327
 Transform:
   m_ObjectHideFlags: 0
@@ -22246,7 +22246,6 @@ MonoBehaviour:
   playerCoin: {fileID: 0}
   playerBuff: {fileID: 0}
   playerDebuff: {fileID: 0}
-  playerFunnyItem: {fileID: 0}
   playerMiniGame: {fileID: 0}
   playerVFX: {fileID: 0}
   playerTrapState: {fileID: 0}
@@ -76910,7 +76909,6 @@ MonoBehaviour:
   playerCoin: {fileID: 0}
   playerBuff: {fileID: 0}
   playerDebuff: {fileID: 0}
-  playerFunnyItem: {fileID: 0}
   playerMiniGame: {fileID: 0}
   playerVFX: {fileID: 0}
   playerTrapState: {fileID: 0}
@@ -82855,7 +82853,6 @@ MonoBehaviour:
   playerCoin: {fileID: 0}
   playerBuff: {fileID: 0}
   playerDebuff: {fileID: 0}
-  playerFunnyItem: {fileID: 0}
   playerMiniGame: {fileID: 0}
   playerVFX: {fileID: 0}
   playerTrapState: {fileID: 0}
@@ -95143,7 +95140,6 @@ MonoBehaviour:
   playerCoin: {fileID: 0}
   playerBuff: {fileID: 0}
   playerDebuff: {fileID: 0}
-  playerFunnyItem: {fileID: 0}
   playerMiniGame: {fileID: 0}
   playerVFX: {fileID: 0}
   playerTrapState: {fileID: 0}
@@ -170792,7 +170788,6 @@ MonoBehaviour:
   playerCoin: {fileID: 0}
   playerBuff: {fileID: 0}
   playerDebuff: {fileID: 0}
-  playerFunnyItem: {fileID: 0}
   playerMiniGame: {fileID: 0}
   playerVFX: {fileID: 0}
   playerTrapState: {fileID: 0}

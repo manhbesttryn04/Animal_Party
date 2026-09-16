@@ -31900,6 +31900,7 @@ MonoBehaviour:
   settingPanel: {fileID: 8699851112556421970}
   openSettingPanelButton: {fileID: 890667215442454688}
   exitMainMenuButton: {fileID: 8412614740039011491}
+  instructKeyBoardSetting: {fileID: 263612038376559062}
   settingPanelAnimator: {fileID: 0}
   settingOpenTrigger: Open
   settingCloseTrigger: Close
