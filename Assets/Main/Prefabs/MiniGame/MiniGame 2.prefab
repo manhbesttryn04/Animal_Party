@@ -2393,8 +2393,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5021099650837901895}
   - component: {fileID: 4730442930956433512}
+  - component: {fileID: 4056660115726849793}
   m_Layer: 0
-  m_Name: 'Map '
+  m_Name: MiniGame 2 Lava Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2478,6 +2479,26 @@ Terrain:
   m_EnableTreesAndDetailsRayTracing: 0
   m_EnableHeightmapLODFrustumCulling: 1
   m_TreeMotionVectorModeOverride: 3
+--- !u!154 &4056660115726849793
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3322581380987416419}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_TerrainData: {fileID: 15600000, guid: acc62d12ea2d3644aafd15e214dfa7b4, type: 2}
+  m_EnableTreeColliders: 1
 --- !u!1 &3384565811770660480
 GameObject:
   m_ObjectHideFlags: 0
@@ -4120,7 +4141,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6876762432717958552
 Transform:

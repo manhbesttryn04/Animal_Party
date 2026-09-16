@@ -2445,7 +2445,7 @@ GameObject:
   - component: {fileID: 242467124001704517}
   - component: {fileID: 9025603174305251386}
   m_Layer: 0
-  m_Name: Terrain
+  m_Name: MiniGame 4 Pirate Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

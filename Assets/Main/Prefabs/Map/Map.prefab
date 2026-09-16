@@ -27146,7 +27146,7 @@ GameObject:
   - component: {fileID: 1070696376273723816}
   - component: {fileID: 4301688854275991986}
   m_Layer: 0
-  m_Name: Terrain
+  m_Name: Main Scene Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30425,7 +30425,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3682134145165420158}
-  - component: {fileID: 5904077634598022958}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -30466,18 +30465,6 @@ Transform:
   - {fileID: 8869736381544938442}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5904077634598022958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4512583043831382619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb271a2e8f7b62e4d8ab830c1eada89f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!1 &4531250359319839943
 GameObject:
   m_ObjectHideFlags: 0
