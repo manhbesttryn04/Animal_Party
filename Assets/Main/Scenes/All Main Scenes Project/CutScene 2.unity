@@ -1828,6 +1828,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 15BirdsPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 9143115200420249582, guid: 5232bada72e1b514683da03d14bd102e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

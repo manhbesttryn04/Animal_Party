@@ -24520,7 +24520,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Team 4AM \xB7 Graduation Project \xB7 v2.0\xB7 Summer to Fall \xB7 04.09.2026"
+  m_text: "Team 4AM \xB7 Graduation Project \xB7 v3.0\xB7 Summer to Fall \xB7 04.09.2026"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7659f6d6ec9b642db8be29bc45fe97cc, type: 2}
   m_sharedMaterial: {fileID: 8690591861142563998, guid: 7659f6d6ec9b642db8be29bc45fe97cc, type: 2}
