@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5111479376808174399}
   - component: {fileID: 7837406261613286437}
   m_Layer: 3
-  m_Name: DiceRamdom
+  m_Name: Dice Ramdom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
