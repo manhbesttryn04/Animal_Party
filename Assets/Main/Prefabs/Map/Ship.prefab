@@ -5525,7 +5525,7 @@ GameObject:
   - component: {fileID: 4591277562814787254}
   - component: {fileID: 1752896239958694524}
   m_Layer: 0
-  m_Name: Barrel_Wood (7)
+  m_Name: Barrel_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5927,7 +5927,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1079909887395610048}
   m_Layer: 0
-  m_Name: Chest_Wood (3)
+  m_Name: Chest_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16724,7 +16724,7 @@ GameObject:
   - component: {fileID: 3483153974945478197}
   - component: {fileID: 1707516664382063359}
   m_Layer: 0
-  m_Name: Barrel_Wood (4)
+  m_Name: Barrel_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32302,7 +32302,7 @@ GameObject:
   - component: {fileID: 3193849798445125489}
   - component: {fileID: 843899576784436155}
   m_Layer: 0
-  m_Name: Barrel_Wood (5)
+  m_Name: Barrel_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43315,7 +43315,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405448346267548504}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 864b4ec22155c394c997c90a021eee36, type: 3}
   m_Name: 
@@ -43332,7 +43332,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405448346267548504}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30f7443e4ba380f49b7250439cc26330, type: 3}
   m_Name: 
@@ -43346,7 +43346,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405448346267548504}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8977b2293eb34a544a1bd5e51bd8e1bb, type: 3}
   m_Name: 
@@ -48344,7 +48344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2289043342860680215}
   m_Layer: 0
-  m_Name: Chest_Wood (1)
+  m_Name: Chest_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48411,7 +48411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2166183497322242026}
   m_Layer: 0
-  m_Name: Chest_Wood (6)
+  m_Name: Chest_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60710,7 +60710,7 @@ GameObject:
   - component: {fileID: 8350258355492518398}
   - component: {fileID: 3026435896910034317}
   m_Layer: 0
-  m_Name: Barrel_Wood (8)
+  m_Name: Barrel_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77721,7 +77721,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2544374456642334271}
   m_Layer: 0
-  m_Name: Chest_Wood (4)
+  m_Name: Chest_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77754,7 +77754,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2589258963039667012}
   m_Layer: 0
-  m_Name: Chest_Wood (2)
+  m_Name: Chest_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103221,7 +103221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7029654007028922226}
   m_Layer: 0
-  m_Name: Character
+  m_Name: Characters
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115086,7 +115086,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3887874909376767439}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 864b4ec22155c394c997c90a021eee36, type: 3}
   m_Name: 
@@ -115103,7 +115103,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3887874909376767439}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30f7443e4ba380f49b7250439cc26330, type: 3}
   m_Name: 
@@ -115117,7 +115117,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3887874909376767439}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8977b2293eb34a544a1bd5e51bd8e1bb, type: 3}
   m_Name: 
@@ -130334,7 +130334,7 @@ GameObject:
   - component: {fileID: 8289336365546136660}
   - component: {fileID: 5820096941805304821}
   m_Layer: 0
-  m_Name: Barrel_Wood (9)
+  m_Name: Barrel_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132387,7 +132387,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4452249997070403417}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 864b4ec22155c394c997c90a021eee36, type: 3}
   m_Name: 
@@ -132404,7 +132404,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4452249997070403417}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30f7443e4ba380f49b7250439cc26330, type: 3}
   m_Name: 
@@ -132418,7 +132418,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4452249997070403417}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8977b2293eb34a544a1bd5e51bd8e1bb, type: 3}
   m_Name: 
@@ -133862,6 +133862,7 @@ Transform:
   - {fileID: 7029654007028922226}
   - {fileID: 647812411292736727}
   - {fileID: 1024477466251409529}
+  - {fileID: 4876899185166328476}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &8810001341096667759
@@ -151669,7 +151670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6394619262440652403}
   m_Layer: 0
-  m_Name: Chest_Wood (5)
+  m_Name: Chest_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156805,7 +156806,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6759243923908718846}
   m_Layer: 0
-  m_Name: Chest_Wood (7)
+  m_Name: Chest_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162536,7 +162537,7 @@ GameObject:
   - component: {fileID: 7328521808091241087}
   - component: {fileID: 4778552887132008117}
   m_Layer: 0
-  m_Name: Barrel_Wood (2)
+  m_Name: Barrel_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162721,7 +162722,7 @@ Animator:
   m_GameObject: {fileID: 6483433100760077643}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 6efc4ea407b0e4849a9a6fa83340d8be, type: 3}
-  m_Controller: {fileID: 9100000, guid: 15ef5271caa913c468387efb04fb22a6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9eaff4f99a21f8b47bdf8b857b19c65b, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -162978,7 +162979,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6483433100760077643}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 864b4ec22155c394c997c90a021eee36, type: 3}
   m_Name: 
@@ -162995,7 +162996,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6483433100760077643}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30f7443e4ba380f49b7250439cc26330, type: 3}
   m_Name: 
@@ -163009,7 +163010,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6483433100760077643}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8977b2293eb34a544a1bd5e51bd8e1bb, type: 3}
   m_Name: 
@@ -164734,7 +164735,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6806730419550665620}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 864b4ec22155c394c997c90a021eee36, type: 3}
   m_Name: 
@@ -164773,7 +164774,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6806730419550665620}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30f7443e4ba380f49b7250439cc26330, type: 3}
   m_Name: 
@@ -164787,7 +164788,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6806730419550665620}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8977b2293eb34a544a1bd5e51bd8e1bb, type: 3}
   m_Name: 
@@ -180971,7 +180972,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7171491186760938535}
   m_Layer: 0
-  m_Name: Chest_Wood (8)
+  m_Name: Chest_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -186487,7 +186488,7 @@ GameObject:
   - component: {fileID: 5887277366068904584}
   - component: {fileID: 8527346934454482498}
   m_Layer: 0
-  m_Name: Barrel_Wood (1)
+  m_Name: Barrel_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187146,7 +187147,7 @@ GameObject:
   - component: {fileID: 5925582662538128364}
   - component: {fileID: 8493526392004976422}
   m_Layer: 0
-  m_Name: Barrel_Wood (3)
+  m_Name: Barrel_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187443,7 +187444,7 @@ GameObject:
   - component: {fileID: 5519883894431810046}
   - component: {fileID: 7745740979731363124}
   m_Layer: 0
-  m_Name: 00_Island_7 (3)
+  m_Name: 00_Island_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194801,7 +194802,7 @@ GameObject:
   - component: {fileID: 5179663297694448977}
   - component: {fileID: 6918983794957765019}
   m_Layer: 0
-  m_Name: Barrel_Wood (6)
+  m_Name: Barrel_Wood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -201060,7 +201061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3219567235672412077, guid: 78a33966cc5639b4387c905a99a39d65, type: 3}
       propertyPath: m_Name
-      value: StylShip_Cannon (1)
+      value: StylShip_Cannon
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3219567235672412076, guid: 78a33966cc5639b4387c905a99a39d65, type: 3}
@@ -201147,4 +201148,78 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2147566298837806395, guid: 78a33966cc5639b4387c905a99a39d65, type: 3}
   m_PrefabInstance: {fileID: 1526946631707177452}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4764442058169892270
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 203866527842977423}
+    m_Modifications:
+    - target: {fileID: 121750259874307890, guid: c05c34cf7415e0c4e98b01a365a21256, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1741115
+      objectReference: {fileID: 0}
+    - target: {fileID: 121750259874307890, guid: c05c34cf7415e0c4e98b01a365a21256, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1741116
+      objectReference: {fileID: 0}
+    - target: {fileID: 121750259874307890, guid: c05c34cf7415e0c4e98b01a365a21256, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1741115
+      objectReference: {fileID: 0}
+    - target: {fileID: 121750259874307890, guid: c05c34cf7415e0c4e98b01a365a21256, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.03128872
+      objectReference: {fileID: 0}
+    - target: {fileID: 121750259874307890, guid: c05c34cf7415e0c4e98b01a365a21256, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15.146039
+      objectReference: {fileID: 0}
+    - target: {fileID: 121750259874307890, guid: c05c34cf7415e0c4e98b01a365a21256, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -31.63846
+      objectReference: {fileID: 0}
+    - target: {fileID: 121750259874307890, guid: c05c34cf7415e0c4e98b01a365a21256, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 121750259874307890, guid: c05c34cf7415e0c4e98b01a365a21256, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000001545431
+      objectReference: {fileID: 0}
+    - target: {fileID: 121750259874307890, guid: c05c34cf7415e0c4e98b01a365a21256, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 121750259874307890, guid: c05c34cf7415e0c4e98b01a365a21256, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.00000001545431
+      objectReference: {fileID: 0}
+    - target: {fileID: 121750259874307890, guid: c05c34cf7415e0c4e98b01a365a21256, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 121750259874307890, guid: c05c34cf7415e0c4e98b01a365a21256, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 121750259874307890, guid: c05c34cf7415e0c4e98b01a365a21256, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3607417009381202274, guid: c05c34cf7415e0c4e98b01a365a21256, type: 3}
+      propertyPath: m_Name
+      value: StylShip_Box
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c05c34cf7415e0c4e98b01a365a21256, type: 3}
+--- !u!4 &4876899185166328476 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 121750259874307890, guid: c05c34cf7415e0c4e98b01a365a21256, type: 3}
+  m_PrefabInstance: {fileID: 4764442058169892270}
   m_PrefabAsset: {fileID: 0}

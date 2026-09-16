@@ -39746,7 +39746,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9083680512766727720}
-  - component: {fileID: 8697515680515188741}
   m_Layer: 0
   m_Name: Point
   m_TagString: Untagged
@@ -39802,53 +39801,6 @@ Transform:
   - {fileID: 9206653472297853062}
   m_Father: {fileID: 3682134145165420158}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8697515680515188741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6943513459347150473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f680eff64d09e7047af709d8d4ae7000, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  point:
-  - {fileID: 8399013336751962684}
-  - {fileID: 5917212411248543409}
-  - {fileID: 3244148378051010526}
-  - {fileID: 6111715130635609570}
-  - {fileID: 1133945754109217700}
-  - {fileID: 130699513949842252}
-  - {fileID: 4668756976189723268}
-  - {fileID: 8726819912937603823}
-  - {fileID: 4027079152800500882}
-  - {fileID: 3922980265496288458}
-  - {fileID: 2460199739579278161}
-  - {fileID: 983430060782558789}
-  - {fileID: 6881501911967321555}
-  - {fileID: 5289642416217989758}
-  - {fileID: 1920992166869295558}
-  - {fileID: 5857113342450458126}
-  - {fileID: 581978017131232908}
-  - {fileID: 4924134038081954232}
-  - {fileID: 2795609045970721690}
-  - {fileID: 5020589432219480361}
-  - {fileID: 980450985285824466}
-  - {fileID: 4205853068869319027}
-  - {fileID: 4205853068869319027}
-  - {fileID: 4205853068869319027}
-  - {fileID: 4205853068869319027}
-  - {fileID: 4205853068869319027}
-  - {fileID: 4205853068869319027}
-  - {fileID: 4205853068869319027}
-  - {fileID: 4205853068869319027}
-  - {fileID: 4205853068869319027}
-  - {fileID: 4205853068869319027}
-  - {fileID: 4205853068869319027}
-  - {fileID: 4205853068869319027}
-  traps: []
 --- !u!1 &7047619384407543428
 GameObject:
   m_ObjectHideFlags: 0

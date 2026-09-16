@@ -3401,33 +3401,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3137318742708416705, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 31.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3137318742708416705, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -8.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4608966730463473846, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4608966730463473846, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 15.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4608966730463473846, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 27.4
-      objectReference: {fileID: 0}
     - target: {fileID: 4984177965433441110, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
       propertyPath: m_Name
       value: Ship
-      objectReference: {fileID: 0}
-    - target: {fileID: 7401326259110740855, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 19.52
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
