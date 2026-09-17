@@ -213,6 +213,7 @@ MonoBehaviour:
   shipVoiceClip: {fileID: 8300000, guid: c53bb44a1f2d266458a1807af7671053, type: 3}
   shipMoveClip: {fileID: 8300000, guid: 7547672e6e0985641b4c354253ef190f, type: 3}
   musicCutScene2Clip: {fileID: 8300000, guid: 8b31b77c1eb630a4a99064822109c46d, type: 3}
+  llamaVoiceClip: {fileID: 8300000, guid: cf88635b3037a084196d3948894da05b, type: 3}
   cannonClip: {fileID: 8300000, guid: c1de56d8437ba0a40865b26468f65845, type: 3}
   fallingBom: {fileID: 8300000, guid: 845d0fde2707f57449c0dc2651a9f645, type: 3}
   boomClip: {fileID: 8300000, guid: 48d0d0522a3be6240af8ac105dce5e0e, type: 3}

@@ -62,6 +62,10 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        SetupSingleTon();
+    }
+    public void SetupSingleTon()
+    {
         // Tạo Singleton
         if (instance == null)
         {

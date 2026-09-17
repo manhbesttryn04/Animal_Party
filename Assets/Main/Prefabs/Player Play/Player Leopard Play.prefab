@@ -3656,9 +3656,6 @@ PrefabInstance:
       addedObject: {fileID: 12300518445331123}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 680b36b9f8c4f824692a8472049936d9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5952950691190167018}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 680b36b9f8c4f824692a8472049936d9, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 134312465171503920}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 680b36b9f8c4f824692a8472049936d9, type: 3}
       insertIndex: -1
@@ -3703,7 +3700,6 @@ MonoBehaviour:
   playerCoin: {fileID: 0}
   playerBuff: {fileID: 0}
   playerDebuff: {fileID: 0}
-  playerFunnyItem: {fileID: 0}
   playerMiniGame: {fileID: 0}
   playerVFX: {fileID: 0}
   playerTrapState: {fileID: 0}
@@ -3781,6 +3777,10 @@ MonoBehaviour:
   isMove: 1
   isJump: 1
   isWalk: 0
+  horizontalJoystick1: HorizontalJoystick1
+  horizontalJoystick2: HorizontalJoystick2
+  verticalJoystick1: VerticalJoystick1
+  verticalJoystick2: VerticalJoystick2
   hasLie: 0
   lieHeight: 0.5
   lieCenter: {x: 0, y: 0.25, z: 0}
@@ -3846,23 +3846,7 @@ MonoBehaviour:
   attackCooldown: 0.5
   aimDistance: 3
   hasAttack: 0
---- !u!114 &5952950691190167018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1505682087016488576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a065503f11da6d44db22d9727eb287ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  manager: {fileID: 3652732936232595761}
-  isBoxFunny: 0
-  boxFunny: {fileID: 8531491617237634453}
-  moveHeight: 0.4
-  moveDuration: 0
+  canAttack: 1
 --- !u!135 &134312465171503920
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4100,11 +4084,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d51ff2188494a8e4587a4ba203ba03fe, type: 3}
---- !u!1 &8531491617237634453 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3837125433143377547, guid: d51ff2188494a8e4587a4ba203ba03fe, type: 3}
-  m_PrefabInstance: {fileID: 4838492370507707166}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9020185311885154095 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4470919861090968625, guid: d51ff2188494a8e4587a4ba203ba03fe, type: 3}

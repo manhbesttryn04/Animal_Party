@@ -41,12 +41,14 @@ public class AudioManager : MonoBehaviour
     public AudioClip musicChooseSceneClip;
     public AudioClip doneChooseClickClip;
     public AudioClip startGameButtonClickClip;
+   
     [Header("CutScene 1")]
     public AudioClip musicCutScene1Clip;
     public AudioClip shipVoiceClip;
     public AudioClip shipMoveClip;
     [Header("CutScene 2")]
     public AudioClip musicCutScene2Clip;
+    public AudioClip llamaVoiceClip;
 
     [Header("Debuff SFX")]
     public AudioClip cannonClip;

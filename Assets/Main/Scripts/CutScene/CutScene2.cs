@@ -544,7 +544,10 @@ public class CutScene2 : MonoBehaviour
         // Teleport tới point 8 và câu số 5.
         if (teleport != null)
             teleport.SetActive(true);
-
+        if(audio != null)
+        {
+            audio.PlaySFX(audio.llamaVoiceClip);
+        }
         TeleportToTransform(transVideos[8]);
 
         StartCoroutine(

@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using JetBrains.Annotations;
 
 public class MiniGameManager : MonoBehaviour
 {
@@ -161,6 +162,21 @@ public class MiniGameManager : MonoBehaviour
             yield break;
         }
 
+        if(volume == null)
+        {
+            yield break;
+        }
+
+        if(maincharacterandmap == null)
+        {
+            yield break;
+        }
+
+        if(cursor == null)
+        {
+            yield break;
+        }
+
         // =====================================================
         // CHECK INDEX TRƯỚC
         // =====================================================
@@ -169,8 +185,6 @@ public class MiniGameManager : MonoBehaviour
         {
             yield break;
         }
-
-        int miniGameIndex = indexMiniGame - 1;
 
         // =====================================================
         // CHECK DATA NULL
@@ -199,22 +213,9 @@ public class MiniGameManager : MonoBehaviour
         // =====================================================
         // CHECK INDEX LIST
         // =====================================================
-
-        if (miniGameIndex >= mapMiniGameList.mapMiniGameList.Count)
-        {
-            yield break;
-        }
-
-        if (miniGameIndex >= miniGameCamera.cameraList.Count)
-        {
-            yield break;
-        }
-
-        if (miniGameIndex >= spawnPoint.transSpawPlayerList.Count)
-        {
-            yield break;
-        }
-
+        int miniGameIndex = indexMiniGame - 1;
+        StartCoroutine(CheckIndexMiniGame(miniGameIndex));
+        
         // =====================================================
         // SETUP BAN ĐẦU
         // =====================================================
@@ -224,18 +225,10 @@ public class MiniGameManager : MonoBehaviour
         isPlaying = true;
 
         // Tắt map chính
-       
-        if(maincharacterandmap != null)
-        {
-            var mainmap = maincharacterandmap.mainMap;
-            if(mainmap != null)
-            {
-                mainmap.SetActive(false);
-            }
-        }
+        maincharacterandmap.SetActiveMainMap(false);
 
         // Bật map minigame
-        mapMiniGameList.mapMiniGameList[miniGameIndex].SetActive(true);
+        mapMiniGameList.SetActiveTrueMapMiniGame(miniGameIndex);
 
         // Tắt nhạc map chính
         audio.PauseAudio();
@@ -243,18 +236,15 @@ public class MiniGameManager : MonoBehaviour
         // Ẩn bảng thông báo play
         ui.HideNotifiPlayPanel(false);
 
-        // Không cho mở setting bằng controller
-        setting.canOpenSettingByController = false;
-
-        // Cursor
-        if (cursor != null)
-        {
-            cursor.HideGameCursor();
-        }
-
         // Tắt nút mở setting
         ui.ActiveOpenSettingButton(false);
 
+        // Không cho mở setting bằng controller
+        setting.canOpenSettingByController = false;
+
+        // Ẩn chuột
+        cursor.HideGameCursor();
+        
         // =====================================================
         // LOADING
         // =====================================================
@@ -265,6 +255,7 @@ public class MiniGameManager : MonoBehaviour
 
         loading.HideLoading();
 
+        //Reset trạng thái setting
         setting.ResetSetting();
 
         // =====================================================
@@ -284,11 +275,8 @@ public class MiniGameManager : MonoBehaviour
         // ENABLE CAMERA
         // =====================================================
 
-        miniGameCamera
-            .cameraList[miniGameIndex]
-            .gameObject
-            .SetActive(true);
-
+        miniGameCamera.SetActiveCameraMiniGame(miniGameIndex,true);
+           
         // =====================================================
         // ENABLE TIMER UI
         // =====================================================
@@ -346,6 +334,17 @@ public class MiniGameManager : MonoBehaviour
 
         PlayerMove move2 =
             currentPlayer2.GetComponent<PlayerMove>();
+        PlayerAttack attack1 =
+            currentPlayer1.GetComponent<PlayerAttack>();
+
+        PlayerAttack attack2 =
+            currentPlayer2.GetComponent<PlayerAttack>();
+
+        PlayerDefense defense1 =
+            currentPlayer1.GetComponent<PlayerDefense>();
+
+        PlayerDefense defense2 =
+            currentPlayer2.GetComponent<PlayerDefense>();
 
         PlayerVFX vfx1 =
             currentPlayer1.GetComponent<PlayerVFX>();
@@ -382,46 +381,49 @@ public class MiniGameManager : MonoBehaviour
             yield break;
         }
 
+        if(move1 == null && move2 == null)
+        {
+            yield break;
+        }
+
+        if (attack1 == null || attack2 == null)
+        {
+            yield break;
+        }
+
+        if (defense1 == null || defense2 == null)
+        {
+            yield break;
+        }
+
         // =====================================================
         // LOCK PLAYER MOVE
         // =====================================================
 
         yield return new WaitForSeconds(0.5f);
 
-        if (move1 != null)
-        {
-            move1.isJumpAndMove = false;
-        }
-
-        if (move2 != null)
-        {
-            move2.isJumpAndMove = false;
-        }
+        move1.isJumpAndMove = false;
+        move2.isJumpAndMove = false;
 
         // =====================================================
         // PLAYER DISSOLVE
         // =====================================================
 
-        if (vfx2 != null)
-        {
-            StartCoroutine(
-                vfx2.DissolveInRoutine1()
-            );
-        }
+        StartCoroutine(
+               vfx2.DissolveInRoutine1()
+           );
 
-        if (vfx1 != null)
-        {
-            StartCoroutine(
-                vfx1.DissolveInRoutine1()
-            );
-        }
+        StartCoroutine(
+            vfx1.DissolveInRoutine1()
+        );
 
         // =====================================================
         // SETUP PLAYER
         // =====================================================
-
+        // Trao quyền Player 2
         player2Type.isPlayer2 = true;
 
+        //Setup checkpoint
         p1.checkPoint = spawn;
         p2.checkPoint = spawn;
 
@@ -445,28 +447,22 @@ public class MiniGameManager : MonoBehaviour
         // PLAY CUTSCENE
         // =====================================================
 
-        if (miniGameCamera.MiniGameCameraList[miniGameIndex] != null)
+        if (miniGameCamera.miniGameCameraList[miniGameIndex] != null)
         {
             yield return StartCoroutine(
                 miniGameCamera
-                    .MiniGameCameraList[miniGameIndex]
+                    .miniGameCameraList[miniGameIndex]
                     .PlayCutscene()
             );
         }
 
-        if(maincharacterandmap != null)
-        {
-            var maincharacter = maincharacterandmap.mainCharacters;
-            if(maincharacter != null)
-            {
-                maincharacter.SetActive(false);
-            }
-        }
+        maincharacterandmap.SetActiveMainCharacters(false);
 
         // =====================================================
         // SHOW INSTRUCTION
         // =====================================================
-
+        
+        //Hiện hướng dẫn chơi
         ui.canvasIntructGamePlay.SetActive(true);
 
         ui.instructGamePlayText.text =
@@ -482,11 +478,8 @@ public class MiniGameManager : MonoBehaviour
         // VIDEO INSTRUCTION
         // =====================================================
 
-        if (videoInstructList.videoInstructList[miniGameIndex] != null)
-        {
-            videoIntrucs.clip =
-                videoInstructList.videoInstructList[miniGameIndex];
-        }
+        //Video hướng dẫn
+        videoInstructList.ShowInstructMiniGame(videoIntrucs, miniGameIndex);
 
         // =====================================================
         // WAIT INSTRUCTION
@@ -511,6 +504,7 @@ public class MiniGameManager : MonoBehaviour
         // INPUT INSTRUCTION
         // =====================================================
 
+        // Hiện hướng dẫn thao tác
         ui.canvasInstructInput.SetActive(true);
 
         if (inputMinigame != null)
@@ -534,29 +528,20 @@ public class MiniGameManager : MonoBehaviour
         // =====================================================
 
         ui.flastBlackPanel.SetActive(false);
-
         ui.ActiveOpenSettingButton(true);
 
-        if (cursor != null)
-        {
-            cursor.ShowGameCursor();
-        }
+        //Hiện chuột
+        cursor.ShowGameCursor();
 
+        //Cho phép mở setting bằng tay cầm
         setting.canOpenSettingByController = true;
 
         // =====================================================
         // UNLOCK PLAYER MOVE
         // =====================================================
 
-        if (move1 != null)
-        {
-            move1.isJumpAndMove = true;
-        }
-
-        if (move2 != null)
-        {
-            move2.isJumpAndMove = true;
-        }
+        move1.isJumpAndMove = true;
+        move2.isJumpAndMove = true;
 
         // =====================================================
         // SHOW GAME UI
@@ -662,35 +647,51 @@ public class MiniGameManager : MonoBehaviour
         // STOP MINIGAME
         // =====================================================
 
-        audio.StopMusic();
-        audio.ZeroAllAudio();
+        ui.canvasMiniGame.SetActive(false);
 
         ExitStopMiniGame();
-
-        ui.canvasMiniGame.SetActive(false);
 
         // =====================================================
         // SHOW RESULT
         // =====================================================
 
+        audio.PauseAudio();
         audio.ZeroAllAudio();
 
         setting.canOpenSettingByController = false;
-       
+
         ui.ActiveOpenSettingButton(false);
 
-
-        if (cursor != null)
-        {
-            cursor.HideGameCursor();
-        }
+        cursor.HideGameCursor();
 
         setting.ResetSetting();
 
+        //Update và hiện bảng kết quả
         ui.UpdateResultPanel(
             coin1.coinMiniGame,
             coin2.coinMiniGame
         );
+
+        move1.isJumpAndMove = false;
+        move2.isJumpAndMove = false;
+
+        move1.hasLie = false;
+        move2.hasLie = false;
+
+        if (attack1.hasAttack == true || attack2.hasAttack == true)
+        {
+            attack1.hasAttack = false;
+            attack2.hasAttack = false;
+        }
+
+        if (defense1.hasDefense == true || defense2.hasDefense == true)
+        {
+            defense1.hasDefense = false;
+            defense2.hasDefense = false;
+        }
+
+        StartCoroutine(vfx1.DissolveOutRoutine1());
+        StartCoroutine(vfx2.DissolveOutRoutine1());
 
         // =====================================================
         // WAIT RESULT
@@ -702,6 +703,7 @@ public class MiniGameManager : MonoBehaviour
         // HIDE RESULT
         // =====================================================
 
+        //Ẩn bảng kết quả
         ui.HideResultPanel();
 
         // =====================================================
@@ -714,24 +716,11 @@ public class MiniGameManager : MonoBehaviour
 
         audio.SetupMainGameAudio();
 
-        if (maincharacterandmap != null)
-        {
-            var maincharacter = maincharacterandmap.mainCharacters;
-            if (maincharacter != null)
-            {
-                maincharacter.SetActive(true);
-            }
-        }
+        //Bật character chính
+        maincharacterandmap.SetActiveMainCharacters(true);
 
         // Bật lại map chính
-        if (maincharacterandmap != null)
-        {
-            var mainmap = maincharacterandmap.mainMap;
-            if (mainmap != null)
-            {
-                mainmap.SetActive(true);
-            }
-        }
+        maincharacterandmap.SetActiveMainMap(true);
 
         // Reset light
         ResetLight();
@@ -747,10 +736,7 @@ public class MiniGameManager : MonoBehaviour
 
         ui.ActiveOpenSettingButton(true);
 
-        if (cursor != null)
-        {
-            cursor.ShowGameCursor();
-        }
+        cursor.ShowGameCursor();
 
         setting.canOpenSettingByController = true;
 
@@ -758,10 +744,8 @@ public class MiniGameManager : MonoBehaviour
         // DISABLE CAMERA
         // =====================================================
 
-        miniGameCamera
-            .cameraList[miniGameIndex]
-            .gameObject
-            .SetActive(false);
+        //tắt camera minigame;
+        miniGameCamera.SetActiveCameraMiniGame(miniGameIndex, false);
 
         // =====================================================
         // HIDE TIMER
@@ -795,20 +779,14 @@ public class MiniGameManager : MonoBehaviour
         // =====================================================
         // DESTROY PLAYER
         // =====================================================
-
-        Destroy(currentPlayer1);
-        Destroy(currentPlayer2);
-
-        currentPlayer1 = null;
-        currentPlayer2 = null;
-
+        DestroyAllPlayerMiniGame();
         // =====================================================
         // DISABLE MAP MINIGAME
         // =====================================================
 
+        //Tắt map minigame
         mapMiniGameList
-            .mapMiniGameList[miniGameIndex]
-            .SetActive(false);
+            .SetActiveTrueMapMiniGame(miniGameIndex);
 
         // =====================================================
         // NEXT ROUND AUDIO
@@ -1038,6 +1016,31 @@ public class MiniGameManager : MonoBehaviour
             Destroy(currentPlayer1);
             Destroy(currentPlayer2);
         }
+    }
+    IEnumerator CheckIndexMiniGame(int miniGameIndex)
+        {
+            if (miniGameIndex >= mapMiniGameList.mapMiniGameList.Count)
+            {
+                yield break;
+            }
+
+            if (miniGameIndex >= miniGameCamera.cameraList.Count)
+            {
+                yield break;
+            }
+
+            if (miniGameIndex >= spawnPoint.transSpawPlayerList.Count)
+            {
+                yield break;
+            }
+        }
+    public void DestroyAndCleanAllPlayer()
+    {
+        Destroy(currentPlayer1);
+        Destroy(currentPlayer2);
+
+        currentPlayer1 = null;
+        currentPlayer2 = null;
     }
 
     #endregion

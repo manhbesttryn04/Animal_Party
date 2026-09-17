@@ -36,4 +36,8 @@ public class MapMiniGameList : MonoBehaviour
             }
         }
     }
+    public void SetActiveTrueMapMiniGame(int i)
+    {
+        mapMiniGameList[i].SetActive(true);
+    }
 }

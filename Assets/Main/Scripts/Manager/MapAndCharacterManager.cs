@@ -23,4 +23,14 @@ public class MapAndCharacterManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject); // giữ lại khi đổi scene
     }
+    public void SetActiveMainMap(bool i)
+    {
+        if (mainMap == null) return;
+        mainMap.gameObject.SetActive(i);
+    }
+    public void SetActiveMainCharacters(bool i)
+    {
+        if (mainCharacters == null) return;
+        mainCharacters.gameObject.SetActive(i);
+    }
 }
