@@ -1,0 +1,426 @@
+[33m961c3ee4[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mMain[m[33m, [m[1;31morigin/Manh[m[33m)[m Update
+[33m8eab2ba4[m Update
+[33mbbc9ecde[m[33m ([m[1;31morigin/Main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Update
+[33mca8c688b[m Update
+[33mfc5add74[m Track TIFF files with Git LFS
+[33mf65cf5fd[m Update
+[33m59831d68[m Update
+[33mde7bfb78[m Update
+[33m37ff03ad[m Update
+[33m0d9f5657[m Update
+[33me4153078[m Update
+[33m4b6e12ba[m Update
+[33m099640e4[m Update
+[33m9673244a[m Update
+[33mf032a484[m Update
+[33m882210f6[m Update
+[33m050143ff[m Update
+[33m1d883a27[m Update
+[33mb7a9158c[m Update
+[33m2bd2c944[m Update
+[33m6a466f95[m Update
+[33m2591b4a5[m Update
+[33m7a2fe70f[m Update
+[33m97244d87[m Update
+[33mcb088d72[m Update Version 2.0
+[33m7819507b[m Update
+[33md33a1bed[m Update
+[33m54c4c4c6[m Update
+[33m696f8952[m Update
+[33m878ba503[m Update
+[33md6195238[m Update
+[33m8de69b21[m Update
+[33m39c08cee[m Update
+[33m83606dd6[m Update
+[33mb0945372[m Update
+[33ma8229a0e[m Update
+[33mbe48beb2[m Update
+[33mc47ce482[m Update
+[33m8208a396[m Update
+[33mc397a77b[m Update
+[33mb12c5f14[m Update
+[33md3e5293d[m Update
+[33m2bccc53f[m Update
+[33maeb57ffb[m Update
+[33m7a17b96b[m Update
+[33m74075f13[m Update
+[33m3e9daffa[m Update
+[33maca437bf[m Update
+[33m598b2950[m Update
+[33mc92bbf89[m Update
+[33m0e367ead[m Update
+[33m114075c2[m Update
+[33m9f637848[m Update
+[33mb28e3bc3[m Update
+[33m768a7490[m Update
+[33me1ce4084[m Update
+[33m10ff1254[m Update
+[33m0b986d60[m Update
+[33mf5de3321[m Update
+[33m2b02cff3[m Update
+[33meb5b2fd3[m Update
+[33mfb4f2c16[m Update
+[33m7c4e07e4[m Update
+[33md847701d[m Update
+[33m39164b58[m Update
+[33m551797c2[m Update
+[33mee9a12cc[m Update
+[33m19627922[m Update
+[33me0ee2d5a[m Merge branch 'new-minigame' into Main
+[33mc10a2f22[m Merge branch 'Xuan' into manh1
+[33m47a1efea[m Update
+[33m0bcfc62b[m Update
+[33m66a3ba4c[m Update
+[33m50245118[m Update
+[33ma8bae482[m Merge remote-tracking branch 'origin/Manh' into Xuan
+[33mbfd91e56[m Update
+[33m679eb426[m Update
+[33mb74d9dae[m Merge remote-tracking branch 'origin/Manh' into Xuan
+[33m2241c6aa[m Update
+[33m1d252a78[m Merge remote-tracking branch 'origin/Manh' into Xuan
+[33m9a11ffdf[m Update
+[33m3d0ba27b[m Merge remote-tracking branch 'origin/Manh' into Xuan
+[33mc61480cb[m Update
+[33m0b434393[m Merge remote-tracking branch 'origin/Manh' into Xuan
+[33mdf3dc43b[m Update
+[33m9006be16[m Update
+[33mcce968a1[m Update
+[33m136a6d6b[m Update
+[33mb54b177f[m Merge remote-tracking branch 'origin/npc' into Manh
+[33m6fb58c15[m Update
+[33m1eb24bc9[m Reapply "Update"
+[33m78ed3ada[m Revert "Update"
+[33m5fd085f7[m Update
+[33mb53cf845[m Update
+[33m4694ece4[m update
+[33maab311fb[m update
+[33m10222034[m update
+[33m1950ea3a[m update
+[33m0f9015ae[m Update
+[33m9fe2d06c[m Update
+[33m195b5de8[m Update
+[33mef59d36b[m Update
+[33m6600a20d[m Update
+[33mec488acb[m Update
+[33m7ca0292c[m Update
+[33m74231e77[m Update
+[33mb876137b[m Update
+[33md1607c08[m Update
+[33me44eca38[m Update
+[33m154ed22e[m Update
+[33mb0438cbf[m Update
+[33m728441fd[m Update
+[33mf0847224[m Update
+[33m7c0802a2[m Update
+[33md61bc66a[m Update
+[33m277fdcbe[m Update
+[33mf3bd9be8[m Update
+[33m237599c4[m Update
+[33m0756d9c1[m Update
+[33maf021306[m Merge remote-tracking branch 'origin/Manh' into Xuan
+[33md0b97c13[m Update
+[33m0136a549[m Merge remote-tracking branch 'origin/Manh' into Xuan
+[33me6734460[m Update
+[33mb32a494d[m Update
+[33m1f66d47e[m update
+[33m4522fc41[m Update
+[33m79d40ce7[m Update
+[33m47718ad4[m Update
+[33mf3c6e4af[m Update
+[33m3b3cb4ce[m Update
+[33mcc6f5480[m Merge remote-tracking branch 'origin/fixbughieuungdoinhac' into m
+[33m4e6d2874[m Update
+[33m700958e3[m fix
+[33me362d16a[m fix
+[33m1d680d65[m Update
+[33ma56ad05a[m update fix bug
+[33m87d3762e[m fix bug
+[33m944a44ff[m update fix hieu ung
+[33me726d380[m Update
+[33mb4b86615[m Update
+[33m0145c7f8[m Update
+[33mf197ee16[m Update
+[33m0556c64f[m Update
+[33m0f2b8ade[m Update
+[33m237e2563[m Update
+[33mc885e52b[m Update
+[33m90079c01[m Merge remote-tracking branch 'origin/dongboUITung' into m
+[33me6abfde6[m Update
+[33m70e6c478[m Update
+[33m15745de7[m update
+[33meb854a52[m update minigame6
+[33m605fa39b[m update minigame6
+[33m8c04b24b[m Update
+[33m03e24441[m Merge branch 'Xuan' into m
+[33m96d45370[m Update
+[33m649cfa52[m update
+[33m491c55c2[m Merge branch 'Xuan' into m
+[33m64d304e0[m Update
+[33m951bbef3[m update minigame 2
+[33m39e04861[m Update
+[33mc13ed3da[m update mini game 2
+[33ma1e9d769[m Merge remote-tracking branch 'origin/Manh' into Xuan
+[33m2d9f6fad[m Update
+[33m95a8055a[m Update
+[33m40ba73a3[m Update
+[33m022e4274[m Update
+[33m55f9d548[m Update
+[33mf38d916e[m Update
+[33m505c3f6f[m Update
+[33maf4a535c[m Update
+[33m041d4f76[m update
+[33m2d44dae9[m Update
+[33m6ae360f3[m update minigame 8
+[33md582da2d[m Update
+[33m0f0e996a[m update
+[33mdd5e1506[m Update
+[33m24069608[m update
+[33m2be21ce6[m Update
+[33m36a04323[m Update
+[33mdb3e20c9[m Update
+[33m04f0d1e1[m Update
+[33mfed04dd7[m Update
+[33mbb3163cc[m update
+[33md6f3bf4d[m Update
+[33m8c9b9acd[m Update
+[33maf1b5023[m Update
+[33mbd9007a0[m Update
+[33m5795c206[m Update
+[33m418e6b14[m Update
+[33mf9bfce62[m Update
+[33m08a5ddec[m update minigame
+[33m7184f6e5[m Merge branch 'Xuan' into Manh
+[33m15ab8690[m Update
+[33m227e3409[m minigame
+[33mbecc2f13[m Update
+[33mc3d1c7a3[m Update
+[33med3397bd[m Merge remote-tracking branch 'origin/Manh' into Xuan
+[33m99973028[m Update
+[33m5217c927[m minigam9
+[33m60d2620f[m Merge branch 'Xuan' into Manh
+[33m42e9e258[m Update
+[33m6f774088[m Update
+[33m116c0bde[m Update
+[33mab6143e4[m minigame moi
+[33m1ea09023[m Update
+[33m06b4f764[m Update
+[33m6ffa58a2[m Update
+[33mb3863e09[m Update
+[33m7c39abd7[m Update
+[33m39185858[m Update
+[33m842cda94[m Update
+[33md746e66f[m Update
+[33mef560c88[m Update
+[33m1782a35d[m Update
+[33me1b284b6[m Update
+[33m03c61f03[m Update
+[33mbf976c78[m Update
+[33ma07d90eb[m Update
+[33m4c8cac9d[m Update
+[33me552083a[m Update
+[33m6d5816dd[m Update
+[33m6c0570b7[m Update
+[33m9b4924ec[m Update
+[33m4786d275[m Update
+[33m25590456[m Update
+[33m21cb05cf[m Update
+[33m1adb58bc[m Update
+[33m0875d197[m Update
+[33mec585334[m Update
+[33m891246de[m Update
+[33m0f7bf150[m Update
+[33m3d4404f4[m Merge branch 'Xuan' into Manh
+[33me14e23ca[m Update
+[33m0f9eb9dd[m Update
+[33m3532c357[m Update
+[33m6b3e85bd[m update minigame
+[33mbd09c4cb[m Update
+[33mec8a29c2[m Update
+[33m03837653[m Update
+[33m533c11fb[m Merge remote-tracking branch 'origin/Nguyen_7' into m
+[33mb053f080[m update
+[33m11a3932e[m update fire impact
+[33m41c578fe[m Update
+[33m0a6f14c2[m Update
+[33m8d3e1b1a[m Merge remote-tracking branch 'origin/cutscne3' into m
+[33m967809d7[m Update
+[33m51699829[m Update
+[33mbb8a2f0d[m update cutscne3
+[33ma0aeb7f3[m Update
+[33m940a1564[m Update
+[33mbdf7e52b[m Update
+[33m3c43bffa[m Merge remote-tracking branch 'origin/tung9' into m
+[33mf1481747[m Update
+[33m03736f9d[m Update
+[33m88b5eb49[m update minigame 7
+[33mdb9d42f0[m Update
+[33m8e12a8d4[m Merge remote-tracking branch 'origin/tung9' into m
+[33mad319ab7[m Update
+[33m43a576a2[m Merge remote-tracking branch 'origin/Nguyen_7' into m
+[33m23dc897e[m Merge branch 'Xuan' into m
+[33m7d9f3925[m Update
+[33m7ed144cb[m Update
+[33ma3a34947[m minigame7
+[33mffabb753[m Update minigame 3 (Flame fire và Lazer hub)
+[33mc1f451d9[m Update
+[33m9d8dfd0e[m Update
+[33m2b77250d[m minigame
+[33m98ec5132[m minigame7
+[33m0f85b6f6[m Update
+[33m0a3024f3[m Update
+[33m614e105c[m Update
+[33md83cfc72[m Update
+[33m652dc2d3[m Update
+[33m4dd4bd30[m Merge branch 'Xuan' into Manh
+[33m40f2ab6c[m Update
+[33m267fe2f3[m Update
+[33m9d9dc08c[m Update
+[33meb2b0163[m Update
+[33m11ca2162[m Merge remote-tracking branch 'origin/Manh' into Xuan
+[33mab965e05[m Update
+[33m08160763[m Update
+[33m8f0f258e[m Update
+[33md750e4fe[m Update
+[33mc5b3c4b1[m Update
+[33m6a2ed75d[m Merge remote-tracking branch 'origin/Manh' into Xuan
+[33m22e94c57[m Update
+[33m6ab6588c[m Update
+[33m4d76cd5a[m Merge remote-tracking branch 'origin/Manh' into Xuan
+[33mcc7c3805[m Update
+[33me581ccf7[m Update
+[33me6d38562[m Update
+[33m3ec22673[m Update
+[33ma17a8660[m Update
+[33m6316b478[m fixmini game 5 chua xong
+[33m94b6d574[m Update
+[33m3db02fc6[m Update
+[33md071afca[m Update
+[33mcd3e770a[m Update
+[33m7d3885d1[m Update
+[33mcbba8d3d[m Update
+[33m47bff25c[m Merge remote-tracking branch 'origin/Tung_5' into m
+[33m290bf833[m Update
+[33me75c092f[m updata
+[33m898788c5[m update cutscne 2
+[33mbb25e70a[m Update
+[33m089ff041[m Merge branch 'Xuan' into m
+[33m32d0632d[m Update
+[33mf3f7dfbd[m Update
+[33mb67cba43[m .
+[33m06794443[m minigame 6
+[33mc231ec85[m Update MiniGame 5
+[33m5038e21a[m Update Minigame 2
+[33mafbd4cdb[m Update Minigame 3
+[33m793e7dae[m Update Asset
+[33m670b4680[m Update CutScene
+[33m16e1859e[m Merge branch 'Manh' into Tung_4
+[33m550bd88e[m Update
+[33m8232eaac[m Update
+[33m9c0e4582[m update cutsnece
+[33m7772c768[m Cải tiến map 4
+[33m28e7e07e[m Làm map minigame 2
+[33m2041197f[m Update
+[33meb8f7da1[m Merge branch 'Tung_4' into m
+[33me837e638[m .
+[33mcfd084d2[m update
+[33m594e9631[m fix minigame 5
+[33m34095d60[m Update Trap
+[33mcc203439[m update CutScene1
+[33m63957a17[m cutscene 1
+[33m8f898399[m Update UI
+[33m7721367b[m Merge branch 'Xuan' into Manh
+[33mcf306686[m Update
+[33mb7d849d9[m Merge remote-tracking branch 'origin/Manh' into Xuan
+[33m98ac7584[m Update
+[33md30db2a4[m Update
+[33m47182af3[m Update
+[33mcdc3dfea[m fix phao
+[33m584343aa[m Merge remote-tracking branch 'origin/Manh' into Xuan
+[33m73835dfa[m canon moi
+[33m553e02f6[m Update
+[33mabf2fac9[m Update
+[33m288905bd[m Update
+[33m5cafaa67[m Up
+[33mf9d642ac[m Up
+[33mf9bcddf9[m Update
+[33m130a4a6e[m Update
+[33mce54891e[m Update
+[33mc9ed7091[m Update
+[33m6f429b89[m Merge branch 'Tung_3' into Manh
+[33ma4ea7cca[m Update
+[33mb1ab35cd[m Update
+[33m12721cd4[m Merge branch 'Tung_3' into Manh
+[33m50ddf9bf[m Update
+[33mefc7cc8e[m Update
+[33m03d786fe[m Update
+[33mf70c1eb9[m Merge branch 'Tung_3' into Manh
+[33mab597a3a[m mainmenu
+[33m23275438[m mainmenu
+[33mb1e5e8a8[m Update
+[33md913ea08[m Merge branch 'Xuan' into Manh
+[33mca3f01db[m Update Cut Scene
+[33m6fb3ac0d[m minigame 6
+[33mbb1b9530[m time game
+[33me7b5bc85[m Merge remote-tracking branch 'origin/Manh' into Xuan
+[33ma7f60c61[m Làm CutScene
+[33md5967ca7[m Update
+[33m1e96ad3a[m Update
+[33m4fbb5a2a[m Update
+[33mc00f1f47[m fix mini game 2
+[33mb36b09a0[m Update Minigame 5
+[33m31e34a4a[m Merge branch 'Nguyen_2' into Manh
+[33m6e6a962f[m Update (vẫn chưa ổn lắm)
+[33md4970a61[m Làm xong nhân vật báo và lười
+[33m7df89fba[m Update minigame 4
+[33mf545d257[m Merge branch 'Xuan' into Manh
+[33m42c6a834[m Update map minigame 4
+[33m207fa59a[m Làm nhân vật thỏ
+[33m944bc824[m Làm nhân vật dơi
+[33m98320249[m minigame moi da toi uu
+[33m127d4557[m Update âm thanh minigame 2
+[33m39bbae5a[m Update Âm thanh minigame 1
+[33m4c0dc3aa[m Update Migame4
+[33mce4edd7c[m Update
+[33mfdc08a2a[m minigamexuan
+[33mc8983ab4[m Update Minigame 4
+[33m1564c204[m Update âm thanh
+[33m0ca4f285[m Update
+[33mc95ef03d[m Merge branch 'Nguyen_2' into Manh
+[33m94de36ba[m Update
+[33m50206c78[m File back_up
+[33mcee08d93[m Map Lazer Leaf
+[33m1eccbe63[m Làm bảng trạng thái
+[33m696abe36[m Up
+[33m0b8009f5[m Update
+[33m0cd67ba9[m Up
+[33mabb1e0f7[m Update
+[33m4bdaef52[m Đã làm xong  game loop
+[33mb1ed32eb[m Up
+[33m011e6eba[m Merge branch 'Xuan' into Manh
+[33m8716ef00[m Up
+[33mcd9378e0[m Setup luồng game
+[33mb158ceb8[m Làm cửa hàng và debuff
+[33m69f3edba[m mini game 5
+[33m616be6f3[m minigame3
+[33mb860397b[m Update SHop
+[33m643e5a58[m Update
+[33m9ff13357[m Up
+[33ma329901f[m Làm chọn item
+[33m962c2e45[m làm shop
+[33mac3022d6[m Fix cơ chế quay xúc xắc
+[33m06bd44e3[m Them asset và hiệu ứng
+[33m7cf866eb[m Fix miniGame 1
+[33m19dbea85[m Merge branch 'Xuan' into Manh
+[33maf51820e[m Làm bảng hướng dẫn chơi miniGame
+[33m8cad46c2[m mini game 3
+[33m7a94eb5d[m Làm Load MiniGame
+[33m1fa53b90[m Làm cơ chế tính điểm cho miniGame 1
+[33m96560711[m Đã làm xong mini game 1
+[33mcaef3b6e[m Code mini game 1
+[33m83c702f4[m Làm cá mập săn mòi
+[33m5dc779cc[m Setup
+[33m71011e5d[m setup
+[33mbd674c59[m Làm cơ chế quay xúc xắc khi vào màn
+[33mf7ad2e25[m Làm tung xúc xắc
+[33m86525df4[m Vẽ Map
+[33m2467f475[m Initial commit
