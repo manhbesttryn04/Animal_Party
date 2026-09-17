@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 960ee3ab1965aa1479b50fb71fcb5b69
+guid: 20310138bf369314bb66dbfa57836cb2
 ModelImporter:
   serializedVersion: 24300
   internalIDToNameTable: []
@@ -9,7 +9,7 @@ ModelImporter:
     materialName: 0
     materialSearch: 1
     materialLocation: 1
-    searchTexturesGlobally: 1
+    searchTexturesGlobally: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -32,11 +32,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Male Laying Pose Clip
+      name: Victory Idle Clip
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 50
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

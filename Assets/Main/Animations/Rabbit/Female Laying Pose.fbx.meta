@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 426f9168d2f0d324dbaa5514fad3e597
 ModelImporter:
-  serializedVersion: 24200
+  serializedVersion: 24300
   internalIDToNameTable: []
   externalObjects: {}
   materials:
@@ -9,6 +9,7 @@ ModelImporter:
     materialName: 0
     materialSearch: 1
     materialLocation: 1
+    searchTexturesGlobally: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -31,7 +32,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: mixamo.com
+      name: Female Laying Pose Clip
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0

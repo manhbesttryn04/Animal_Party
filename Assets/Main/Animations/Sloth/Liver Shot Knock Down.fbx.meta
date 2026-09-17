@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: 9e42031edf563644b93b9ccedb1449f3
+guid: 41db4236f8a5e654b8f781a07ee4d8e9
 ModelImporter:
-  serializedVersion: 24200
+  serializedVersion: 24300
   internalIDToNameTable: []
   externalObjects: {}
   materials:
@@ -9,6 +9,7 @@ ModelImporter:
     materialName: 0
     materialSearch: 1
     materialLocation: 1
+    searchTexturesGlobally: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -31,7 +32,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: mixamo.com
+      name: Liver Shot Knock Down Clip
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
@@ -42,7 +43,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -55,14 +56,14 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.06598241
+      - time: 0.066687964
         functionName: StartLie
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.68141437
+      - time: 0.6835642
         functionName: StopLie
         data: 
         objectReferenceParameter: {instanceID: 0}

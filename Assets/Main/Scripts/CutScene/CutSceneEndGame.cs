@@ -121,6 +121,7 @@ public class CutSceneEndGame : MonoBehaviour
     {
         SetupTeleport();
         FindPlayerWinner();
+        
     }
 
     private void SetupTeleport()
@@ -638,6 +639,12 @@ public class CutSceneEndGame : MonoBehaviour
 
             // Đợi player đi xong
             yield return playerMoveRoutine;
+
+            PlayerAnimator aniPlayer = player.GetComponent<PlayerAnimator>();
+            if(aniPlayer != null)
+            {
+                aniPlayer.playerAnimator.SetTrigger("Win");
+            }
             yield return StartCoroutine(
              ShowSubtitleWithVoice(
                  storyLines[5],
