@@ -810,16 +810,16 @@ public class DebuffManager : MonoBehaviour
         PlayerManager player =
             targetPlayer.GetComponent<PlayerManager>();
 
-        PlayerManager playerWin =
+        PlayerManager playerWinAni =
             targetPlayerWin.GetComponent<PlayerManager>();
 
-        if (player == null || playerWin == null)
+        if (player == null || playerWinAni == null)
         {
             ReturnToShop();
             yield break;
         }
 
-        PlayerAnimator aniPlayerWin = playerWin.playerAnimator;
+        PlayerAnimator aniPlayerWin = playerWinAni.playerAnimator;
 
         if(aniPlayerWin == null)
         {
@@ -848,6 +848,15 @@ public class DebuffManager : MonoBehaviour
                 )
             );
         }
+
+        PlayerLookPlayer playerWinLook = targetPlayerWin.GetComponent<PlayerLookPlayer>();
+
+        if (playerWinLook == null)
+        {
+            ReturnToShop();
+            yield break;
+        }
+        playerWinLook.ResetToSavedRotation();
 
         // Nếu người chơi có buff khiên phép
         // thì chặn Magic Debuff.
@@ -968,8 +977,7 @@ public class DebuffManager : MonoBehaviour
             );
         }
 
-        yield return new WaitForSeconds(1.5f);
-        owner.GetComponent<PlayerAnimator>().playerAnimator.SetTrigger("Salute");
+        yield return new WaitForSeconds(1.5f);    
 
         CannonDebuff cannonScript =
             cannon.GetComponent<CannonDebuff>();
@@ -998,8 +1006,18 @@ public class DebuffManager : MonoBehaviour
                   );
             }
         }
+        PlayerAnimator ownerAni = owner.GetComponent<PlayerAnimator>();
+        PlayerLookPlayer ownerLook = owner.GetComponent<PlayerLookPlayer>();
+        if(ownerAni == null || ownerLook == null)
+        {
+            ReturnToShop();
+            yield break;
+        }
+
+        ownerAni.playerAnimator.SetTrigger("Salute");
 
         yield return new WaitForSeconds(1f);
+        ownerLook.ResetToSavedRotation();
 
         BombDebuff bomb =
             cannonScript.Fire(target.transform);
@@ -1035,6 +1053,12 @@ public class DebuffManager : MonoBehaviour
 
         PlayerMoveAI moveAI =
             target.GetComponent<PlayerMoveAI>();
+
+        if (trapState == null || moveAI == null)
+        {
+            ReturnToShop();
+            yield break;
+        }
 
         // Sau khi bom chạm mục tiêu, DebuffManager tiếp tục điều khiển
         // camera và bám theo player cho tới khi đẩy lùi hoàn tất.

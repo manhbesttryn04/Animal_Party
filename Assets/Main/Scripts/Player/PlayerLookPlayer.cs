@@ -19,45 +19,36 @@ public class PlayerLookPlayer : MonoBehaviour
     public void LookAtOpponentOnXAxis()
     {
         if (manager.playerType == null) return;
-        SaveRotationYPlayer();
+
         string targetTag = manager.playerType.isPlayer2 ? "Player 1" : "Player 2";
         GameObject opponent = GameObject.FindGameObjectWithTag(targetTag);
 
         if (opponent == null) return;
 
-        float myX = transform.position.x;
-        float targetX = opponent.transform.position.x;
+        RotateTowards(opponent);
+    }
 
-        if (Mathf.Abs(myX - targetX) > Mathf.Epsilon)
+    private void RotateTowards(GameObject opponent)
+    {
+        SaveRotationYPlayer();
+
+        Vector3 direction = opponent.transform.position - transform.position;
+        direction.y = 0;
+
+        if (direction.sqrMagnitude > 0.0001f)
         {
-            Vector3 direction = opponent.transform.position - transform.position;
-            direction.y = 0;
-
-            if (direction != Vector3.zero)
-            {
-                Quaternion targetRotation = Quaternion.LookRotation(direction);
-
-                // Chỉ thay đổi Y rotation
-                Vector3 currentEuler = transform.eulerAngles;
-
-                transform.rotation = Quaternion.Euler(
-                    currentEuler.x,
-                    targetRotation.eulerAngles.y,
-                    currentEuler.z
-                );
-            }
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            transform.rotation = targetRotation; // xoay ngay lập tức
         }
     }
 
     public void SaveRotationYPlayer()
     {
-        // Lưu rotation hiện tại
         savedRotation = transform.rotation;
-
     }
+
     public void ResetToSavedRotation()
     {
         transform.rotation = savedRotation;
     }
 }
-

@@ -57,6 +57,9 @@ public class BombDebuff : MonoBehaviour
     // =========================
     // HIT TARGET
     // =========================
+    // =========================
+    // HIT TARGET
+    // =========================
     private void HitTarget()
     {
         AudioManager.Instance.PlaySFX(AudioManager.Instance.boomClip);
@@ -78,8 +81,7 @@ public class BombDebuff : MonoBehaviour
             return;
         }
 
-        PlayerManager player =
-            target.GetComponent<PlayerManager>();
+        PlayerManager player = target.GetComponent<PlayerManager>();
 
         if (player == null)
         {
@@ -100,19 +102,30 @@ public class BombDebuff : MonoBehaviour
             {
                 StartCoroutine(UIManager.Instance.ShowDebuffAndBuffPanel(UIManager.Instance.cannonShieldPanel));
             }
-            player.playerAnimator.playerAnimator.SetTrigger("Defense");
+
+           
+
             StartCoroutine(player.playerBuff.ShowDefenseShield());
 
+            player.playerAnimator.playerAnimator.SetTrigger("Defense Debuff");
             player.playerBuff.isBuffDeffense = false;
             Destroy(gameObject);
             return;
         }
 
         // =========================
+        // DISTANCE CHECK FOR DUCK
+        // =========================
+        float distance = Vector3.Distance(transform.position, target.position);
+        if (distance <= 10f)
+        {
+            player.playerAnimator.playerAnimator.SetTrigger("Duck");
+        }
+
+        // =========================
         // KNOCKBACK SYSTEM
         // =========================
-        PlayerMoveAI moveAI =
-            target.GetComponent<PlayerMoveAI>();
+        PlayerMoveAI moveAI = target.GetComponent<PlayerMoveAI>();
 
         if (moveAI == null)
         {
@@ -120,9 +133,7 @@ public class BombDebuff : MonoBehaviour
             return;
         }
 
-        moveAI.StartCoroutine(
-      moveAI.BoomHitEffect(power)
-  );
+        moveAI.StartCoroutine(moveAI.BoomHitEffect(power));
 
         Destroy(gameObject);
     }
