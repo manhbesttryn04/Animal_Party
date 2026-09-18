@@ -47,6 +47,24 @@ public class PlayerDebuff : MonoBehaviour
         isNoRollDice = true;
 
         AddIceMaterial();
+        var random = Random.Range(0, 2);
+        string aniRanDomString;
+        if (random == 0)
+        {
+            aniRanDomString = "Terrified";
+
+            manager.playerAnimator.playerAnimator.SetTrigger(aniRanDomString);
+
+            yield return new WaitForSeconds(0.2f);
+        }
+        else
+        {
+            aniRanDomString = "Terrified 0";
+
+            manager.playerAnimator.playerAnimator.SetTrigger(aniRanDomString);
+
+            yield return new WaitForSeconds(1f);
+        }
 
         manager.playerAnimator.playerAnimator.speed = 0f;
         AudioManager.Instance.PlaySFX(AudioManager.Instance.bebuffRockMagicClip);

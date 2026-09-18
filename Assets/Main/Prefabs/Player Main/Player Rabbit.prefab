@@ -1660,6 +1660,7 @@ GameObject:
   - component: {fileID: 6932236325927383214}
   - component: {fileID: 3244722395684098332}
   - component: {fileID: 6519358709244795771}
+  - component: {fileID: 1115701820415102589}
   m_Layer: 3
   m_Name: Player Rabbit
   m_TagString: Untagged
@@ -1746,7 +1747,6 @@ MonoBehaviour:
   playerCoin: {fileID: 0}
   playerBuff: {fileID: 0}
   playerDebuff: {fileID: 0}
-  playerFunnyItem: {fileID: 0}
   playerMiniGame: {fileID: 0}
   playerVFX: {fileID: 0}
   playerTrapState: {fileID: 0}
@@ -1794,6 +1794,7 @@ MonoBehaviour:
   pointCheck: []
   currentIndex: 0
   isMoving: 0
+  activeBoomHitCount: 0
 --- !u!114 &7747535825622794880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1897,6 +1898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputDice
   manager: {fileID: 0}
   isClick: 1
+  enableDiceNumberTool: 1
 --- !u!114 &3775783306155004927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2003,6 +2005,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInfo
   avatarCharacter: {fileID: 0}
   characterName: Rabbit
+--- !u!114 &1115701820415102589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6383170884262352192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10b8fd36bfd3780429ed15b3c1d172c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerLookPlayer
 --- !u!1 &6791763365937713733
 GameObject:
   m_ObjectHideFlags: 0

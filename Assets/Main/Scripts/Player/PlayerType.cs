@@ -21,4 +21,5 @@ public class PlayerType : MonoBehaviour
         isPlayer2 = player2;
         SetupPlayerType();
     }
+
 }

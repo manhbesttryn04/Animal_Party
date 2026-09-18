@@ -1626,7 +1626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 680b36b9f8c4f824692a8472049936d9, type: 3}
       propertyPath: m_Name
-      value: PlayerManager
+      value: Player Manager
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 680b36b9f8c4f824692a8472049936d9, type: 3}
       propertyPath: m_Layer
@@ -2056,6 +2056,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 680b36b9f8c4f824692a8472049936d9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5975095716483642866}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 680b36b9f8c4f824692a8472049936d9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8641270777327306345}
   m_SourcePrefab: {fileID: 100100000, guid: 680b36b9f8c4f824692a8472049936d9, type: 3}
 --- !u!1 &3571542887500079794 stripped
 GameObject:
@@ -2076,6 +2079,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   playerAnimator: {fileID: 0}
   playerMove: {fileID: 0}
+  playerAttack: {fileID: 0}
   playerType: {fileID: 0}
   playerDiceRoll: {fileID: 0}
   playerMoveAI: {fileID: 0}
@@ -2086,6 +2090,9 @@ MonoBehaviour:
   playerCoin: {fileID: 0}
   playerBuff: {fileID: 0}
   playerDebuff: {fileID: 0}
+  playerMiniGame: {fileID: 0}
+  playerVFX: {fileID: 0}
+  playerTrapState: {fileID: 0}
 --- !u!114 &3759625119164916855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2125,6 +2132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   manager: {fileID: 4954551513608546578}
+  playerTrapState: {fileID: 0}
   navMeshAgent: {fileID: 0}
   pointCheck:
   - {fileID: 0}
@@ -2151,7 +2159,7 @@ MonoBehaviour:
   - {fileID: 0}
   currentIndex: 0
   isMoving: 0
-  bonusPanel: {fileID: 0}
+  activeBoomHitCount: 0
 --- !u!114 &7621013337611982592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2189,6 +2197,7 @@ MonoBehaviour:
   transFollow: {fileID: 6658167827695607184}
   transFollow2: {fileID: 9146423399667554895}
   transFollow3: {fileID: 28324756549521494}
+  transFollow4: {fileID: 0}
   player: {fileID: 0}
   cameraMain: {fileID: 0}
   smoothTime: 0.3
@@ -2254,6 +2263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputDice
   manager: {fileID: 0}
   isClick: 1
+  enableDiceNumberTool: 1
 --- !u!114 &5515451473705495529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2270,6 +2280,7 @@ MonoBehaviour:
   isBuffMagic: 0
   isBuffCanon: 0
   isBuffDice: 0
+  isBuffDiceNext: 0
   countCoinPower: 0
   shieldMagic: {fileID: 0}
   shieldCanon: {fileID: 0}
@@ -2287,8 +2298,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7edfaca6fa506d140a1f0763d30d948e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  manager: {fileID: 0}
   isNoRollDice: 0
-  rockMagic: {fileID: 0}
+  playerRenderer: {fileID: 0}
+  iceMaterial: {fileID: 0}
+  iceTime: 1
 --- !u!195 &5975095716483642866
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2311,6 +2325,18 @@ NavMeshAgent:
   m_BaseOffset: -0.1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-8641270777327306345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3571542887500079794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10b8fd36bfd3780429ed15b3c1d172c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerLookPlayer
 --- !u!4 &4241119786952800264 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 680b36b9f8c4f824692a8472049936d9, type: 3}

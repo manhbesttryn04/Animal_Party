@@ -194,6 +194,19 @@ public class DebuffManager : MonoBehaviour
 
     public void OpenDebuffInternal(int playerIndex)
     {
+        var gameManager = GameManager.Instance;
+        if(gameManager != null)
+        {
+            PlayerLookPlayer playerLook =
+                playerIndex == 0 ? gameManager.player1Main.GetComponent<PlayerLookPlayer>()
+                : gameManager.player2Main.GetComponent<PlayerLookPlayer>();
+
+            if(playerLook != null)
+            {
+                playerLook.LookAtOpponentOnXAxis();
+            }
+        }
+
         ui = UIManager.Instance;
 
         if (ui == null)
@@ -779,15 +792,16 @@ public class DebuffManager : MonoBehaviour
         }
         // Nếu Player 1 chọn thì target là Player 2,
         // ngược lại.
-        string targetTag =
-            playerIndex == 0
-                ? "Player 2"
-                : "Player 1";
+        var gameManager = GameManager.instance;
+        if(gameManager == null)
+        {
+            yield break;
+        }
 
-        GameObject targetPlayer =
-            GameObject.FindGameObjectWithTag(targetTag);
+        GameObject targetPlayer = playerIndex == 0 ? gameManager.player2Main : gameManager.player1Main;
+        GameObject targetPlayerWin = playerIndex == 0 ? gameManager.player1Main : gameManager.player2Main;
 
-        if (targetPlayer == null)
+        if (targetPlayer == null || targetPlayerWin == null)
         {
             ReturnToShop();
             yield break;
@@ -796,11 +810,34 @@ public class DebuffManager : MonoBehaviour
         PlayerManager player =
             targetPlayer.GetComponent<PlayerManager>();
 
-        if (player == null)
+        PlayerManager playerWin =
+            targetPlayerWin.GetComponent<PlayerManager>();
+
+        if (player == null || playerWin == null)
         {
             ReturnToShop();
             yield break;
         }
+
+        PlayerAnimator aniPlayerWin = playerWin.playerAnimator;
+
+        if(aniPlayerWin == null)
+        {
+            ReturnToShop();
+            yield break;
+        }
+
+        var random = Random.Range(0, 2);
+        string aniRandomString;
+
+        if (random == 0)
+        {
+            aniRandomString = "Magic";
+        } else aniRandomString = "Magic 0";
+
+        aniPlayerWin.playerAnimator.SetTrigger(aniRandomString);
+
+        yield return new WaitForSeconds(1.5f);
 
         if (CameraManager.Instance != null)
         {

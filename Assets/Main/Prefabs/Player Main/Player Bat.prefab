@@ -2327,6 +2327,7 @@ GameObject:
   - component: {fileID: 3224379677900977750}
   - component: {fileID: 2623694218369040710}
   - component: {fileID: 2656138512721306608}
+  - component: {fileID: 5311670000771070749}
   m_Layer: 3
   m_Name: Player Bat
   m_TagString: Untagged
@@ -2413,10 +2414,10 @@ MonoBehaviour:
   playerCoin: {fileID: 0}
   playerBuff: {fileID: 0}
   playerDebuff: {fileID: 0}
-  playerFunnyItem: {fileID: 0}
   playerMiniGame: {fileID: 0}
   playerVFX: {fileID: 0}
   playerTrapState: {fileID: 0}
+  playerLookPlayer: {fileID: 0}
 --- !u!114 &5323853250264109155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2461,6 +2462,7 @@ MonoBehaviour:
   pointCheck: []
   currentIndex: 0
   isMoving: 0
+  activeBoomHitCount: 0
 --- !u!114 &2169407639131681665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2564,6 +2566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputDice
   manager: {fileID: 0}
   isClick: 1
+  enableDiceNumberTool: 1
 --- !u!114 &3172133887160864175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2670,6 +2673,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInfo
   avatarCharacter: {fileID: 0}
   characterName: Bat
+--- !u!114 &5311670000771070749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8227564280047608387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10b8fd36bfd3780429ed15b3c1d172c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerLookPlayer
+  manager: {fileID: 2763609384600980252}
+  autoLookAtOpponent: 0
 --- !u!1 &8312435199000842809
 GameObject:
   m_ObjectHideFlags: 0

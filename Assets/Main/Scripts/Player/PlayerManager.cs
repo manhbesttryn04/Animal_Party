@@ -18,6 +18,7 @@ public class PlayerManager : MonoBehaviour
     public PlayerMiniGame playerMiniGame;
     public PlayerVFX playerVFX;
     public PlayerTrapState playerTrapState;
+    public PlayerLookPlayer playerLookPlayer;
     private void Awake()
     {
         playerMove = GetComponent<PlayerMove>();
@@ -36,5 +37,6 @@ public class PlayerManager : MonoBehaviour
         playerMiniGame = GetComponent<PlayerMiniGame>();
         playerVFX = GetComponent<PlayerVFX>();
         playerTrapState = GetComponent<PlayerTrapState>();
+        playerLookPlayer = GetComponent<PlayerLookPlayer>();
     }
 }
