@@ -47,7 +47,9 @@ public class BombDebuff : MonoBehaviour
                 rotateSpeed * Time.deltaTime,
                 Space.Self
             );
-
+            // =========================
+            // DISTANCE CHECK FOR DUCK
+            // =========================
             yield return null;
         }
 
@@ -113,15 +115,7 @@ public class BombDebuff : MonoBehaviour
             return;
         }
 
-        // =========================
-        // DISTANCE CHECK FOR DUCK
-        // =========================
-        float distance = Vector3.Distance(transform.position, target.position);
-        if (distance <= 10f)
-        {
-            player.playerAnimator.playerAnimator.SetTrigger("Duck");
-        }
-
+        
         // =========================
         // KNOCKBACK SYSTEM
         // =========================
