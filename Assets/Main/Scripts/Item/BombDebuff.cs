@@ -18,10 +18,17 @@ public class BombDebuff : MonoBehaviour
 
     private Vector3 startPos;
 
+    private bool hasTriggeredDuck = false;
+
     private void Start()
     {
         startPos = transform.position;
         StartCoroutine(FlyRoutine());
+    }
+
+    private void Update()
+    {
+       // CheckDistanceToPlayer();
     }
 
     // =========================
@@ -105,10 +112,6 @@ public class BombDebuff : MonoBehaviour
                 StartCoroutine(UIManager.Instance.ShowDebuffAndBuffPanel(UIManager.Instance.cannonShieldPanel));
             }
 
-           
-
-            StartCoroutine(player.playerBuff.ShowDefenseShield());
-
             player.playerAnimator.playerAnimator.SetTrigger("Defense Debuff");
             player.playerBuff.isBuffDeffense = false;
             Destroy(gameObject);
@@ -130,5 +133,26 @@ public class BombDebuff : MonoBehaviour
         moveAI.StartCoroutine(moveAI.BoomHitEffect(power));
 
         Destroy(gameObject);
+    }
+
+    private void CheckDistanceToPlayer()
+    {
+        if (target == null || hasTriggeredDuck)
+            return;
+
+        float distance = Vector3.Distance(transform.position, target.position);
+
+        if (distance <= 5f)
+        {
+            PlayerManager player = target.GetComponent<PlayerManager>();
+
+            if (player != null)
+            {
+                player.playerAnimator.playerAnimator.SetTrigger("Duck");
+
+                // Khóa không cho gọi Duck lần 2
+                hasTriggeredDuck = true;
+            }
+        }
     }
 }

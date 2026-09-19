@@ -153,16 +153,17 @@ public class PlayerBuff : MonoBehaviour
 
         shieldDice.SetActive(false);
     }
-
-    public IEnumerator ShowDefenseShield()
+ 
+    public void ShowDefenseShield()
     {
         if (shieldDefense == null)
-            yield break;
+           return;
         AudioManager.Instance.PlaySFX(AudioManager.Instance.buffDeffClip);
         shieldDefense.SetActive(true);
+    }
 
-        yield return new WaitForSeconds(2f);
-
+    public void HideDefenseShield()
+    {
         shieldDefense.SetActive(false);
     }
     public void ConvertBuffDice()

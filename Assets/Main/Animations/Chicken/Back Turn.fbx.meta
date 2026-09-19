@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b1687d16b802bc447acf7f79eabf5721
+guid: b2acc2dfcfa35f54d8072111e13b315c
 ModelImporter:
   serializedVersion: 24300
   internalIDToNameTable: []
@@ -32,11 +32,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Happy Right Turn Clip
+      name: Back Turn Clip
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 22
+      lastFrame: 49
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

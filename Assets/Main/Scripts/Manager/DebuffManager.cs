@@ -80,6 +80,7 @@ public class DebuffManager : MonoBehaviour
     private bool rightHorizontalReady = true;
 
     private bool isSelectingDebuff;
+    public int testInt = 0;
     public bool isOpen = false;
 
     // Khi Setting đóng, phải thả cần/phím và nút xác nhận
@@ -120,7 +121,7 @@ public class DebuffManager : MonoBehaviour
     {
         if (isOpen)
         {
-            Open(0);
+            Open(testInt);
         }
     }
 
