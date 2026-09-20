@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   indexPlayer1: 0
-  indexPlayer2: 1
+  indexPlayer2: 0
   player1List:
   - {fileID: 6208376202053381075}
   - {fileID: 930064261}
@@ -614,12 +614,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3172133887160864175, guid: 81772fc8339a875489fdb0ef101666de, type: 3}
+      propertyPath: isBuffMagic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3172133887160864175, guid: 81772fc8339a875489fdb0ef101666de, type: 3}
       propertyPath: countCoinPower
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3172133887160864175, guid: 81772fc8339a875489fdb0ef101666de, type: 3}
       propertyPath: isBuffDeffense
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3568441589646444963, guid: 81772fc8339a875489fdb0ef101666de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1294,6 +1298,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4004152328816559513, guid: 0c3e5e24e6938a343806a6f8b60ed8b3, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4622632661078031861, guid: 0c3e5e24e6938a343806a6f8b60ed8b3, type: 3}
+      propertyPath: isPlayer2
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5316361272581587288, guid: 0c3e5e24e6938a343806a6f8b60ed8b3, type: 3}
@@ -2049,6 +2057,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3775783306155004927, guid: 15e6aab9454c1f44e90f5dd4cbc031fc, type: 3}
       propertyPath: isBuffDice
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775783306155004927, guid: 15e6aab9454c1f44e90f5dd4cbc031fc, type: 3}
+      propertyPath: isBuffCanon
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775783306155004927, guid: 15e6aab9454c1f44e90f5dd4cbc031fc, type: 3}
+      propertyPath: isBuffMagic
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3775783306155004927, guid: 15e6aab9454c1f44e90f5dd4cbc031fc, type: 3}
@@ -3332,12 +3348,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3172133887160864175, guid: 81772fc8339a875489fdb0ef101666de, type: 3}
+      propertyPath: isBuffMagic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3172133887160864175, guid: 81772fc8339a875489fdb0ef101666de, type: 3}
       propertyPath: countCoinPower
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3172133887160864175, guid: 81772fc8339a875489fdb0ef101666de, type: 3}
       propertyPath: isBuffDeffense
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3568441589646444963, guid: 81772fc8339a875489fdb0ef101666de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4331,13 +4351,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 775207260}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.14854789, y: -0.74450284, z: 0.2526615, w: -0.5998428}
-  m_LocalPosition: {x: 411.1, y: 8.2, z: 998.6}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 443, y: -71.4, z: 974.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2065887005}
-  m_LocalEulerAnglesHint: {x: 33.671, y: -259.427, z: -5.649}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &775207264
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8562,6 +8582,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2132998352042617262, guid: c6d0a1efa11874540b74891a6e77aa88, type: 3}
+      propertyPath: isBuffMagic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2132998352042617262, guid: c6d0a1efa11874540b74891a6e77aa88, type: 3}
       propertyPath: countCoinPower
       value: 0
       objectReference: {fileID: 0}
@@ -11515,7 +11539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3548275952067095837, guid: 3a35bb4fdc8f3e64c8e902780ea050e1, type: 3}
       propertyPath: isBuffDeffense
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3795562217871257698, guid: 3a35bb4fdc8f3e64c8e902780ea050e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -12153,6 +12177,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3775783306155004927, guid: 15e6aab9454c1f44e90f5dd4cbc031fc, type: 3}
       propertyPath: isBuffDice
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775783306155004927, guid: 15e6aab9454c1f44e90f5dd4cbc031fc, type: 3}
+      propertyPath: isBuffMagic
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3775783306155004927, guid: 15e6aab9454c1f44e90f5dd4cbc031fc, type: 3}
@@ -12971,7 +12999,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2132998352042617262, guid: c6d0a1efa11874540b74891a6e77aa88, type: 3}
+      propertyPath: isBuffMagic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2132998352042617262, guid: c6d0a1efa11874540b74891a6e77aa88, type: 3}
       propertyPath: countCoinPower
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2132998352042617262, guid: c6d0a1efa11874540b74891a6e77aa88, type: 3}
+      propertyPath: isBuffDeffense
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2143952648770916140, guid: c6d0a1efa11874540b74891a6e77aa88, type: 3}
@@ -14024,6 +14060,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7818402335824007926, guid: 0c3e5e24e6938a343806a6f8b60ed8b3, type: 3}
       propertyPath: isBuffDice
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818402335824007926, guid: 0c3e5e24e6938a343806a6f8b60ed8b3, type: 3}
+      propertyPath: isBuffMagic
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7818402335824007926, guid: 0c3e5e24e6938a343806a6f8b60ed8b3, type: 3}

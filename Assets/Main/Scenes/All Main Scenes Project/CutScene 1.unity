@@ -3424,6 +3424,22 @@ PrefabInstance:
       propertyPath: m_ExternalAcceleration.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4699701593380243452, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
+      propertyPath: m_RandomAcceleration.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699701593380243452, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
+      propertyPath: m_RandomAcceleration.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699701593380243452, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
+      propertyPath: m_ExternalAcceleration.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4699701593380243452, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
+      propertyPath: m_ExternalAcceleration.z
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4984177965433441110, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
       propertyPath: m_Name
       value: Ship
@@ -3432,6 +3448,38 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6755462640020753304, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
+      propertyPath: m_RandomAcceleration.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755462640020753304, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
+      propertyPath: m_RandomAcceleration.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755462640020753304, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
+      propertyPath: m_ExternalAcceleration.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755462640020753304, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
+      propertyPath: m_ExternalAcceleration.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937726239764037278, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
+      propertyPath: m_RandomAcceleration.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937726239764037278, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
+      propertyPath: m_RandomAcceleration.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937726239764037278, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
+      propertyPath: m_ExternalAcceleration.x
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7937726239764037278, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
+      propertyPath: m_ExternalAcceleration.z
+      value: -20
+      objectReference: {fileID: 0}
     - target: {fileID: 7937784746938818974, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3439,6 +3487,22 @@ PrefabInstance:
     - target: {fileID: 8052326805049065554, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127538322363237753, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
+      propertyPath: m_RandomAcceleration.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127538322363237753, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
+      propertyPath: m_RandomAcceleration.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127538322363237753, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
+      propertyPath: m_ExternalAcceleration.x
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127538322363237753, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
+      propertyPath: m_ExternalAcceleration.z
+      value: -20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
