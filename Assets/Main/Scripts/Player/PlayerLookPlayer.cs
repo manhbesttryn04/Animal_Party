@@ -13,12 +13,11 @@ public class PlayerLookPlayer : MonoBehaviour
 
     private TurnType lastTurnType = TurnType.None;
 
-    [Header("Tham chiếu PlayerType")]
+    [Header("Tham chiếu PlayerManager")]
     public PlayerManager manager;
 
-    [Header("Saved Transform")]
+    [Header("Saved Rotation")]
     [SerializeField] private Quaternion savedRotation;
-    [SerializeField] private Vector3 savedPosition;
 
     [Header("Smooth Look")]
     [SerializeField] private float smoothLookTime = 0.25f;
@@ -33,76 +32,111 @@ public class PlayerLookPlayer : MonoBehaviour
         manager = GetComponent<PlayerManager>();
     }
 
-    // =========================
-    // LOOK AT OPPONENT ON X AXIS
-    // =========================
     public void LookAtOpponentOnXAxis()
     {
         if (manager == null || manager.playerType == null)
             return;
 
-        string targetTag = manager.playerType.isPlayer2
-            ? "Player 1"
-            : "Player 2";
+        if (GameManager.Instance == null)
+            return;
 
-        GameObject opponent = GameObject.FindGameObjectWithTag(targetTag);
+        PlayerMoveAI myMoveAI = GetComponent<PlayerMoveAI>();
+
+        if (myMoveAI == null)
+            return;
+
+        GameObject opponent;
+
+        if (manager.playerType.isPlayer2)
+        {
+            opponent = GameManager.Instance.player1Main;
+        }
+        else
+        {
+            opponent = GameManager.Instance.player2Main;
+        }
 
         if (opponent == null)
             return;
 
-        Vector3 myPos = transform.position;
-        Vector3 opponentPos = opponent.transform.position;
+        PlayerMoveAI opponentMoveAI =
+            opponent.GetComponent<PlayerMoveAI>();
 
-        PlayerAnimator animator = GetComponent<PlayerAnimator>();
+        if (opponentMoveAI == null)
+            return;
+
+        PlayerAnimator animator =
+            GetComponent<PlayerAnimator>();
 
         if (animator == null)
             return;
-        SaveRotationYPlayer();
-        SavePosition();
 
-        // =========================
-        // X CỦA BẢN THÂN LỚN HƠN
-        // =========================
-        if (myPos.x > opponentPos.x)
+        SaveRotationYPlayer();
+
+        // ==========================================
+        // PLAYER ĐỨNG TRƯỚC
+        // ==========================================
+
+        if (myMoveAI.currentIndex > opponentMoveAI.currentIndex)
         {
             lastTurnType = TurnType.Back;
 
             animator.playerAnimator.SetTrigger("Back Turn");
 
-            StartCoroutine(LookAtOpponentAfterDelay(1.2f));
+            StartCoroutine(
+                LookAtOpponentAfterDelay(1.5f)
+            );
         }
 
-        // =========================
-        // X CỦA BẢN THÂN NHỎ HƠN
-        // =========================
-        else if (myPos.x < opponentPos.x)
+        // ==========================================
+        // PLAYER ĐỨNG SAU
+        // ==========================================
+
+        else if (myMoveAI.currentIndex < opponentMoveAI.currentIndex)
         {
             return;
         }
 
-        // =========================
-        // X BẰNG NHAU
-        // =========================
+        // ==========================================
+        // CÙNG INDEX
+        // ==========================================
+
         else
         {
-            if (myPos.z > opponentPos.z)
-            {
-                lastTurnType = TurnType.Right;
-
-                animator.playerAnimator.SetTrigger("Right Turn");
-            }
-            else if (myPos.z < opponentPos.z)
+            if (manager.playerType.isPlayer2)
             {
                 lastTurnType = TurnType.Left;
 
                 animator.playerAnimator.SetTrigger("Left Turn");
+                StartCoroutine(
+                LookAtOpponentAfterDelay(0.5f)
+            );
+            }
+            else
+            {
+                lastTurnType = TurnType.Right;
+
+                animator.playerAnimator.SetTrigger("Right Turn");
+                StartCoroutine(
+                LookAtOpponentAfterDelay(0.5f)
+            );
             }
         }
     }
 
-    // =========================
-    // DELAY LOOK AT OPPONENT
-    // =========================
+    // ==========================================
+    // SAVE ROTATION
+    // ==========================================
+
+    public void SaveRotationYPlayer()
+    {
+        savedRotation = transform.rotation;
+    }
+
+    // ==========================================
+    // LOOK AT OPPONENT AFTER DELAY
+    // ==========================================
+
     private IEnumerator LookAtOpponentAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -110,115 +144,92 @@ public class PlayerLookPlayer : MonoBehaviour
         LookAtOpponent();
     }
 
-    // =========================
-    // SAVE ROTATION
-    // =========================
-    public void SaveRotationYPlayer()
-    {
-        savedRotation = transform.rotation;
-    }
+    // ==========================================
+    // RESET TURN
+    // ==========================================
 
-    // =========================
-    // SAVE POSITION
-    // =========================
-    public void SavePosition()
-    {
-        savedPosition = transform.position;
-    }
-
-    // =========================
-    // RESET POSITION
-    // =========================
-    public void ResetPosition()
-    {
-        transform.position = savedPosition;
-    }
-
-    // =========================
-    // RESET POSITION AFTER DELAY
-    // =========================
-    public void ResetPositionAfterDelay(float delay)
-    {
-        StartCoroutine(ResetPositionDelay(delay));
-    }
-
-    private IEnumerator ResetPositionDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-
-        ResetPosition();
-    }
-
-    // =========================
-    // RESET ROTATION
-    // =========================
     public void ResetToSavedRotation()
     {
-        PlayerAnimator animator = GetComponent<PlayerAnimator>();
+        PlayerAnimator animator =
+            GetComponent<PlayerAnimator>();
 
         if (animator == null)
             return;
 
-        // =========================
-        // LEFT -> RIGHT
-        // =========================
+        // LEFT → RIGHT
         if (lastTurnType == TurnType.Left)
         {
             animator.playerAnimator.SetTrigger("Right Turn");
-            ResetPositionAfterDelay(0.4f);
+
+            StartCoroutine(
+                RotateToSavedRotationAfterDelay(0.7f)
+            );
         }
 
-        // =========================
-        // RIGHT -> LEFT
-        // =========================
+        // RIGHT → LEFT
         else if (lastTurnType == TurnType.Right)
         {
             animator.playerAnimator.SetTrigger("Left Turn");
-            ResetPositionAfterDelay(0.4f);
+
+            StartCoroutine(
+                RotateToSavedRotationAfterDelay(0.7f)
+            );
         }
 
-        // =========================
-        // BACK -> BACK
-        // =========================
+        // BACK → BACK
         else if (lastTurnType == TurnType.Back)
         {
             animator.playerAnimator.SetTrigger("Back Turn");
 
-            StartCoroutine(RotateToSavedRotationAfterDelay(1.2f));
+            StartCoroutine(
+                RotateToSavedRotationAfterDelay(1.7f)
+            );
         }
     }
 
-    // =========================
-    // DELAY -> SAVED ROTATION
-    // =========================
+    // ==========================================
+    // BACK RESET
+    // ==========================================
+
     private IEnumerator RotateToSavedRotationAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        ResetPositionAfterDelay(0f);
-        StartCoroutine(SmoothRotateToTarget(savedRotation));
+
+        StartCoroutine(
+            SmoothRotateToTarget(savedRotation)
+        );
     }
 
-    // =========================
-    // LOOK AT OPPONENT SMOOTH
-    // =========================
+    // ==========================================
+    // LOOK AT OPPONENT
+    // ==========================================
+
     public void LookAtOpponent()
     {
         if (manager == null || manager.playerType == null)
             return;
 
-        string targetTag = manager.playerType.isPlayer2
-            ? "Player 1"
-            : "Player 2";
+        if (GameManager.Instance == null)
+            return;
 
-        GameObject opponent = GameObject.FindGameObjectWithTag(targetTag);
+        GameObject opponent;
+
+        if (manager.playerType.isPlayer2)
+        {
+            opponent = GameManager.Instance.player1Main;
+        }
+        else
+        {
+            opponent = GameManager.Instance.player2Main;
+        }
 
         if (opponent == null)
             return;
 
         Vector3 direction =
-            opponent.transform.position - transform.position;
+            opponent.transform.position -
+            transform.position;
 
-        // Chỉ xoay ngang
         direction.y = 0f;
 
         if (direction.sqrMagnitude < 0.0001f)
@@ -232,13 +243,15 @@ public class PlayerLookPlayer : MonoBehaviour
         );
     }
 
-    // =========================
+    // ==========================================
     // SMOOTH ROTATION
-    // =========================
+    // ==========================================
+
     private IEnumerator SmoothRotateToTarget(
         Quaternion targetRotation)
     {
-        Quaternion startRotation = transform.rotation;
+        Quaternion startRotation =
+            transform.rotation;
 
         float time = 0f;
 
@@ -246,21 +259,25 @@ public class PlayerLookPlayer : MonoBehaviour
         {
             time += Time.deltaTime;
 
-            float t = time / smoothLookTime;
+            float t =
+                time / smoothLookTime;
 
-            // SmoothStep giúp chuyển động mượt hơn
-            t = Mathf.SmoothStep(0f, 1f, t);
-
-            transform.rotation = Quaternion.Slerp(
-                startRotation,
-                targetRotation,
+            t = Mathf.SmoothStep(
+                0f,
+                1f,
                 t
             );
+
+            transform.rotation =
+                Quaternion.Slerp(
+                    startRotation,
+                    targetRotation,
+                    t
+                );
 
             yield return null;
         }
 
-        // Đảm bảo cuối cùng đúng rotation
         transform.rotation = targetRotation;
     }
 }
