@@ -84,7 +84,7 @@ public class PlayerLookPlayer : MonoBehaviour
             animator.playerAnimator.SetTrigger("Back Turn");
 
             StartCoroutine(
-                LookAtOpponentAfterDelay(1.5f)
+                LookAtOpponentAfterDelay(1.4f)
             );
         }
 

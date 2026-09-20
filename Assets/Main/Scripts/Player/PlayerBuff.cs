@@ -23,7 +23,7 @@ public class PlayerBuff : MonoBehaviour
         isBuffDeffense = false;
         isBuffMagic = false;
         isBuffCanon = false;
-       // countCoinPower = 0;
+        // countCoinPower = 0;
 
         if (shieldMagic != null)
             shieldMagic.SetActive(false);
@@ -64,6 +64,10 @@ public class PlayerBuff : MonoBehaviour
         }
     }
 
+    public void ShowMagicShieldEvent()
+    {
+        StartCoroutine(ShowMagicShield());
+    }
     public IEnumerator ShowMagicShield()
     {
         if (shieldMagic == null)

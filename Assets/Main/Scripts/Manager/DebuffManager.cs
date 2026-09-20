@@ -872,11 +872,18 @@ public class DebuffManager : MonoBehaviour
             {
                 StartCoroutine(UIManager.Instance.ShowDebuffAndBuffPanel(UIManager.Instance.petrificationImmunityPanel));
             }
-            yield return StartCoroutine(
-                player.playerBuff.ShowMagicShield()
-            );
 
-            yield return new WaitForSeconds(1.5f);
+            PlayerAnimator playerAniLoser = targetPlayer.GetComponent<PlayerAnimator>();
+
+            if(playerAniLoser == null)
+            {
+                ReturnToShop();
+                yield break;
+            }
+
+            playerAniLoser.playerAnimator.SetTrigger("Defense Magic Debuff");
+
+            yield return new WaitForSeconds(3f);
 
             if (CameraManager.Instance != null)
             {

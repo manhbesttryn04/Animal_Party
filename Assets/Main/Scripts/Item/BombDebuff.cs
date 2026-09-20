@@ -112,7 +112,7 @@ public class BombDebuff : MonoBehaviour
                 StartCoroutine(UIManager.Instance.ShowDebuffAndBuffPanel(UIManager.Instance.cannonShieldPanel));
             }
 
-            player.playerAnimator.playerAnimator.SetTrigger("Defense Debuff");
+            player.playerAnimator.playerAnimator.SetTrigger("Defense Cannon Debuff");
             player.playerBuff.isBuffDeffense = false;
             Destroy(gameObject);
             return;
