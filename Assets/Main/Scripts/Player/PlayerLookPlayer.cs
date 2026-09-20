@@ -12,10 +12,13 @@ public class PlayerLookPlayer : MonoBehaviour
     }
 
     private TurnType lastTurnType = TurnType.None;
+
     [Header("Tham chiếu PlayerType")]
     public PlayerManager manager;
 
+    [Header("Saved Transform")]
     [SerializeField] private Quaternion savedRotation;
+    [SerializeField] private Vector3 savedPosition;
 
     [Header("Smooth Look")]
     [SerializeField] private float smoothLookTime = 0.25f;
@@ -30,6 +33,9 @@ public class PlayerLookPlayer : MonoBehaviour
         manager = GetComponent<PlayerManager>();
     }
 
+    // =========================
+    // LOOK AT OPPONENT ON X AXIS
+    // =========================
     public void LookAtOpponentOnXAxis()
     {
         if (manager == null || manager.playerType == null)
@@ -52,6 +58,8 @@ public class PlayerLookPlayer : MonoBehaviour
         if (animator == null)
             return;
         SaveRotationYPlayer();
+        SavePosition();
+
         // =========================
         // X CỦA BẢN THÂN LỚN HƠN
         // =========================
@@ -90,7 +98,6 @@ public class PlayerLookPlayer : MonoBehaviour
                 animator.playerAnimator.SetTrigger("Left Turn");
             }
         }
-        //SaveRotationYPlayer();
     }
 
     // =========================
@@ -112,13 +119,41 @@ public class PlayerLookPlayer : MonoBehaviour
     }
 
     // =========================
+    // SAVE POSITION
+    // =========================
+    public void SavePosition()
+    {
+        savedPosition = transform.position;
+    }
+
+    // =========================
+    // RESET POSITION
+    // =========================
+    public void ResetPosition()
+    {
+        transform.position = savedPosition;
+    }
+
+    // =========================
+    // RESET POSITION AFTER DELAY
+    // =========================
+    public void ResetPositionAfterDelay(float delay)
+    {
+        StartCoroutine(ResetPositionDelay(delay));
+    }
+
+    private IEnumerator ResetPositionDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        ResetPosition();
+    }
+
+    // =========================
     // RESET ROTATION
     // =========================
     public void ResetToSavedRotation()
     {
-        // Reset rotation ban đầu
-        //transform.rotation = savedRotation;
-
         PlayerAnimator animator = GetComponent<PlayerAnimator>();
 
         if (animator == null)
@@ -130,6 +165,7 @@ public class PlayerLookPlayer : MonoBehaviour
         if (lastTurnType == TurnType.Left)
         {
             animator.playerAnimator.SetTrigger("Right Turn");
+            ResetPositionAfterDelay(0.4f);
         }
 
         // =========================
@@ -138,6 +174,7 @@ public class PlayerLookPlayer : MonoBehaviour
         else if (lastTurnType == TurnType.Right)
         {
             animator.playerAnimator.SetTrigger("Left Turn");
+            ResetPositionAfterDelay(0.4f);
         }
 
         // =========================
@@ -150,10 +187,14 @@ public class PlayerLookPlayer : MonoBehaviour
             StartCoroutine(RotateToSavedRotationAfterDelay(1.2f));
         }
     }
+
+    // =========================
+    // DELAY -> SAVED ROTATION
+    // =========================
     private IEnumerator RotateToSavedRotationAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-
+        ResetPositionAfterDelay(0f);
         StartCoroutine(SmoothRotateToTarget(savedRotation));
     }
 
@@ -164,7 +205,7 @@ public class PlayerLookPlayer : MonoBehaviour
     {
         if (manager == null || manager.playerType == null)
             return;
-        //SaveRotationYPlayer();
+
         string targetTag = manager.playerType.isPlayer2
             ? "Player 1"
             : "Player 2";
@@ -174,7 +215,8 @@ public class PlayerLookPlayer : MonoBehaviour
         if (opponent == null)
             return;
 
-        Vector3 direction = opponent.transform.position - transform.position;
+        Vector3 direction =
+            opponent.transform.position - transform.position;
 
         // Chỉ xoay ngang
         direction.y = 0f;
@@ -182,15 +224,19 @@ public class PlayerLookPlayer : MonoBehaviour
         if (direction.sqrMagnitude < 0.0001f)
             return;
 
-        Quaternion targetRotation = Quaternion.LookRotation(direction);
+        Quaternion targetRotation =
+            Quaternion.LookRotation(direction);
 
-        StartCoroutine(SmoothRotateToTarget(targetRotation));
+        StartCoroutine(
+            SmoothRotateToTarget(targetRotation)
+        );
     }
 
     // =========================
     // SMOOTH ROTATION
     // =========================
-    private IEnumerator SmoothRotateToTarget(Quaternion targetRotation)
+    private IEnumerator SmoothRotateToTarget(
+        Quaternion targetRotation)
     {
         Quaternion startRotation = transform.rotation;
 

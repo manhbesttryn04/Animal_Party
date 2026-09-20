@@ -184,8 +184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ea2412eaaa51ad4c9db2c51474a7044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  indexPlayer1: 0
-  indexPlayer2: 0
+  indexPlayer1: 4
+  indexPlayer2: 4
   player1List:
   - {fileID: 6208376202053381075}
   - {fileID: 930064261}
@@ -619,7 +619,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3172133887160864175, guid: 81772fc8339a875489fdb0ef101666de, type: 3}
       propertyPath: isBuffDeffense
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3568441589646444963, guid: 81772fc8339a875489fdb0ef101666de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1346,7 +1346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7818402335824007926, guid: 0c3e5e24e6938a343806a6f8b60ed8b3, type: 3}
       propertyPath: isBuffDeffense
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4985234465097247430, guid: 0c3e5e24e6938a343806a6f8b60ed8b3, type: 3}
@@ -3333,7 +3333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3172133887160864175, guid: 81772fc8339a875489fdb0ef101666de, type: 3}
       propertyPath: isBuffDeffense
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3568441589646444963, guid: 81772fc8339a875489fdb0ef101666de, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3469,7 +3469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5749469370915433331, guid: 81772fc8339a875489fdb0ef101666de, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.091
       objectReference: {fileID: 0}
     - target: {fileID: 5749469370915433331, guid: 81772fc8339a875489fdb0ef101666de, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7426,7 +7426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6729299164792965132, guid: 3a35bb4fdc8f3e64c8e902780ea050e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.954
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6729299164792965132, guid: 3a35bb4fdc8f3e64c8e902780ea050e1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7434,7 +7434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6729299164792965132, guid: 3a35bb4fdc8f3e64c8e902780ea050e1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.277
+      value: 0.4800005
       objectReference: {fileID: 0}
     - target: {fileID: 6729299164792965132, guid: 3a35bb4fdc8f3e64c8e902780ea050e1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7795,7 +7795,7 @@ MonoBehaviour:
   resetThreshold: 0.2
   horizontalJoystick1: HorizontalJoystick1
   horizontalJoystick2: HorizontalJoystick2
-  testInt: 1
+  testInt: 0
   isOpen: 1
 --- !u!4 &1427530311
 Transform:
@@ -11711,7 +11711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6729299164792965132, guid: 3a35bb4fdc8f3e64c8e902780ea050e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.904
       objectReference: {fileID: 0}
     - target: {fileID: 6729299164792965132, guid: 3a35bb4fdc8f3e64c8e902780ea050e1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11719,7 +11719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6729299164792965132, guid: 3a35bb4fdc8f3e64c8e902780ea050e1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.094
       objectReference: {fileID: 0}
     - target: {fileID: 6729299164792965132, guid: 3a35bb4fdc8f3e64c8e902780ea050e1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -12153,6 +12153,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3775783306155004927, guid: 15e6aab9454c1f44e90f5dd4cbc031fc, type: 3}
       propertyPath: countCoinPower
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3775783306155004927, guid: 15e6aab9454c1f44e90f5dd4cbc031fc, type: 3}
+      propertyPath: isBuffDeffense
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3889507106175989737, guid: 15e6aab9454c1f44e90f5dd4cbc031fc, type: 3}
@@ -14016,6 +14020,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7818402335824007926, guid: 0c3e5e24e6938a343806a6f8b60ed8b3, type: 3}
       propertyPath: countCoinPower
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818402335824007926, guid: 0c3e5e24e6938a343806a6f8b60ed8b3, type: 3}
+      propertyPath: isBuffDeffense
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7960923004640102829, guid: 0c3e5e24e6938a343806a6f8b60ed8b3, type: 3}

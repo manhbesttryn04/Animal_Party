@@ -28,7 +28,7 @@ public class BombDebuff : MonoBehaviour
 
     private void Update()
     {
-       // CheckDistanceToPlayer();
+       CheckDistanceToPlayer();
     }
 
     // =========================
@@ -148,7 +148,7 @@ public class BombDebuff : MonoBehaviour
 
             if (player != null)
             {
-                player.playerAnimator.playerAnimator.SetTrigger("Duck");
+                if(!player.playerBuff.isBuffDeffense) player.playerAnimator.playerAnimator.SetTrigger("Duck");
 
                 // Khóa không cho gọi Duck lần 2
                 hasTriggeredDuck = true;
