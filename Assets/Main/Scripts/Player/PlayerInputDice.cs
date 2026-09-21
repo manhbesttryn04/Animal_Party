@@ -3,7 +3,7 @@ using UnityEngine.Serialization;
 
 public class PlayerInputDice : MonoBehaviour
 {
-    [Header("References")]
+    [Header("Manager")]
     public PlayerManager manager;
 
     [Header("Dice State")]

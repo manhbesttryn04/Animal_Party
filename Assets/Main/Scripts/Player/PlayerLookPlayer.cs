@@ -13,7 +13,7 @@ public class PlayerLookPlayer : MonoBehaviour
 
     private TurnType lastTurnType = TurnType.None;
 
-    [Header("Tham chiếu PlayerManager")]
+    [Header("Manager")]
     public PlayerManager manager;
 
     [Header("Saved Rotation")]
@@ -123,6 +123,53 @@ public class PlayerLookPlayer : MonoBehaviour
             }
         }
     }
+    public void LookAtAttacker()
+    {
+        if (manager == null || manager.playerType == null)
+            return;
+
+        if (GameManager.Instance == null)
+            return;
+
+        PlayerMoveAI myMoveAI = GetComponent<PlayerMoveAI>();
+
+        if (myMoveAI == null)
+            return;
+
+        GameObject opponent;
+
+        if (manager.playerType.isPlayer2)
+        {
+            opponent = GameManager.Instance.player1Main;
+        }
+        else
+        {
+            opponent = GameManager.Instance.player2Main;
+        }
+
+        if (opponent == null)
+            return;
+
+        PlayerMoveAI opponentMoveAI =
+            opponent.GetComponent<PlayerMoveAI>();
+
+        if (opponentMoveAI == null)
+            return;
+
+        // Chỉ xoay khi mình có index lớn hơn đối thủ
+        if (myMoveAI.currentIndex <= opponentMoveAI.currentIndex)
+            return;
+
+        // Lưu rotation ban đầu
+        SaveRotationYPlayer();
+
+        // Đánh dấu trạng thái Back
+        lastTurnType = TurnType.Back;
+
+        // Tái sử dụng hàm có sẵn
+        LookAtOpponent();
+    }
+
 
     // ==========================================
     // SAVE ROTATION
@@ -151,7 +198,7 @@ public class PlayerLookPlayer : MonoBehaviour
     public void ResetToSavedRotation()
     {
         PlayerAnimator animator =
-            GetComponent<PlayerAnimator>();
+            manager.playerAnimator;
 
         if (animator == null)
             return;
@@ -248,7 +295,7 @@ public class PlayerLookPlayer : MonoBehaviour
     // ==========================================
 
     private IEnumerator SmoothRotateToTarget(
-        Quaternion targetRotation)
+     Quaternion targetRotation)
     {
         Quaternion startRotation =
             transform.rotation;

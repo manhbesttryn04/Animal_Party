@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerDebuff : MonoBehaviour
 {
+    [Header("Manager")]
     public PlayerManager manager;
 
     [Header("Debuff State")]

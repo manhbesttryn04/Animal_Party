@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class TimeMinigame : MonoBehaviour
 {
+    [Header("Time MiniGame")]
     public float timeMinigame1 = 0f;
     public float timeMinigame2 = 0f;
     public float timeMinigame3 = 0f;

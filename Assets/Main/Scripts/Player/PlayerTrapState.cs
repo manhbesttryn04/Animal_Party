@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerTrapState : MonoBehaviour
 {
+    [Header("Manager")]
     public PlayerManager manager;
     public bool isTrapActive = false;
 

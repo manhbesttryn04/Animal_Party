@@ -23,29 +23,51 @@ public class BombDebuff : MonoBehaviour
     private void Start()
     {
         startPos = transform.position;
-        StartCoroutine(FlyRoutine());
+
+        if (target != null)
+        {
+            StartCoroutine(FlyRoutine());
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void Update()
     {
-       CheckDistanceToPlayer();
+        CheckDistanceToPlayer();
     }
 
     // =========================
     // FLY TO TARGET
     // =========================
+
     private IEnumerator FlyRoutine()
     {
         float time = 0f;
 
         while (time < flyTime)
         {
+            if (target == null)
+            {
+                yield break;
+            }
+
             time += Time.deltaTime;
 
             float t = time / flyTime;
 
-            Vector3 pos = Vector3.Lerp(startPos, target.position, t);
-            pos.y += arcHeight * Mathf.Sin(t * Mathf.PI);
+            Vector3 pos =
+                Vector3.Lerp(
+                    startPos,
+                    target.position,
+                    t
+                );
+
+            pos.y +=
+                arcHeight *
+                Mathf.Sin(t * Mathf.PI);
 
             transform.position = pos;
 
@@ -54,9 +76,7 @@ public class BombDebuff : MonoBehaviour
                 rotateSpeed * Time.deltaTime,
                 Space.Self
             );
-            // =========================
-            // DISTANCE CHECK FOR DUCK
-            // =========================
+
             yield return null;
         }
 
@@ -66,23 +86,45 @@ public class BombDebuff : MonoBehaviour
     // =========================
     // HIT TARGET
     // =========================
-    // =========================
-    // HIT TARGET
-    // =========================
+
     private void HitTarget()
     {
-        AudioManager.Instance.PlaySFX(AudioManager.Instance.boomClip);
-        // Explosion FX
+        // =========================
+        // SOUND
+        // =========================
+
+        if (AudioManager.Instance != null)
+        {
+            if (AudioManager.Instance.boomClip != null)
+            {
+                AudioManager.Instance.PlaySFX(
+                    AudioManager.Instance.boomClip
+                );
+            }
+        }
+
+        // =========================
+        // EXPLOSION FX
+        // =========================
+
         if (explosionPrefab != null)
         {
-            GameObject explosion = Instantiate(
-                explosionPrefab,
-                transform.position,
-                Quaternion.identity
-            );
+            GameObject explosion =
+                Instantiate(
+                    explosionPrefab,
+                    transform.position,
+                    Quaternion.identity
+                );
 
-            Destroy(explosion, 2f);
+            if (explosion != null)
+            {
+                Destroy(explosion, 2f);
+            }
         }
+
+        // =========================
+        // TARGET CHECK
+        // =========================
 
         if (target == null)
         {
@@ -90,7 +132,8 @@ public class BombDebuff : MonoBehaviour
             return;
         }
 
-        PlayerManager player = target.GetComponent<PlayerManager>();
+        PlayerManager player =
+            target.GetComponent<PlayerManager>();
 
         if (player == null)
         {
@@ -101,28 +144,64 @@ public class BombDebuff : MonoBehaviour
         // =========================
         // SHIELD CHECK
         // =========================
-        if (player.playerBuff.isBuffDeffense)
+
+        if (player.playerBuff != null &&
+            player.playerBuff.isBuffDeffense)
         {
+            // Shield voice
             if (AudioManager.Instance != null)
             {
-                AudioManager.Instance.PlaySpecial(AudioManager.Instance.cannonShieldVoiceClip);
-            }
-            if (UIManager.Instance != null)
-            {
-                StartCoroutine(UIManager.Instance.ShowDebuffAndBuffPanel(UIManager.Instance.cannonShieldPanel));
+                if (AudioManager.Instance.cannonShieldVoiceClip != null)
+                {
+                    AudioManager.Instance.PlaySpecial(
+                        AudioManager.Instance.cannonShieldVoiceClip
+                    );
+                }
             }
 
-            player.playerAnimator.playerAnimator.SetTrigger("Defense Cannon Debuff");
+            // Shield UI
+            if (UIManager.Instance != null)
+            {
+                if (UIManager.Instance.cannonShieldPanel != null)
+                {
+                    StartCoroutine(
+                        UIManager.Instance.ShowDebuffAndBuffPanel(
+                            UIManager.Instance.cannonShieldPanel
+                        )
+                    );
+                }
+            }
+
+            // =========================
+            // DEFENSE ANIMATION
+            // =========================
+
+            if (player.playerAnimator != null)
+            {
+                if (player.playerAnimator.playerAnimator != null)
+                {
+                    player.playerAnimator.playerAnimator.SetTrigger(
+                        "Defense Cannon Debuff"
+                    );
+                }
+            }
+
+            // =========================
+            // REMOVE SHIELD BUFF
+            // =========================
+
             player.playerBuff.isBuffDeffense = false;
+
             Destroy(gameObject);
             return;
         }
 
-        
         // =========================
         // KNOCKBACK SYSTEM
         // =========================
-        PlayerMoveAI moveAI = target.GetComponent<PlayerMoveAI>();
+
+        PlayerMoveAI moveAI =
+            target.GetComponent<PlayerMoveAI>();
 
         if (moveAI == null)
         {
@@ -130,25 +209,55 @@ public class BombDebuff : MonoBehaviour
             return;
         }
 
-        moveAI.StartCoroutine(moveAI.BoomHitEffect(power));
+        moveAI.StartCoroutine(
+            moveAI.BoomHitEffect(power)
+        );
 
         Destroy(gameObject);
     }
 
+    // =========================
+    // CHECK DISTANCE TO PLAYER
+    // =========================
+
     private void CheckDistanceToPlayer()
     {
-        if (target == null || hasTriggeredDuck)
+        if (target == null ||
+            hasTriggeredDuck)
+        {
             return;
+        }
 
-        float distance = Vector3.Distance(transform.position, target.position);
+        float distance =
+            Vector3.Distance(
+                transform.position,
+                target.position
+            );
 
         if (distance <= 5f)
         {
-            PlayerManager player = target.GetComponent<PlayerManager>();
+            PlayerManager player =
+                target.GetComponent<PlayerManager>();
 
             if (player != null)
             {
-                if(!player.playerBuff.isBuffDeffense) player.playerAnimator.playerAnimator.SetTrigger("Duck");
+                // =========================
+                // DUCK
+                // =========================
+
+                if (player.playerBuff != null &&
+                    !player.playerBuff.isBuffDeffense)
+                {
+                    if (player.playerAnimator != null)
+                    {
+                        if (player.playerAnimator.playerAnimator != null)
+                        {
+                            player.playerAnimator.playerAnimator.SetTrigger(
+                                "Duck"
+                            );
+                        }
+                    }
+                }
 
                 // Khóa không cho gọi Duck lần 2
                 hasTriggeredDuck = true;

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerDiceRoll : MonoBehaviour
 {
+    [Header("Manager")]
     public PlayerManager manager;
 
     // Thứ tự các phần tử phải tương ứng với mặt 1 → 6

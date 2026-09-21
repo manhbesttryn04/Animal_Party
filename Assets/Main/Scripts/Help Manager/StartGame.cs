@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StartGame : MonoBehaviour
 {
+    [Header("Players")]
     public GameObject player1;
     public GameObject player2;
 

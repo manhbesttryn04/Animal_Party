@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerCoin : MonoBehaviour
 {
+    [Header("Manager")]
     public PlayerManager manager;
     public MiniGameManager gameManager;
     public int coinMiniGame = 100;

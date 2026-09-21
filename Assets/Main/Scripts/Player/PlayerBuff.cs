@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class PlayerBuff : MonoBehaviour
 {
+    [Header("Manager")]
+    public PlayerManager manager;
+
     [Header("Buff")]
     public bool isBuffDeffense;
     public bool isBuffMagic;
@@ -14,28 +17,35 @@ public class PlayerBuff : MonoBehaviour
 
     [Header("Effects")]
     public GameObject shieldMagic;
-    public GameObject shieldCanon;
-    public GameObject shieldDice;
     public GameObject shieldDefense;
+
+    public void Start()
+    {
+        SetupPlayerBuff();
+    }
+
+    public void SetupPlayerBuff()
+    {
+        manager = GetComponent<PlayerManager>();
+    }
 
     public void ResetBuff()
     {
         isBuffDeffense = false;
         isBuffMagic = false;
         isBuffCanon = false;
+
         // countCoinPower = 0;
 
         if (shieldMagic != null)
+        {
             shieldMagic.SetActive(false);
-
-        if (shieldCanon != null)
-            shieldCanon.SetActive(false);
-
-        if (shieldDice != null)
-            shieldDice.SetActive(false);
+        }
 
         if (shieldDefense != null)
+        {
             shieldDefense.SetActive(false);
+        }
     }
 
     public void ApplyBuff(int itemIndex)
@@ -68,15 +78,29 @@ public class PlayerBuff : MonoBehaviour
     {
         StartCoroutine(ShowMagicShield());
     }
+
     public IEnumerator ShowMagicShield()
     {
         if (shieldMagic == null)
             yield break;
 
         shieldMagic.SetActive(true);
-        AudioManager.Instance.PlaySFX(AudioManager.Instance.buffMagicClip);
+
+        // Audio
+        if (AudioManager.Instance != null)
+        {
+            if (AudioManager.Instance.buffMagicClip != null)
+            {
+                AudioManager.Instance.PlaySFX(
+                    AudioManager.Instance.buffMagicClip
+                );
+            }
+        }
 
         Transform shield = shieldMagic.transform;
+
+        if (shield == null)
+            yield break;
 
         // Bắt đầu từ scale 0
         shield.localScale = Vector3.zero;
@@ -86,6 +110,7 @@ public class PlayerBuff : MonoBehaviour
 
         // Scale từ 0 -> 1.7
         float t = 0f;
+
         while (t < growTime)
         {
             t += Time.deltaTime;
@@ -130,46 +155,57 @@ public class PlayerBuff : MonoBehaviour
 
         shield.localScale = Vector3.zero;
 
-        shieldMagic.SetActive(false);
+        if (shieldMagic != null)
+        {
+            shieldMagic.SetActive(false);
+        }
+
+        // Reset rotation
+        if (manager != null)
+        {
+            if (manager.playerLookPlayer != null)
+            {
+                manager.playerLookPlayer.ResetToSavedRotation();
+            }
+        }
     }
 
-    public IEnumerator ShowCanonShield()
-    {
-        if (shieldCanon == null)
-            yield break;
-
-        shieldCanon.SetActive(true);
-
-        yield return new WaitForSeconds(2f);
-
-        shieldCanon.SetActive(false);
-    }
-
-    public IEnumerator ShowDiceShield()
-    {
-        if (shieldDice == null)
-            yield break;
-        
-        shieldDice.SetActive(true);
-     
-
-        yield return new WaitForSeconds(2f);
-
-        shieldDice.SetActive(false);
-    }
- 
     public void ShowDefenseShield()
     {
         if (shieldDefense == null)
-           return;
-        AudioManager.Instance.PlaySFX(AudioManager.Instance.buffDeffClip);
+            return;
+
+        // Audio
+        if (AudioManager.Instance != null)
+        {
+            if (AudioManager.Instance.buffDeffClip != null)
+            {
+                AudioManager.Instance.PlaySFX(
+                    AudioManager.Instance.buffDeffClip
+                );
+            }
+        }
+
         shieldDefense.SetActive(true);
     }
 
     public void HideDefenseShield()
     {
-        shieldDefense.SetActive(false);
+        if (shieldDefense != null)
+        {
+            shieldDefense.SetActive(false);
+        }
+
+        // Reset rotation
+        if (manager != null)
+        {
+            if (manager.playerLookPlayer != null)
+            {
+                manager.playerLookPlayer.ResetToSavedRotation();
+            }
+        }
     }
+
     public void ConvertBuffDice()
     {
         if (isBuffDiceNext > 0)

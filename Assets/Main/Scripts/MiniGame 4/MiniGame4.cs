@@ -9,6 +9,9 @@ public class MiniGame4 : MonoBehaviour
 
     [Header("Pirate")]
     public Animator animator;
+    [Header("Back Turn Animation")]
+    public float backTurnDelay = 1.4f;
+    public float smoothRotateSpeed = 5f;
 
     [Header("Settings")]
     public float firstWaitTime = 3f;
@@ -51,8 +54,8 @@ public class MiniGame4 : MonoBehaviour
     private bool hasSetEndTimer;
     private bool hasGivenReward;
 
-    private Quaternion backRotation;
-    private Quaternion lookRotation;
+    //private Quaternion backRotation;
+    //private Quaternion lookRotation;
 
     private Queue<GameObject> attackQueue = new Queue<GameObject>();
 
@@ -67,13 +70,13 @@ public class MiniGame4 : MonoBehaviour
     private Dictionary<GameObject, Vector3> redStartPositions =
         new Dictionary<GameObject, Vector3>();
 
-    private Quaternion startRotation;
+    //private Quaternion startRotation;
 
     private void Start()
     {
-        startRotation = transform.rotation;
-        backRotation = Quaternion.Euler(0f, 0f, 0f);
-        lookRotation = backRotation * Quaternion.Euler(0f, 180f, 0f);
+       // startRotation = transform.rotation;
+       // backRotation = Quaternion.Euler(0f, 0f, 0f);
+        //lookRotation = backRotation * Quaternion.Euler(0f, 180f, 0f);
     }
 
     public void StartMiniGame()
@@ -151,7 +154,7 @@ public class MiniGame4 : MonoBehaviour
 
         hasSetEndTimer = false;
 
-        transform.rotation = startRotation;
+       // transform.rotation = startRotation;
 
         // Khôi phục Layer Overrides (xoá layer của người kia khỏi danh sách Exclude)
         if (manager.currentPlayer1 != null && manager.currentPlayer2 != null)
@@ -170,7 +173,7 @@ public class MiniGame4 : MonoBehaviour
     IEnumerator PirateRoutine()
     {
 
-        transform.rotation = backRotation;
+       // transform.rotation = backRotation;
 
         yield return new WaitForSeconds(firstWaitTime);
 
@@ -182,8 +185,8 @@ public class MiniGame4 : MonoBehaviour
             hasLaughThisWatch = false;
             AudioManager.Instance.PlaySFX(AudioManager.Instance.scanPiratesClip);
 
-            yield return StartCoroutine(RotateTo(lookRotation, rotateSpeed));
-
+            //yield return StartCoroutine(TurnWithBackAnimation(lookRotation));\
+            animator.SetTrigger("Gaze");
             isWatching = true;
 
             SaveRedStartPosition(manager.currentPlayer1);
@@ -231,7 +234,8 @@ public class MiniGame4 : MonoBehaviour
                 yield break;
             }
 
-            yield return StartCoroutine(RotateTo(backRotation, rotateSpeed));
+            //yield return StartCoroutine(TurnWithBackAnimation(backRotation));
+            animator.SetTrigger("No Gaze");
 
             int randomGreenTime = Random.Range(2, 5);
 
@@ -689,6 +693,21 @@ public class MiniGame4 : MonoBehaviour
         }
 
         transform.rotation = targetRotation;
+    }
+    IEnumerator TurnWithBackAnimation(Quaternion targetRotation)
+    {
+        if (animator != null)
+        {
+            animator.SetTrigger("Back Turn");
+        }
+
+        // Chờ animation Back Turn chạy
+        yield return new WaitForSeconds(backTurnDelay);
+
+        // Sau animation mới chỉnh chính xác rotation
+        yield return StartCoroutine(
+            RotateTo(targetRotation, smoothRotateSpeed)
+        );
     }
 
     void PlayRandomPirateVoice(int random)

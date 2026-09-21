@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerNotifi : MonoBehaviour
 {
+    [Header("Manager")]
     public PlayerManager manager;
     public GameObject NotifiPlayer;
     public GameObject DicePlayer;
