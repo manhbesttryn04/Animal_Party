@@ -199,11 +199,16 @@ public class PlayerBuff : MonoBehaviour
         // Reset rotation
         if (manager != null)
         {
+            if (manager.playerBuff != null)
+            {
+                manager.playerBuff.isBuffDeffense = false;
+            }
             if (manager.playerLookPlayer != null)
             {
                 manager.playerLookPlayer.ResetToSavedRotation();
             }
         }
+        
     }
 
     public void ConvertBuffDice()

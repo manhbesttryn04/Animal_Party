@@ -22,15 +22,30 @@ public class PlayerLookPlayer : MonoBehaviour
     [Header("Smooth Look")]
     [SerializeField] private float smoothLookTime = 0.25f;
 
+
+    // =====================================================
+    // UNITY
+    // =====================================================
+
     private void Start()
     {
         SetUpPlayerLookPlayer();
     }
 
+
+    // =====================================================
+    // SETUP
+    // =====================================================
+
     private void SetUpPlayerLookPlayer()
     {
         manager = GetComponent<PlayerManager>();
     }
+
+
+    // =====================================================
+    // LOOK AT OPPONENT ON X AXIS
+    // =====================================================
 
     public void LookAtOpponentOnXAxis()
     {
@@ -73,9 +88,9 @@ public class PlayerLookPlayer : MonoBehaviour
 
         SaveRotationYPlayer();
 
-        // ==========================================
+        // =================================================
         // PLAYER ĐỨNG TRƯỚC
-        // ==========================================
+        // =================================================
 
         if (myMoveAI.currentIndex > opponentMoveAI.currentIndex)
         {
@@ -88,18 +103,18 @@ public class PlayerLookPlayer : MonoBehaviour
             );
         }
 
-        // ==========================================
+        // =================================================
         // PLAYER ĐỨNG SAU
-        // ==========================================
+        // =================================================
 
         else if (myMoveAI.currentIndex < opponentMoveAI.currentIndex)
         {
             return;
         }
 
-        // ==========================================
+        // =================================================
         // CÙNG INDEX
-        // ==========================================
+        // =================================================
 
         else
         {
@@ -108,21 +123,30 @@ public class PlayerLookPlayer : MonoBehaviour
                 lastTurnType = TurnType.Left;
 
                 animator.playerAnimator.SetTrigger("Left Turn");
+
                 StartCoroutine(
-                LookAtOpponentAfterDelay(0.5f)
-            );
+                    LookAtOpponentAfterDelay(0.5f)
+                );
             }
             else
             {
                 lastTurnType = TurnType.Right;
 
                 animator.playerAnimator.SetTrigger("Right Turn");
+
                 StartCoroutine(
-                LookAtOpponentAfterDelay(0.5f)
-            );
+                    LookAtOpponentAfterDelay(0.5f)
+                );
             }
         }
     }
+
+
+
+    // =====================================================
+    // LOOK AT ATTACKER
+    // =====================================================
+
     public void LookAtAttacker()
     {
         if (manager == null || manager.playerType == null)
@@ -136,64 +160,115 @@ public class PlayerLookPlayer : MonoBehaviour
         if (myMoveAI == null)
             return;
 
-        GameObject opponent;
+        GameObject attacker;
 
+        // Tìm kẻ tấn công
         if (manager.playerType.isPlayer2)
         {
-            opponent = GameManager.Instance.player1Main;
+            attacker = GameManager.Instance.player1Main;
         }
         else
         {
-            opponent = GameManager.Instance.player2Main;
+            attacker = GameManager.Instance.player2Main;
         }
 
-        if (opponent == null)
+        if (attacker == null)
             return;
 
-        PlayerMoveAI opponentMoveAI =
-            opponent.GetComponent<PlayerMoveAI>();
+        PlayerMoveAI attackerMoveAI =
+            attacker.GetComponent<PlayerMoveAI>();
 
-        if (opponentMoveAI == null)
+        if (attackerMoveAI == null)
             return;
 
-        // Chỉ xoay khi mình có index lớn hơn đối thủ
-        if (myMoveAI.currentIndex <= opponentMoveAI.currentIndex)
+        PlayerAnimator animator =
+            GetComponent<PlayerAnimator>();
+
+        if (animator == null)
             return;
 
-        // Lưu rotation ban đầu
+
+        // =================================================
+        // MÌNH ĐỨNG SAU KẺ TẤN CÔNG
+        // =================================================
+
+        if (myMoveAI.currentIndex < attackerMoveAI.currentIndex)
+        {
+            return;
+        }
+
+
+        // =================================================
+        // CÙNG INDEX
+        // =================================================
+
+        if (myMoveAI.currentIndex == attackerMoveAI.currentIndex)
+        {
+            SaveRotationYPlayer();
+
+
+            // =============================================
+            // DEFENSE BUFF
+            //
+            // P1 -> LEFT
+            // P2 -> RIGHT
+            //
+            // Quay cùng hướng với kẻ tấn công
+            // =============================================
+
+            if (manager.playerBuff != null &&
+                manager.playerBuff.isBuffDeffense)
+            {
+                if (manager.playerType.isPlayer2)
+                {
+                    lastTurnType = TurnType.Right;
+
+                    // animator.playerAnimator.SetTrigger("Right Turn");
+                }
+                else
+                {
+                    lastTurnType = TurnType.Left;
+
+                    // animator.playerAnimator.SetTrigger("Left Turn");
+                }
+
+                StartCoroutine(
+                    LookAtDefenseDirectionAfterDelay(
+                        0f,
+                        attacker
+                    )
+                );
+
+                return;
+            }
+            else if(manager.playerBuff != null && manager.playerBuff.isBuffMagic)
+            {
+                if (manager.playerType.isPlayer2)
+                {
+                    lastTurnType = TurnType.Left;
+
+                    // animator.playerAnimator.SetTrigger("Right Turn");
+                }
+                else
+                {
+                    lastTurnType = TurnType.Right;
+
+                    // animator.playerAnimator.SetTrigger("Left Turn");
+                }
+                StartCoroutine(LookAtOpponentAfterDelay(0f));
+                return;
+            }
+        }
+
         SaveRotationYPlayer();
 
-        // Đánh dấu trạng thái Back
         lastTurnType = TurnType.Back;
 
-        // Tái sử dụng hàm có sẵn
-        LookAtOpponent();
+        StartCoroutine(LookAtOpponentAfterDelay(0f));
     }
-
-
-    // ==========================================
-    // SAVE ROTATION
-    // ==========================================
-
-    public void SaveRotationYPlayer()
-    {
-        savedRotation = transform.rotation;
-    }
-
-    // ==========================================
-    // LOOK AT OPPONENT AFTER DELAY
-    // ==========================================
-
-    private IEnumerator LookAtOpponentAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-
-        LookAtOpponent();
-    }
-
-    // ==========================================
-    // RESET TURN
-    // ==========================================
+        // =====================================================
+        // RESET TURN
+        // =====================================================
 
     public void ResetToSavedRotation()
     {
@@ -203,7 +278,9 @@ public class PlayerLookPlayer : MonoBehaviour
         if (animator == null)
             return;
 
-        // LEFT → RIGHT
+
+        // LEFT -> RIGHT
+
         if (lastTurnType == TurnType.Left)
         {
             animator.playerAnimator.SetTrigger("Right Turn");
@@ -213,7 +290,9 @@ public class PlayerLookPlayer : MonoBehaviour
             );
         }
 
-        // RIGHT → LEFT
+
+        // RIGHT -> LEFT
+
         else if (lastTurnType == TurnType.Right)
         {
             animator.playerAnimator.SetTrigger("Left Turn");
@@ -223,33 +302,74 @@ public class PlayerLookPlayer : MonoBehaviour
             );
         }
 
-        // BACK → BACK
+
+        // BACK -> BACK
+
         else if (lastTurnType == TurnType.Back)
         {
             animator.playerAnimator.SetTrigger("Back Turn");
 
             StartCoroutine(
-                RotateToSavedRotationAfterDelay(1.7f)
+                RotateToSavedRotationAfterDelay(1.4f)
             );
         }
     }
 
-    // ==========================================
-    // BACK RESET
-    // ==========================================
+
+    // =====================================================
+    // SAVE ROTATION
+    // =====================================================
+
+    public void SaveRotationYPlayer()
+    {
+        savedRotation = transform.rotation;
+    }
+
+
+    // =====================================================
+    // COROUTINE
+    // =====================================================
+
+    private IEnumerator LookAtOpponentAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        LookAtOpponent();
+    }
+
+
+    private IEnumerator LookAtDefenseDirectionAfterDelay(
+     float delay,
+     GameObject attacker)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (attacker == null)
+            yield break;
+
+        // Player quay cùng hướng với kẻ tấn công
+        Quaternion targetRotation =
+            attacker.transform.rotation;
+
+        yield return StartCoroutine(
+            SmoothRotateToTarget(targetRotation)
+        );
+    }
+
 
     private IEnumerator RotateToSavedRotationAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
 
-        StartCoroutine(
+        yield return StartCoroutine(
             SmoothRotateToTarget(savedRotation)
         );
     }
 
-    // ==========================================
-    // LOOK AT OPPONENT
-    // ==========================================
+
+    // =====================================================
+    // LOOK TARGET
+    // =====================================================
 
     public void LookAtOpponent()
     {
@@ -290,12 +410,13 @@ public class PlayerLookPlayer : MonoBehaviour
         );
     }
 
-    // ==========================================
+
+    // =====================================================
     // SMOOTH ROTATION
-    // ==========================================
+    // =====================================================
 
     private IEnumerator SmoothRotateToTarget(
-     Quaternion targetRotation)
+        Quaternion targetRotation)
     {
         Quaternion startRotation =
             transform.rotation;

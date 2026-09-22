@@ -1024,8 +1024,7 @@ public class DebuffManager : MonoBehaviour
 
         ownerAni.playerAnimator.SetTrigger("Salute");
 
-        yield return new WaitForSeconds(1f);
-        ownerLook.ResetToSavedRotation();
+        yield return new WaitForSeconds(1.5f);
 
         BombDebuff bomb =
             cannonScript.Fire(target.transform);
@@ -1055,6 +1054,9 @@ public class DebuffManager : MonoBehaviour
         yield return StartCoroutine(
             FollowBomb(bomb.transform)
         );
+
+        ownerLook.ResetToSavedRotation();
+
 
         PlayerTrapState trapState =
             target.GetComponent<PlayerTrapState>();

@@ -190,7 +190,7 @@ public class BombDebuff : MonoBehaviour
             // REMOVE SHIELD BUFF
             // =========================
 
-            player.playerBuff.isBuffDeffense = false;
+            //player.playerBuff.isBuffDeffense = false;
 
             Destroy(gameObject);
             return;
