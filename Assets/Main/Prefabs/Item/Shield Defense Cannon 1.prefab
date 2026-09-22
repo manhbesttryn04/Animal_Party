@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 4620636506641996559}
   - component: {fileID: 6221154557585067042}
   m_Layer: 0
-  m_Name: Shield Deff Cannon 1
+  m_Name: Shield Defense Cannon 1
   m_TagString: Defense
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

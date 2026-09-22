@@ -690,8 +690,11 @@ public class MiniGameManager : MonoBehaviour
             defense2.hasDefense = false;
         }
 
-        StartCoroutine(vfx1.DissolveOutRoutine1());
-        StartCoroutine(vfx2.DissolveOutRoutine1());
+        if (currentPlayer1.activeInHierarchy)
+            StartCoroutine(vfx1.DissolveOutRoutine1());
+
+        if (currentPlayer2.activeInHierarchy)
+            StartCoroutine(vfx2.DissolveOutRoutine1());
 
         // =====================================================
         // WAIT RESULT
@@ -1002,12 +1005,12 @@ public class MiniGameManager : MonoBehaviour
 
     public void SetIndex()
     {
-        indexMiniGame++;
+       /* indexMiniGame++;
 
         if (indexMiniGame > 7)
         {
             indexMiniGame = 1;
-        }
+        }*/
     }
     public void DestroyAllPlayerMiniGame()
     {

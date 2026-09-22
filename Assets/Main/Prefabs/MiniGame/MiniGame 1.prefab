@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 8906399766597818832}
   - component: {fileID: 59066204953301142}
   m_Layer: 0
-  m_Name: Ship(Blue)03 (1)
+  m_Name: Ship(Blue)03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1078,7 +1078,7 @@ GameObject:
   - component: {fileID: 399816014164630720}
   - component: {fileID: 146041492272869259}
   m_Layer: 0
-  m_Name: Shark Mom (1)
+  m_Name: Shark Mom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2079,7 +2079,7 @@ GameObject:
   - component: {fileID: 3022495957199909898}
   - component: {fileID: 3348612631808935745}
   m_Layer: 0
-  m_Name: Shark Mom (2)
+  m_Name: Shark Mom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20844,7 +20844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198342, guid: fe9bab289d42f0244859df1b1359454b, type: 3}
       propertyPath: m_Name
-      value: Mole (1)
+      value: Mole
       objectReference: {fileID: 0}
     - target: {fileID: 198342, guid: fe9bab289d42f0244859df1b1359454b, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -24814,7 +24814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9143115200420249582, guid: 5232bada72e1b514683da03d14bd102e, type: 3}
       propertyPath: m_Name
-      value: 15BirdsPrefab (1)
+      value: 15BirdsPrefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

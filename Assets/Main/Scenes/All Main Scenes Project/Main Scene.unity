@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   indexPlayer1: 0
-  indexPlayer2: 0
+  indexPlayer2: 1
   player1List:
   - {fileID: 6208376202053381075}
   - {fileID: 930064261}
@@ -1429,7 +1429,7 @@ MonoBehaviour:
   canStartNextRound: 0
   canCheckPlayer2: 1
   canCheckMiniGame: 1
-  canRandomIndexMiniGame: 0
+  canRandomIndexMiniGame: 1
 --- !u!4 &265678874
 Transform:
   m_ObjectHideFlags: 0
@@ -1512,7 +1512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f5c43531b7774c45ba1db7013ef8a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  indexMiniGame: 7
+  indexMiniGame: 0
   miniGameList: {fileID: 288627989}
   intrusTextList: {fileID: 288627990}
   videoInstructList: {fileID: 288627991}
@@ -5805,6 +5805,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1407231548830340688, guid: 0e9cab61898551a4d84fd037f6a66f3b, type: 3}
   m_PrefabInstance: {fileID: 1655820471901133863}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1118382631
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1118382632}
+  m_Layer: 0
+  m_Name: Animals Voice
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1118382632
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118382631}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1455798201}
+  - {fileID: 1967833702}
+  m_Father: {fileID: 2004911892}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1125984568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8032,12 +8065,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455798200}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2004911892}
+  m_Father: {fileID: 1118382632}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1455798202
 MonoBehaviour:
@@ -10940,12 +10973,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1967833701}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2004911892}
+  m_Father: {fileID: 1118382632}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1967833703
 MonoBehaviour:
@@ -11269,8 +11302,7 @@ Transform:
   - {fileID: 8657964364562323622}
   - {fileID: 2776789062125197109}
   - {fileID: 1264633344}
-  - {fileID: 1455798201}
-  - {fileID: 1967833702}
+  - {fileID: 1118382632}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2022514286
@@ -15498,7 +15530,7 @@ PrefabInstance:
       objectReference: {fileID: 240327253}
     - target: {fileID: 621890633700212758, guid: 02822d56b2647f0499063b22883eae5f, type: 3}
       propertyPath: showDebuffRandomColorLists
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 669277567865293016, guid: 02822d56b2647f0499063b22883eae5f, type: 3}
       propertyPath: m_IsActive
@@ -28425,8 +28457,8 @@ SceneRoots:
   - {fileID: 754339473}
   - {fileID: 1056191722}
   - {fileID: 2133488384}
-  - {fileID: 818252071}
   - {fileID: 7451772}
+  - {fileID: 818252071}
   - {fileID: 5850709716948362276}
   - {fileID: 3145067721181402235}
   - {fileID: 3527892717591208851}

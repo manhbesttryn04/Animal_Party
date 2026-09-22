@@ -125,7 +125,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (30)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -195,7 +195,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -206,7 +207,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -222,7 +223,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (38)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -276,18 +277,57 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
+--- !u!1 &5348429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5348430}
+  m_Layer: 0
+  m_Name: Animals
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5348430
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5348429}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 249308026}
+  - {fileID: 1128409739}
+  - {fileID: 550155514}
+  - {fileID: 100001387}
+  - {fileID: 1664406194}
+  - {fileID: 1385184992}
+  - {fileID: 1718747051}
+  m_Father: {fileID: 2135086654}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8090506
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -303,7 +343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (54)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -357,7 +397,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -389,7 +430,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -405,7 +446,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (27)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -459,7 +500,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -480,7 +522,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -496,7 +538,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (63)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -550,7 +592,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -645,7 +688,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -661,7 +704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (60)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -715,7 +758,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -831,9 +875,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2135086654}
+  - {fileID: 339519382}
   - {fileID: 601958593}
-  - {fileID: 382966074}
-  - {fileID: 479405824}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &249308025
@@ -842,7 +885,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 5348430}
     m_Modifications:
     - target: {fileID: 196176321292119701, guid: 5232bada72e1b514683da03d14bd102e, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1471,7 +1514,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1487,7 +1530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (12)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1541,7 +1584,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1679,7 +1723,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1695,7 +1739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (20)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1749,7 +1793,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1770,7 +1815,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1786,7 +1831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (46)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1840,7 +1885,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1850,6 +1896,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7915993163180168968, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
   m_PrefabInstance: {fileID: 302997890}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &339519381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 339519382}
+  m_Layer: 0
+  m_Name: Animals Voice
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &339519382
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339519381}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 382966074}
+  - {fileID: 479405824}
+  m_Father: {fileID: 239591728}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &341664990 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7915993163180168968, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
@@ -1861,7 +1940,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1877,7 +1956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (62)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1931,7 +2010,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1947,7 +2027,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1963,7 +2043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (3)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2017,7 +2097,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2053,12 +2134,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382966073}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 239591728}
+  m_Father: {fileID: 339519382}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &382966075
 MonoBehaviour:
@@ -2201,7 +2282,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2217,7 +2298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (28)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2271,11 +2352,48 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
+--- !u!1 &440368894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 440368895}
+  m_Layer: 0
+  m_Name: Treasure
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &440368895
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440368894}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4707756149407551539}
+  - {fileID: 1860671965}
+  - {fileID: 6420834876417297146}
+  - {fileID: 2048248142}
+  - {fileID: 2931738397354972011}
+  m_Father: {fileID: 2135086654}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &448409739
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2347,7 +2465,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2363,7 +2481,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (47)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2417,7 +2535,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3185,7 +3304,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 1214491738}
     m_Modifications:
     - target: {fileID: 2804070465777273743, guid: b5b345652819a96468b021a97fe70a51, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3229,7 +3348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3288155046874829109, guid: b5b345652819a96468b021a97fe70a51, type: 3}
       propertyPath: m_Name
-      value: 00_Island_2 (1)
+      value: '00_Island_2 '
       objectReference: {fileID: 0}
     - target: {fileID: 3288155046874829109, guid: b5b345652819a96468b021a97fe70a51, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3267,7 +3386,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3283,7 +3402,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (41)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3337,7 +3456,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3373,12 +3493,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 479405823}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 239591728}
+  m_Father: {fileID: 339519382}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &479405825
 MonoBehaviour:
@@ -3506,7 +3626,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3522,7 +3642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (58)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3576,7 +3696,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3592,7 +3713,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 5348430}
     m_Modifications:
     - target: {fileID: 4038442658805349457, guid: f3c124fd4034b724483d1c6ad63fb900, type: 3}
       propertyPath: m_Name
@@ -3600,11 +3721,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8266126928822617870, guid: f3c124fd4034b724483d1c6ad63fb900, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.59999996
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 8266126928822617870, guid: f3c124fd4034b724483d1c6ad63fb900, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6000001
+      value: 0.60000014
       objectReference: {fileID: 0}
     - target: {fileID: 8266126928822617870, guid: f3c124fd4034b724483d1c6ad63fb900, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3672,7 +3793,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3688,7 +3809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (37)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3742,7 +3863,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3753,7 +3875,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3769,7 +3891,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (15)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3823,7 +3945,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3834,7 +3957,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3850,7 +3973,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (39)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3904,7 +4027,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4394,7 +4518,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4410,7 +4534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (21)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4464,7 +4588,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4598,7 +4723,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 1601190305}
     m_Modifications:
     - target: {fileID: 1421765994501647586, guid: 7bc62276af2584844ac37b94286d4e3f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4654,7 +4779,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5250618785924401589, guid: 7bc62276af2584844ac37b94286d4e3f, type: 3}
       propertyPath: m_Name
-      value: BroadleafTree_04_Red (1)
+      value: 'BroadleafTree_04_Red '
       objectReference: {fileID: 0}
     - target: {fileID: 5250618785924401589, guid: 7bc62276af2584844ac37b94286d4e3f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4677,7 +4802,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 5348430}
     m_Modifications:
     - target: {fileID: 4038442658805349457, guid: f3c124fd4034b724483d1c6ad63fb900, type: 3}
       propertyPath: m_Name
@@ -4689,7 +4814,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d061812ced865104bb15fd3e365b178c, type: 2}
     - target: {fileID: 8266126928822617870, guid: f3c124fd4034b724483d1c6ad63fb900, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6000001
+      value: 0.60000014
       objectReference: {fileID: 0}
     - target: {fileID: 8266126928822617870, guid: f3c124fd4034b724483d1c6ad63fb900, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4747,7 +4872,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4763,7 +4888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (35)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4817,7 +4942,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4828,7 +4954,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4844,7 +4970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (14)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4898,7 +5024,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4924,7 +5051,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4940,7 +5067,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (59)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4994,7 +5121,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5005,7 +5133,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5021,7 +5149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (48)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5075,7 +5203,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5091,7 +5220,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 1601190305}
     m_Modifications:
     - target: {fileID: 1421765994501647586, guid: 7bc62276af2584844ac37b94286d4e3f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5200,7 +5329,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5216,7 +5345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (34)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5270,7 +5399,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5377,7 +5507,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5393,7 +5523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (29)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5447,11 +5577,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
+--- !u!1 &908522596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 908522597}
+  m_Layer: 0
+  m_Name: Rocks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &908522597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908522596}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5608621906415936489}
+  - {fileID: 6698808611318328112}
+  - {fileID: 2858039459341480118}
+  - {fileID: 2858039457726102638}
+  - {fileID: 8923612321553848297}
+  - {fileID: 8884547607865186772}
+  - {fileID: 6698808610981323251}
+  - {fileID: 4393243370263593673}
+  - {fileID: 185447749538801164}
+  - {fileID: 1664684493}
+  m_Father: {fileID: 2135086654}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &911456688 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7915993163180168968, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
@@ -5463,7 +5635,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5479,7 +5651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (8)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5533,7 +5705,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5549,7 +5722,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5565,7 +5738,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (6)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5619,7 +5792,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5630,7 +5804,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 155560312399036359, guid: c255a97f0f00f934fade030c353aff54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5674,7 +5848,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 676518420115694973, guid: c255a97f0f00f934fade030c353aff54, type: 3}
       propertyPath: m_Name
-      value: Bush_03_02 (1)
+      value: 'Bush_03_02 '
       objectReference: {fileID: 0}
     - target: {fileID: 676518420115694973, guid: c255a97f0f00f934fade030c353aff54, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5700,7 +5874,8 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6213447003130450165, guid: c255a97f0f00f934fade030c353aff54, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5711,7 +5886,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 1601190305}
     m_Modifications:
     - target: {fileID: 2976414912143441290, guid: 69757ad24b3650244986c0d352d29163, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5773,7 +5948,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6507421944412776698, guid: 69757ad24b3650244986c0d352d29163, type: 3}
+    - {fileID: 3946127652225070084, guid: 69757ad24b3650244986c0d352d29163, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5783,6 +5960,103 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7915993163180168968, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
   m_PrefabInstance: {fileID: 981436371}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &965911793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 965911794}
+  m_Layer: 0
+  m_Name: Bushs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &965911794
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965911793}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 844567460}
+  - {fileID: 219271391}
+  - {fileID: 217387110}
+  - {fileID: 1167705539}
+  - {fileID: 1228434553}
+  - {fileID: 1884836795}
+  - {fileID: 111888837}
+  - {fileID: 1462178076}
+  - {fileID: 1984832613}
+  - {fileID: 766815337}
+  - {fileID: 1841415488}
+  - {fileID: 415178861}
+  - {fileID: 1195499214}
+  - {fileID: 471584610}
+  - {fileID: 1726697691}
+  - {fileID: 806511065}
+  - {fileID: 1016621965}
+  - {fileID: 336239330}
+  - {fileID: 764148451}
+  - {fileID: 296915204}
+  - {fileID: 1277656214}
+  - {fileID: 1842478465}
+  - {fileID: 1483585296}
+  - {fileID: 1851940485}
+  - {fileID: 1498910356}
+  - {fileID: 917593475}
+  - {fileID: 233916406}
+  - {fileID: 527167416}
+  - {fileID: 1284081282}
+  - {fileID: 1450914915}
+  - {fileID: 978163195}
+  - {fileID: 397765434}
+  - {fileID: 1452768488}
+  - {fileID: 341664990}
+  - {fileID: 983430684}
+  - {fileID: 692985431}
+  - {fileID: 1572747138}
+  - {fileID: 693994818}
+  - {fileID: 376400778}
+  - {fileID: 1389275723}
+  - {fileID: 1170002504}
+  - {fileID: 314487389}
+  - {fileID: 354000236}
+  - {fileID: 1738027646}
+  - {fileID: 658974352}
+  - {fileID: 123543620}
+  - {fileID: 1790564165}
+  - {fileID: 1592241266}
+  - {fileID: 1713589085}
+  - {fileID: 1710943257}
+  - {fileID: 957669353}
+  - {fileID: 767041068}
+  - {fileID: 2031704604}
+  - {fileID: 1975637588}
+  - {fileID: 649314118}
+  - {fileID: 2079948281}
+  - {fileID: 589091264}
+  - {fileID: 398112915}
+  - {fileID: 1915108784}
+  - {fileID: 911456688}
+  - {fileID: 326406552}
+  - {fileID: 972904580}
+  - {fileID: 1298314871}
+  - {fileID: 1787411218}
+  - {fileID: 199595719}
+  - {fileID: 2005613164}
+  m_Father: {fileID: 2135086654}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &972904580 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7915993163180168968, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
@@ -5799,7 +6073,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5815,7 +6089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (44)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -5869,7 +6143,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5885,7 +6160,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 5348430}
     m_Modifications:
     - target: {fileID: 4038442658805349457, guid: f3c124fd4034b724483d1c6ad63fb900, type: 3}
       propertyPath: m_Name
@@ -5897,7 +6172,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d061812ced865104bb15fd3e365b178c, type: 2}
     - target: {fileID: 8266126928822617870, guid: f3c124fd4034b724483d1c6ad63fb900, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6000001
+      value: 0.60000014
       objectReference: {fileID: 0}
     - target: {fileID: 8266126928822617870, guid: f3c124fd4034b724483d1c6ad63fb900, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5986,7 +6261,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6002,7 +6277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (51)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6056,7 +6331,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6067,7 +6343,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 1601190305}
     m_Modifications:
     - target: {fileID: 470393261303106968, guid: 48787cd427c3d3f428ae28e6fef17b12, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6087,7 +6363,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6193453659618800568, guid: 48787cd427c3d3f428ae28e6fef17b12, type: 3}
       propertyPath: m_Name
-      value: BroadleafTree_01_Red (1)
+      value: BroadleafTree_01_Red
       objectReference: {fileID: 0}
     - target: {fileID: 6193453659618800568, guid: 48787cd427c3d3f428ae28e6fef17b12, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6150,7 +6426,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6166,7 +6442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (45)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6220,7 +6496,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6236,7 +6513,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6252,7 +6529,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (1)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6306,7 +6583,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6317,7 +6595,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 5348430}
     m_Modifications:
     - target: {fileID: 196176321292119701, guid: 5232bada72e1b514683da03d14bd102e, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6917,7 +7195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9143115200420249582, guid: 5232bada72e1b514683da03d14bd102e, type: 3}
       propertyPath: m_Name
-      value: 15BirdsPrefab (1)
+      value: '15BirdsPrefab '
       objectReference: {fileID: 0}
     - target: {fileID: 9143115200420249582, guid: 5232bada72e1b514683da03d14bd102e, type: 3}
       propertyPath: m_IsActive
@@ -6946,7 +7224,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6962,7 +7240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (43)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7016,11 +7294,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
+--- !u!1 &1146942188
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1146942189}
+  m_Layer: 0
+  m_Name: Grounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1146942189
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146942188}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1226101461468200852}
+  - {fileID: 1226101460453772851}
+  m_Father: {fileID: 2135086654}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1167705539 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7915993163180168968, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
@@ -7042,7 +7354,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7058,7 +7370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (19)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7112,11 +7424,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
+--- !u!1 &1214491737
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1214491738}
+  m_Layer: 0
+  m_Name: Islands
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1214491738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214491737}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1333769718}
+  - {fileID: 469712900}
+  m_Father: {fileID: 2135086654}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1228434553 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7915993163180168968, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
@@ -7267,7 +7613,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7283,7 +7629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (10)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7337,7 +7683,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7495,7 +7842,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 1214491738}
     m_Modifications:
     - target: {fileID: 2804070465777273743, guid: b5b345652819a96468b021a97fe70a51, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7577,7 +7924,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7593,7 +7940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (5)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7647,7 +7994,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7796,7 +8144,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7812,7 +8160,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (55)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7866,7 +8214,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7877,7 +8226,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 1601190305}
     m_Modifications:
     - target: {fileID: 2392485467701830001, guid: 03e2340891d61e94b93df31e86c00f99, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7941,6 +8290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6911687399468150749, guid: 03e2340891d61e94b93df31e86c00f99, type: 3}
+    - {fileID: 8340026474708400559, guid: 03e2340891d61e94b93df31e86c00f99, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -7951,7 +8301,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7967,7 +8317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (13)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8021,7 +8371,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8042,7 +8393,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8058,7 +8409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (52)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8112,7 +8463,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8349,7 +8701,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8365,7 +8717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (61)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8419,7 +8771,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8435,7 +8788,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8451,7 +8804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (9)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8505,7 +8858,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8516,7 +8870,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8532,7 +8886,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (4)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8586,7 +8940,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8706,7 +9061,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8722,7 +9077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (31)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8776,7 +9131,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -8792,7 +9148,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8808,7 +9164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (18)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8862,18 +9218,60 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
+--- !u!1 &1601190304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1601190305}
+  m_Layer: 0
+  m_Name: Trees
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1601190305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601190304}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1840600393}
+  - {fileID: 574817415}
+  - {fileID: 1028501518}
+  - {fileID: 2089561677}
+  - {fileID: 493580478}
+  - {fileID: 869602427}
+  - {fileID: 1056973113}
+  - {fileID: 1628713849}
+  - {fileID: 841640387}
+  - {fileID: 538781842}
+  m_Father: {fileID: 2135086654}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1607937352
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8889,7 +9287,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (22)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8943,7 +9341,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9077,7 +9476,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9093,7 +9492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (11)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9147,7 +9546,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9158,7 +9558,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9174,7 +9574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (49)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9228,7 +9628,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9239,7 +9640,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9255,7 +9656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9309,7 +9710,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9325,7 +9727,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 908522597}
     m_Modifications:
     - target: {fileID: 8560386294252704627, guid: c7fe83c52eb617d45bd0f368d30248fa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9375,7 +9777,8 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4304440790864985898, guid: c7fe83c52eb617d45bd0f368d30248fa, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9391,7 +9794,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 1601190305}
     m_Modifications:
     - target: {fileID: 470393261303106968, guid: 48787cd427c3d3f428ae28e6fef17b12, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9630,7 +10033,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 5348430}
     m_Modifications:
     - target: {fileID: 4038442658805349457, guid: f3c124fd4034b724483d1c6ad63fb900, type: 3}
       propertyPath: m_Name
@@ -9691,7 +10094,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9707,7 +10110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (50)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9761,7 +10164,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9772,7 +10176,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9788,7 +10192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (33)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9842,7 +10246,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9853,7 +10258,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9869,7 +10274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (56)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9923,7 +10328,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -9944,7 +10350,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -9960,7 +10366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (23)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -10014,7 +10420,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10025,7 +10432,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 5348430}
     m_Modifications:
     - target: {fileID: 182780018913584961, guid: c1798281c14ffb647b4d0c2d3e8e6d70, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -10332,7 +10739,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -10348,7 +10755,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (40)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -10402,7 +10809,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10447,7 +10855,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -10463,7 +10871,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (32)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -10517,7 +10925,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10585,7 +10994,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 1601190305}
     m_Modifications:
     - target: {fileID: 2976414912143441290, guid: 69757ad24b3650244986c0d352d29163, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -10653,6 +11062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6507421944412776698, guid: 69757ad24b3650244986c0d352d29163, type: 3}
+    - {fileID: 3946127652225070084, guid: 69757ad24b3650244986c0d352d29163, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10699,7 +11109,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -10715,7 +11125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (42)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -10769,7 +11179,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10790,7 +11201,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -10806,7 +11217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (53)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -10860,7 +11271,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10871,7 +11283,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -10887,7 +11299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (26)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -10941,7 +11353,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -10952,7 +11365,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -10968,7 +11381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (2)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11022,7 +11435,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11059,7 +11473,7 @@ GameObject:
   - component: {fileID: 1860671967}
   - component: {fileID: 1860671966}
   m_Layer: 0
-  m_Name: chest_04 (1)
+  m_Name: 'chest_04 '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11074,11 +11488,11 @@ Transform:
   m_GameObject: {fileID: 1860671964}
   serializedVersion: 2
   m_LocalRotation: {x: -0.17466281, y: 0.9734111, z: -0.033935692, w: 0.14426425}
-  m_LocalPosition: {x: -7.011, y: 6.964, z: 13.441}
+  m_LocalPosition: {x: -7.0109997, y: 6.9639997, z: 13.441}
   m_LocalScale: {x: 0.8320601, y: 0.83206, z: 0.8320601}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2135086654}
+  m_Father: {fileID: 440368895}
   m_LocalEulerAnglesHint: {x: 0.898, y: 162.978, z: -20.479}
 --- !u!23 &1860671966
 MeshRenderer:
@@ -11143,7 +11557,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 1601190305}
     m_Modifications:
     - target: {fileID: 1421765994501647586, guid: 7bc62276af2584844ac37b94286d4e3f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11291,7 +11705,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11307,7 +11721,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (17)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11361,7 +11775,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11387,7 +11802,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11403,7 +11818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (24)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11457,7 +11872,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11468,7 +11884,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11484,7 +11900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (36)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11538,7 +11954,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11560,7 +11977,7 @@ GameObject:
   - component: {fileID: 2048248144}
   - component: {fileID: 2048248143}
   m_Layer: 0
-  m_Name: coin_04_bag (1)
+  m_Name: 'coin_04_bag '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11576,10 +11993,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.02419372, y: -0.36520937, z: 0.058357168, w: 0.9287795}
   m_LocalPosition: {x: -6.531707, y: 6.8982315, z: 13.723567}
-  m_LocalScale: {x: 0.55364007, y: 0.55364, z: 0.55364007}
+  m_LocalScale: {x: 0.55364007, y: 0.55364, z: 0.5536401}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2135086654}
+  m_Father: {fileID: 440368895}
   m_LocalEulerAnglesHint: {x: -0.133, y: -42.939, z: 7.243}
 --- !u!23 &2048248143
 MeshRenderer:
@@ -11644,7 +12061,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11660,7 +12077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (57)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11714,7 +12131,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11735,7 +12153,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11751,7 +12169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (7)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11805,7 +12223,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11816,7 +12235,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 155560312399036359, guid: c255a97f0f00f934fade030c353aff54, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11886,7 +12305,8 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6213447003130450165, guid: c255a97f0f00f934fade030c353aff54, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11897,7 +12317,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 1601190305}
     m_Modifications:
     - target: {fileID: 470393261303106968, guid: 48787cd427c3d3f428ae28e6fef17b12, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11917,7 +12337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6193453659618800568, guid: 48787cd427c3d3f428ae28e6fef17b12, type: 3}
       propertyPath: m_Name
-      value: BroadleafTree_01_Red (2)
+      value: BroadleafTree_01_Red
       objectReference: {fileID: 0}
     - target: {fileID: 6193453659618800568, guid: 48787cd427c3d3f428ae28e6fef17b12, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11975,7 +12395,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11991,7 +12411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (16)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -12045,7 +12465,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12056,7 +12477,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 965911794}
     m_Modifications:
     - target: {fileID: 2753555964593176067, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -12072,7 +12493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_Name
-      value: Bush_03_01 (25)
+      value: 'Bush_03_01 '
       objectReference: {fileID: 0}
     - target: {fileID: 7390566949429054898, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -12126,7 +12547,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5081165286152435785, guid: 18665362feb1b494fbeda66c24a91d57, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12137,7 +12559,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2135086654}
+    m_TransformParent: {fileID: 1601190305}
     m_Modifications:
     - target: {fileID: 49806830468320177, guid: aec7bcbf20e5d5f4fa566cabacc811c9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12201,6 +12623,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7430670006697730278, guid: aec7bcbf20e5d5f4fa566cabacc811c9, type: 3}
+    - {fileID: 5634788785705735666, guid: aec7bcbf20e5d5f4fa566cabacc811c9, type: 3}
+    - {fileID: 927383654134864053, guid: aec7bcbf20e5d5f4fa566cabacc811c9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -12239,111 +12663,15 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7965804368428527033}
-  - {fileID: 5608621906415936489}
-  - {fileID: 6698808611318328112}
-  - {fileID: 2858039459341480118}
-  - {fileID: 2858039457726102638}
-  - {fileID: 8923612321553848297}
-  - {fileID: 8884547607865186772}
-  - {fileID: 6698808610981323251}
-  - {fileID: 4393243370263593673}
-  - {fileID: 185447749538801164}
-  - {fileID: 4707756149407551539}
-  - {fileID: 1860671965}
-  - {fileID: 6420834876417297146}
-  - {fileID: 2048248142}
-  - {fileID: 2931738397354972011}
-  - {fileID: 1226101461468200852}
-  - {fileID: 1226101460453772851}
+  - {fileID: 908522597}
+  - {fileID: 440368895}
+  - {fileID: 1146942189}
   - {fileID: 6777392490296543538}
-  - {fileID: 1333769718}
-  - {fileID: 469712900}
-  - {fileID: 869602427}
-  - {fileID: 1056973113}
-  - {fileID: 1628713849}
-  - {fileID: 841640387}
-  - {fileID: 538781842}
-  - {fileID: 844567460}
-  - {fileID: 219271391}
-  - {fileID: 217387110}
-  - {fileID: 1167705539}
-  - {fileID: 1228434553}
-  - {fileID: 1884836795}
-  - {fileID: 111888837}
-  - {fileID: 1462178076}
-  - {fileID: 1984832613}
-  - {fileID: 766815337}
-  - {fileID: 1841415488}
-  - {fileID: 415178861}
-  - {fileID: 1195499214}
-  - {fileID: 471584610}
-  - {fileID: 1726697691}
-  - {fileID: 806511065}
-  - {fileID: 1016621965}
-  - {fileID: 336239330}
-  - {fileID: 764148451}
-  - {fileID: 296915204}
-  - {fileID: 1277656214}
-  - {fileID: 1842478465}
-  - {fileID: 1483585296}
-  - {fileID: 1851940485}
-  - {fileID: 1498910356}
-  - {fileID: 917593475}
-  - {fileID: 233916406}
-  - {fileID: 527167416}
-  - {fileID: 1284081282}
-  - {fileID: 1450914915}
-  - {fileID: 978163195}
-  - {fileID: 397765434}
-  - {fileID: 1452768488}
-  - {fileID: 341664990}
-  - {fileID: 983430684}
-  - {fileID: 692985431}
-  - {fileID: 1572747138}
-  - {fileID: 693994818}
-  - {fileID: 376400778}
-  - {fileID: 1389275723}
-  - {fileID: 1170002504}
-  - {fileID: 314487389}
-  - {fileID: 354000236}
-  - {fileID: 1738027646}
-  - {fileID: 658974352}
-  - {fileID: 123543620}
-  - {fileID: 1790564165}
-  - {fileID: 1592241266}
-  - {fileID: 1713589085}
-  - {fileID: 1710943257}
-  - {fileID: 957669353}
-  - {fileID: 767041068}
-  - {fileID: 2031704604}
-  - {fileID: 1975637588}
-  - {fileID: 649314118}
-  - {fileID: 2079948281}
-  - {fileID: 589091264}
-  - {fileID: 398112915}
-  - {fileID: 1915108784}
-  - {fileID: 911456688}
-  - {fileID: 326406552}
-  - {fileID: 972904580}
-  - {fileID: 1298314871}
-  - {fileID: 1787411218}
-  - {fileID: 1718747051}
-  - {fileID: 1664684493}
-  - {fileID: 1840600393}
-  - {fileID: 574817415}
-  - {fileID: 1028501518}
-  - {fileID: 2089561677}
-  - {fileID: 199595719}
-  - {fileID: 2005613164}
-  - {fileID: 493580478}
+  - {fileID: 1214491738}
+  - {fileID: 965911794}
+  - {fileID: 1601190305}
+  - {fileID: 5348430}
   - {fileID: 1052350372}
-  - {fileID: 249308026}
-  - {fileID: 1128409739}
-  - {fileID: 550155514}
-  - {fileID: 100001387}
-  - {fileID: 1664406194}
-  - {fileID: 1385184992}
   m_Father: {fileID: 239591728}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6222661388629722
@@ -17819,7 +18147,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2135086654}
+  m_Father: {fileID: 908522597}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &194994207670373656
 MeshFilter:
@@ -29455,24 +29783,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4016154499920337011}
   m_Mesh: {fileID: 1973586566808688842, guid: 5c2cc2988abc0004d8aafb20bea0c227, type: 3}
---- !u!1 &826359137170295088
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2724677904349495521}
-  - component: {fileID: 4130068647481077168}
-  - component: {fileID: 4481042884006298993}
-  m_Layer: 0
-  m_Name: Tree_07_p2_Fall
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
 --- !u!4 &836210246112271152
 Transform:
   m_ObjectHideFlags: 0
@@ -30810,7 +31120,7 @@ Transform:
   m_LocalScale: {x: 2.3347, y: 2.3347, z: 2.3347}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2135086654}
+  m_Father: {fileID: 1146942189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1226101461468200852
 Transform:
@@ -30825,7 +31135,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2135086654}
+  m_Father: {fileID: 1146942189}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1226545690954963123
 Transform:
@@ -30932,7 +31242,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2667934920454743347}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 864b4ec22155c394c997c90a021eee36, type: 3}
   m_Name: 
@@ -36962,7 +37272,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2667934920454743347}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8977b2293eb34a544a1bd5e51bd8e1bb, type: 3}
   m_Name: 
@@ -37175,7 +37485,7 @@ GameObject:
   - component: {fileID: 2786645551949562262}
   - component: {fileID: 92552579177821532}
   m_Layer: 0
-  m_Name: Ground_Sand_Small (1)
+  m_Name: Ground_Sand_Small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67715,21 +68025,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!4 &2724677904349495521
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826359137170295088}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2967529, y: 2.7782042, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7965804368428527033}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2725334852236041831
 Transform:
   m_ObjectHideFlags: 0
@@ -72554,6 +72849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46707f4ea53ee9a40ab085a793976ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  manager: {fileID: 0}
   isBuffDeffense: 0
   isBuffMagic: 0
   isBuffCanon: 0
@@ -72561,8 +72857,6 @@ MonoBehaviour:
   isBuffDiceNext: 0
   countCoinPower: 0
   shieldMagic: {fileID: 7774431710152738107}
-  shieldCanon: {fileID: 0}
-  shieldDice: {fileID: 0}
   shieldDefense: {fileID: 8808527674339432821}
 --- !u!1 &2748840105512772373
 GameObject:
@@ -77826,7 +78120,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2135086654}
+  m_Father: {fileID: 908522597}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2858039459341480118
 Transform:
@@ -77841,7 +78135,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2135086654}
+  m_Father: {fileID: 908522597}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2860980245548772308
 Transform:
@@ -78001,11 +78295,11 @@ Transform:
   m_GameObject: {fileID: 8047670780386087476}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.06, y: 7.093, z: 13.456}
+  m_LocalPosition: {x: -7.0599995, y: 7.0929995, z: 13.456}
   m_LocalScale: {x: 0.4330918, y: 0.4330918, z: 0.4330918}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2135086654}
+  m_Father: {fileID: 440368895}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2932672888837043715
 GameObject:
@@ -83636,7 +83930,7 @@ GameObject:
   - component: {fileID: 1154628134589395915}
   - component: {fileID: 4027035425650476801}
   m_Layer: 0
-  m_Name: HardRock_11 (1)
+  m_Name: HardRock_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -89158,6 +89452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46707f4ea53ee9a40ab085a793976ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  manager: {fileID: 0}
   isBuffDeffense: 0
   isBuffMagic: 0
   isBuffCanon: 0
@@ -89165,8 +89460,6 @@ MonoBehaviour:
   isBuffDiceNext: 0
   countCoinPower: 0
   shieldMagic: {fileID: 500350176033284040}
-  shieldCanon: {fileID: 0}
-  shieldDice: {fileID: 0}
   shieldDefense: {fileID: 4825746648069900938}
 --- !u!4 &3555406708940963520
 Transform:
@@ -95430,14 +95723,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTrapState
   manager: {fileID: 0}
   isTrapActive: 0
---- !u!33 &4130068647481077168
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826359137170295088}
-  m_Mesh: {fileID: -6824929577324194482, guid: 8b0de42655f4bd246932c0c316157ad2, type: 3}
 --- !u!4 &4132656283022389486
 Transform:
   m_ObjectHideFlags: 0
@@ -100735,7 +101020,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5263336876463265207}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30f7443e4ba380f49b7250439cc26330, type: 3}
   m_Name: 
@@ -100801,7 +101086,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2135086654}
+  m_Father: {fileID: 908522597}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4407798628306605021
 MeshFilter:
@@ -105788,55 +106073,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!23 &4481042884006298993
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826359137170295088}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 772d9d9117eab56479d2738f542c054c, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!198 &4481971431259484621
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -111165,7 +111401,7 @@ GameObject:
   - component: {fileID: 5334597908001409841}
   - component: {fileID: 7302519900274173724}
   m_Layer: 3
-  m_Name: Player Leopard
+  m_Name: Player Leo Pard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111276,10 +111512,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7754412, z: -0, w: 0.6314197}
   m_LocalPosition: {x: -6.04702, y: 7.18521, z: 14.54553}
-  m_LocalScale: {x: 0.8320601, y: 0.83206, z: 0.8320601}
+  m_LocalScale: {x: 0.8320602, y: 0.83206, z: 0.8320602}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2135086654}
+  m_Father: {fileID: 440368895}
   m_LocalEulerAnglesHint: {x: 0, y: 101.69, z: 0}
 --- !u!4 &4708645954840916735
 Transform:
@@ -111820,7 +112056,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2667934920454743347}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30f7443e4ba380f49b7250439cc26330, type: 3}
   m_Name: 
@@ -112394,6 +112630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46707f4ea53ee9a40ab085a793976ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  manager: {fileID: 0}
   isBuffDeffense: 0
   isBuffMagic: 0
   isBuffCanon: 0
@@ -112401,8 +112638,6 @@ MonoBehaviour:
   isBuffDiceNext: 0
   countCoinPower: 0
   shieldMagic: {fileID: 2109518071487518970}
-  shieldCanon: {fileID: 0}
-  shieldDice: {fileID: 0}
   shieldDefense: {fileID: 7270054450987017311}
 --- !u!1 &5017372881037543344
 GameObject:
@@ -112736,7 +112971,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4698997591082104609}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 864b4ec22155c394c997c90a021eee36, type: 3}
   m_Name: 
@@ -113277,7 +113512,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4698997591082104609}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30f7443e4ba380f49b7250439cc26330, type: 3}
   m_Name: 
@@ -123038,7 +123273,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5263336876463265207}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8977b2293eb34a544a1bd5e51bd8e1bb, type: 3}
   m_Name: 
@@ -123537,7 +123772,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2135086654}
+  m_Father: {fileID: 908522597}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5610083379720393723
 GameObject:
@@ -168540,7 +168775,7 @@ GameObject:
   - component: {fileID: 7735259352475479638}
   - component: {fileID: 5529820198976182940}
   m_Layer: 0
-  m_Name: HardRock_05 (1)
+  m_Name: HardRock_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168800,19 +169035,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.04266445, y: -0.026155932, z: 0.046590123, w: 0.99765974}
   m_LocalPosition: {x: -6.283, y: 6.955, z: 14.038}
-  m_LocalScale: {x: 0.55364007, y: 0.55364, z: 0.55364007}
+  m_LocalScale: {x: 0.5536401, y: 0.55364, z: 0.5536401}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2135086654}
+  m_Father: {fileID: 440368895}
   m_LocalEulerAnglesHint: {x: -4.743, y: -3.231, z: 5.481}
---- !u!33 &6423227405164405276
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7334086097890162435}
-  m_Mesh: {fileID: 2737422789742173326, guid: 8b0de42655f4bd246932c0c316157ad2, type: 3}
 --- !u!1 &6437286958825688137
 GameObject:
   m_ObjectHideFlags: 0
@@ -169377,7 +169604,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2135086654}
+  m_Father: {fileID: 908522597}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &6698808611318328112
 Transform:
@@ -169392,7 +169619,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2135086654}
+  m_Father: {fileID: 908522597}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6703153551320589943
 GameObject:
@@ -170224,6 +170451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46707f4ea53ee9a40ab085a793976ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  manager: {fileID: 0}
   isBuffDeffense: 0
   isBuffMagic: 0
   isBuffCanon: 0
@@ -170231,8 +170459,6 @@ MonoBehaviour:
   isBuffDiceNext: 0
   countCoinPower: 0
   shieldMagic: {fileID: 2099903461658259592}
-  shieldCanon: {fileID: 0}
-  shieldDice: {fileID: 0}
   shieldDefense: {fileID: 5017372881037543344}
 --- !u!1 &6988454718536739489
 GameObject:
@@ -171089,7 +171315,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4698997591082104609}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8977b2293eb34a544a1bd5e51bd8e1bb, type: 3}
   m_Name: 
@@ -171185,24 +171411,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &7334086097890162435
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7965804368428527033}
-  - component: {fileID: 6423227405164405276}
-  - component: {fileID: 9135292372235589334}
-  m_Layer: 0
-  m_Name: Tree_07_Fall
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
 --- !u!1 &7337316123027450491
 GameObject:
   m_ObjectHideFlags: 0
@@ -172124,6 +172332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46707f4ea53ee9a40ab085a793976ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  manager: {fileID: 0}
   isBuffDeffense: 0
   isBuffMagic: 0
   isBuffCanon: 0
@@ -172131,8 +172340,6 @@ MonoBehaviour:
   isBuffDiceNext: 0
   countCoinPower: 0
   shieldMagic: {fileID: 5247096941905544725}
-  shieldCanon: {fileID: 0}
-  shieldDice: {fileID: 0}
   shieldDefense: {fileID: 5522093325960560938}
 --- !u!4 &7607373398104861863
 Transform:
@@ -187266,22 +187473,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
   m_IsActive: 1
---- !u!4 &7965804368428527033
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7334086097890162435}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.1520205, y: 6.452819, z: 12.64853}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2724677904349495521}
-  m_Father: {fileID: 2135086654}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &7966490140374154615
 Transform:
   m_ObjectHideFlags: 0
@@ -192883,7 +193074,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5263336876463265207}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 864b4ec22155c394c997c90a021eee36, type: 3}
   m_Name: 
@@ -205162,7 +205353,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2135086654}
+  m_Father: {fileID: 908522597}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &8923612321553848297
 Transform:
@@ -205177,7 +205368,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2135086654}
+  m_Father: {fileID: 908522597}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!199 &8927562281941742245
 ParticleSystemRenderer:
@@ -205810,55 +206001,6 @@ Transform:
   - {fileID: 644768292212056141}
   m_Father: {fileID: 3500986674757902885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &9135292372235589334
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7334086097890162435}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 772d9d9117eab56479d2738f542c054c, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!23 &9141754895597073841
 MeshRenderer:
   m_ObjectHideFlags: 0

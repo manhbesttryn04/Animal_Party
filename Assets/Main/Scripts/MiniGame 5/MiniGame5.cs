@@ -544,7 +544,7 @@ public class MiniGame5 : MonoBehaviour
         foreach (Transform child in
                  playerObject.GetComponentsInChildren<Transform>(true))
         {
-            if (child.name != "IceBlock")
+            if (child.name != "Ice Block")
                 continue;
 
             iceBlock = child;
