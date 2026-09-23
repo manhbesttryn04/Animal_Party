@@ -64,14 +64,14 @@ public class CutScenePowerCoin : MonoBehaviour
         }
     }
 
-    public void PlayCutScene(GameObject player)
+    public void PlayCutScene(GameObject playerWinner, GameObject playerLoser)
     {
-        StartCoroutine(CutSceneRoutine(player));
+        StartCoroutine(CutSceneRoutine(playerWinner,playerLoser));
     }
 
-    private IEnumerator CutSceneRoutine(GameObject player)
+    private IEnumerator CutSceneRoutine(GameObject playerWinner, GameObject playerLoser)
     {
-        if (player == null || teleport == null)
+        if (playerWinner == null || teleport == null || playerLoser == null)
             yield break;
         VolumeManager.Instance.StartVignette();
         // 1. Camera tới điểm đầu
@@ -93,8 +93,8 @@ public class CutScenePowerCoin : MonoBehaviour
 
         // 3. Đặt cổng trước mặt player
         Vector3 pos =
-            player.transform.position +
-            player.transform.forward * teleportForwardDistance;
+            playerWinner.transform.position +
+            playerWinner.transform.forward * teleportForwardDistance;
 
         teleport.transform.position = new Vector3(
             pos.x,
@@ -103,7 +103,7 @@ public class CutScenePowerCoin : MonoBehaviour
         );
 
         teleport.transform.rotation =
-            Quaternion.LookRotation(player.transform.forward);
+            Quaternion.LookRotation(playerWinner.transform.forward);
 
         yield return new WaitForSeconds(0.2f);
 
@@ -111,8 +111,8 @@ public class CutScenePowerCoin : MonoBehaviour
         // XZ theo sau lưng player, Y lấy theo teleport
         // Rotation giữ nguyên, không LookAt
         Vector3 cameraPos =
-            player.transform.position -
-            player.transform.forward * cameraBackDistance;
+            playerWinner.transform.position -
+            playerWinner.transform.forward * cameraBackDistance;
 
         cameraPos.y = teleport.transform.position.y;
 
@@ -121,6 +121,19 @@ public class CutScenePowerCoin : MonoBehaviour
         yield return StartCoroutine(
             CameraManager.Instance.MoveToPosition(cameraPos, cameraRot, cameraMoveTime)
         );
+
+        PlayerAnimator playerLoserAni = playerLoser.GetComponent<PlayerAnimator>();
+
+        if(playerLoserAni == null)
+        {
+            yield break;
+        }
+
+        var random = Random.Range(0, 2);
+
+        string aniRandomString = random == 0 ? "Loser" : "Loser 0";
+
+        playerLoserAni.playerAnimator.SetTrigger(aniRandomString);
 
         yield return new WaitForSeconds(waitTime);
 
@@ -136,13 +149,13 @@ public class CutScenePowerCoin : MonoBehaviour
         if (transPlayerToWalk != null)
         {
             StartCoroutine(
-                MovePlayerToPoint(player, transPlayerToWalk.position)
+                MovePlayerToPoint(playerWinner, transPlayerToWalk.position)
             );
         }
          yield return new WaitForSeconds(4.5f);
 
         // 7. Player biến mất  từ từ
-        PlayerVFX playerVFX = player.GetComponent<PlayerVFX>();
+        PlayerVFX playerVFX = playerWinner.GetComponent<PlayerVFX>();
 
         if (playerVFX != null)
         {
@@ -151,7 +164,7 @@ public class CutScenePowerCoin : MonoBehaviour
         }
         else
         {
-            SetPlayerMeshActive(player, false);
+            SetPlayerMeshActive(playerWinner, false);
         }
 
         yield return new WaitForSeconds(waitTime);

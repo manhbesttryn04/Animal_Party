@@ -748,12 +748,12 @@ public class GameManager : MonoBehaviour
             if (stateGame.hasPlayer1Win)
             {
                 CutScenePowerCoin.Instance
-                    .PlayCutScene(player1Main);
+                    .PlayCutScene(player1Main,player2Main);
             }
             else if (stateGame.hasPlayer2Win)
             {
                 CutScenePowerCoin.Instance
-                    .PlayCutScene(player2Main);
+                    .PlayCutScene(player2Main,player1Main);
             }
         }
         else if (stateGame.hasWinByIndex)

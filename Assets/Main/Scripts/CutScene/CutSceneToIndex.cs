@@ -61,14 +61,14 @@ public class CutSceneToIndex : MonoBehaviour
                 teleportParticle.Play();
         }
     }
-    public void PlayCutScene(GameObject player)
+    public void PlayCutScene(GameObject playerWinner)
     {
-        StartCoroutine(CutSceneRoutine(player));
+        StartCoroutine(CutSceneRoutine(playerWinner));
     }
 
-    private IEnumerator CutSceneRoutine(GameObject player)
+    private IEnumerator CutSceneRoutine(GameObject playerWinner)
     {
-        if (player == null || teleport == null)
+        if (playerWinner == null || teleport == null)
             yield break;
 
         // 1. Bắt đầu vignette
@@ -88,8 +88,8 @@ public class CutSceneToIndex : MonoBehaviour
 
         // 3. Camera đi ra sau lưng player
         Vector3 cameraPos =
-            player.transform.position -
-            player.transform.forward * cameraBackDistance;
+            playerWinner.transform.position -
+            playerWinner.transform.forward * cameraBackDistance;
 
         cameraPos.y = teleport.transform.position.y;
 
@@ -107,7 +107,7 @@ public class CutSceneToIndex : MonoBehaviour
         if (transPlayerToWalk != null)
         {
            StartCoroutine(
-                MovePlayerToPoint(player, transPlayerToWalk.position)
+                MovePlayerToPoint(playerWinner, transPlayerToWalk.position)
             );
         }
         yield return new WaitForSeconds(4.5f);
@@ -115,7 +115,7 @@ public class CutSceneToIndex : MonoBehaviour
         // 6. Player tan biến bằng VFX không particle
         AudioManager.Instance.PlaySFX(AudioManager.Instance.playerTeleport);
 
-        PlayerVFX playerVFX = player.GetComponent<PlayerVFX>();
+        PlayerVFX playerVFX = playerWinner.GetComponent<PlayerVFX>();
 
         if (playerVFX != null)
         {
@@ -125,7 +125,7 @@ public class CutSceneToIndex : MonoBehaviour
         }
         else
         {
-            SetPlayerMeshActive(player, false);
+            SetPlayerMeshActive(playerWinner, false);
         }
 
         yield return new WaitForSeconds(waitTime);
