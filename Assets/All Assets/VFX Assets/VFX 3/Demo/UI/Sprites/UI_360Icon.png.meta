@@ -1,7 +1,17 @@
 fileFormatVersion: 2
 guid: 21c0ece275809e04395a477d8f8b5de8
+AssetOrigin:
+  serializedVersion: 1
+  productId: 310764
+  packageName: Spells Pack 2 - Free Version
+  packageVersion: 1.0
+  assetPath: Assets/Spells Pack 2 Free Version/Demo/UI/Sprites/UI_360Icon.png
+  uploadId: 731870
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 300429062190050198
+    second: UI_360Icon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -53,7 +63,9 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
+  spriteTessellationMethod: 0
   spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -95,7 +107,29 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: UI_360Icon_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69baa0ce3a65b2400800000000000000
+      internalID: 300429062190050198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -115,10 +149,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 310764
-  packageName: Spells Pack 2 - Free Version
-  packageVersion: 1.0
-  assetPath: Assets/Spells Pack 2 Free Version/Demo/UI/Sprites/UI_360Icon.png
-  uploadId: 731870

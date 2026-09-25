@@ -681,8 +681,8 @@ public class UIManager : MonoBehaviour
     }
 
     private void AddInstructionParentVisibilityToHash(
-        List<GameObject> instructionList,
-        ref int hash)
+    List<GameObject> instructionList,
+    ref int hash)
     {
         if (instructionList == null)
             return;
@@ -706,8 +706,7 @@ public class UIManager : MonoBehaviour
                 continue;
             }
 
-            hash = hash * 31 +
-                   parent.GetInstanceID();
+            hash = hash * 31 + i;
 
             hash = hash * 31 +
                    (parent.gameObject.activeInHierarchy
