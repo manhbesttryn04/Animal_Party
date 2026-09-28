@@ -1615,20 +1615,16 @@ MonoBehaviour:
   - Dodge laser beams and fire as much as possible.
   - Move while the Pirate King is looking away. Stop immediately when he turns around.
   - Move across the tiles to claim them for your color. Own as many tiles as possible.
-  - A bomb will be randomly assigned to one player, move closer to your opponent
-    to pass the bomb.
-  - Dodge artillery fire and survive on the island, making sure not to fall into
-    the water.
+  - A bomb will be randomly assigned to one player, move closer to your opponent to pass the bomb.
+  - Dodge artillery fire and survive on the island, making sure not to fall into the water.
   errorTextList:
   - "The shark\u2019s hunting speed will gradually increase with each wave!"
   - The number of surviving colored squares will decrease over time!
   - The difficulty of the lasers will gradually increase over time!
   - Be careful! Pay attention to his voice! He could turn around at any moment!
   - Color Wipe removes color from adjacent tiles. Freeze temporarily stops your movement!
-  - The bomb explodes when the countdown reaches 4 seconds, and whoever is holding
-    it will be eliminated!
-  - The number and rate of fire of the cannons will be overwhelming right from the
-    start and will gradually increase over time!
+  - The bomb explodes when the countdown reaches 4 seconds, and whoever is holding it will be eliminated!
+  - The number and rate of fire of the cannons will be overwhelming right from the start and will gradually increase over time!
 --- !u!114 &288627991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1721,13 +1717,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae2ba76be3621a47a7c5d843c9d94a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  instructInputMinigame1: 01000000
-  instructInputMinigame2: 01000100
-  instructInputMinigame3: 01010001
-  instructInputMinigame4: 01000000
-  instructInputMinigame5: 01000000
-  instructInputMinigame6: 01010000
-  instructInputMinigame7: 0101000001
+  instructInputMinigame1: 01000000y
+  instructInputMinigame2: 01000100y
+  instructInputMinigame3: 01010001y
+  instructInputMinigame4: 01000000y
+  instructInputMinigame5: 01000000y
+  instructInputMinigame6: 01010000y
+  instructInputMinigame7: 0101000001y
   instructInputMinigame8: 
 --- !u!4 &290775502 stripped
 Transform:
@@ -2630,7 +2626,7 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453568357}
   m_Enabled: 1
-  serializedVersion: 12
+  serializedVersion: 13
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 2
@@ -2639,7 +2635,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize2D: {x: 0.5, y: 0.5}
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -2682,7 +2678,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
-  m_ShadowRadius: 0
+  m_ShapeRadius: 0
   m_ShadowAngle: 0
   m_LightUnit: 1
   m_LuxAtDistance: 1
@@ -4743,8 +4739,8 @@ VideoPlayer:
   m_DirectAudioVolumes:
   - 0
   m_Url: 
-  m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
+  m_EnabledAudioTracks: 01o
+  m_DirectAudioMutes: 00o
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
@@ -10169,8 +10165,8 @@ VideoPlayer:
   m_DirectAudioVolumes:
   - 0
   m_Url: 
-  m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
+  m_EnabledAudioTracks: 01o
+  m_DirectAudioMutes: 00o
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
