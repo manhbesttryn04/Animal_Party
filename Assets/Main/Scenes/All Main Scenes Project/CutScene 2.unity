@@ -1445,11 +1445,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0076a520c1cea824c90b1d4c09afc984, type: 3}
   - {fileID: 8300000, guid: 75baaa6ef8d48864cb539d3a2ec3c56b, type: 3}
   - {fileID: 8300000, guid: dfda03071726a1f4bafe31df62a195e2, type: 3}
-  typeSpeed: 0.035
   fadeOutDuration: 0.3
-  betweenLineFade: 0.2
-  subtitleHideDelay: 0
-  voice3CutTime: 2.1
+  betweenLineFade: 0.3
+  subtitleHideDelay: 0.2
+  subtitleSpeed: 15
+  textSpeedOffset: 0.2
   endAudioFadeTime: 4.5
 --- !u!4 &322993516
 Transform:

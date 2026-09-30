@@ -1585,10 +1585,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2b0137dd89afaa7459c550643d07c1f1, type: 3}
   - {fileID: 8300000, guid: b8445ab1920c4a545967bef79f979df4, type: 3}
   - {fileID: 8300000, guid: 0be23ca505168824a97c139ee10bf3c0, type: 3}
-  typeSpeed: 0.035
   fadeOutDuration: 0.3
   betweenLineFade: 0.3
   subtitleHideDelay: 0.2
+  subtitleSpeed: 15
+  textSpeedOffset: 0.2
 --- !u!4 &1263849323
 Transform:
   m_ObjectHideFlags: 0

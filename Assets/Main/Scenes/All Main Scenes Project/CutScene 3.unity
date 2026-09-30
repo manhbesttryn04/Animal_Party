@@ -2967,7 +2967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   teleport: {fileID: 1734460552}
-  player: {fileID: 1270709816}
+  player: {fileID: 0}
   transPlayerToWalk:
   - {fileID: 1313826968}
   - {fileID: 650047237}
@@ -3017,11 +3017,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 207e99142b016ba40aaf71539f7a31de, type: 3}
   - {fileID: 8300000, guid: 4f684345bebd05f438e67ae932bd6080, type: 3}
   - {fileID: 8300000, guid: 38868ab230be8ab4595ae786e09a07d4, type: 3}
-  narratorVolume: 1
-  typeSpeed: 0.04
   fadeOutDuration: 0.3
   betweenLineFade: 0.3
   subtitleHideDelay: 0.2
+  subtitleSpeed: 15
+  textSpeedOffset: 0.2
   endAudioFadeTime: 4.18
 --- !u!1001 &148831496
 PrefabInstance:

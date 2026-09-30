@@ -47,12 +47,10 @@ public class CutSceneEndGame : MonoBehaviour
 
     [Header("--- SKIP HINT TEXT ---")]
     [SerializeField]
-    private string keyboardSkipHint =
-        "Press Space to Skip";
+    private string keyboardSkipHint = "Press Space to Skip";
 
     [SerializeField]
-    private string controllerSkipHint =
-        "Press Space or B to Skip";
+    private string controllerSkipHint = "Press Space or B to Skip";
 
     [Header("--- CONTROLLER SKIP ---")]
     [Tooltip("Button 1 thường là B trên Xbox hoặc Circle trên PlayStation.")]
@@ -68,25 +66,24 @@ public class CutSceneEndGame : MonoBehaviour
     public TMP_ColorGradient finalGradient;
 
     [Header("--- OUTLINE COLOR ---")]
-    public Color normalOutlineColor =
-        new Color(1f, 1f, 1f, 0.2f);
-
-    public Color finalOutlineColor =
-        new Color(1f, 1f, 1f, 0.31f);
+    public Color normalOutlineColor = new Color(1f, 1f, 1f, 0.2f);
+    public Color finalOutlineColor = new Color(1f, 1f, 1f, 0.31f);
 
     [Header("--- NARRATOR VOICE ---")]
     public AudioClip[] narratorVoices;
 
-    [Range(0f, 1f)]
-    public float narratorVolume = 0.9f;
+    [Header("--- SUBTITLE TIMING & SPEED ---")]
+    public float fadeOutDuration = 0.4f;
+    public float betweenLineFade = 0.5f;
 
-    [Header("--- SUBTITLE TIMING ---")]
-    public float typeSpeed = 0.04f;
-    public float fadeOutDuration = 0.3f;
-    public float betweenLineFade = 0.3f;
-
-    [Tooltip("Sau khi narrator nói xong, chờ từng này giây rồi tắt dòng + chữ.")]
+    [Tooltip("Sau khi narrator thực sự nói xong, chờ thêm thời gian này rồi tắt subtitle.")]
     public float subtitleHideDelay = 0.2f;
+
+    [Tooltip("Tốc độ chạy chữ (số ký tự trên mỗi giây).")]
+    [SerializeField] private float subtitleSpeed = 40f;
+
+    [Tooltip("Độ trễ thời gian (giây) để chữ chạy nhanh hơn voice một chút.")]
+    [SerializeField] private float textSpeedOffset = 0.2f;
 
     [Header("--- END AUDIO FADE ---")]
     public float endAudioFadeTime = 4.18f;
@@ -94,14 +91,8 @@ public class CutSceneEndGame : MonoBehaviour
     private bool isSkipped;
     private bool canSkip;
 
-    // Dùng để ngăn coroutine của câu cũ tắt nhầm câu mới.
     private int subtitleRequestId;
-
-    // Sau khi đóng Setting, phải nhả Space/Enter/B/Circle
-    // rồi mới cho phép skip cutscene.
     private bool waitSkipReleaseAfterSetting;
-
-    // Cache để chỉ đổi text khi trạng thái tay cầm thay đổi.
     private bool previousHasController;
     private bool skipHintStateInitialized;
 
@@ -121,7 +112,6 @@ public class CutSceneEndGame : MonoBehaviour
     {
         SetupTeleport();
         FindPlayerWinner();
-        
     }
 
     private void SetupTeleport()
@@ -141,6 +131,7 @@ public class CutSceneEndGame : MonoBehaviour
 
         PlayCutScene();
         StartCoroutine(EnableSkipAfterDelay());
+        StartCoroutine(ShowSkipHint());
     }
 
     private void SetupSubtitleUI()
@@ -178,9 +169,9 @@ public class CutSceneEndGame : MonoBehaviour
         if (setting != null)
         {
             setting.ResetSetting();
-            setting.canOpenSettingByEsc = true;
+            setting.canOpenSettingByEsc = false;
             setting.isOpenExitButton = false;
-            setting.canOpenSettingByController = true;
+            setting.canOpenSettingByController = false;
         }
 
         var cursor = CursorManager.Instance;
@@ -189,40 +180,30 @@ public class CutSceneEndGame : MonoBehaviour
             cursor.SetSceneCursorVisible(false);
         }
     }
+
     private void Update()
     {
-        // Luôn cập nhật trước mọi lệnh return.
-        // Cắm/rút tay cầm trong Setting vẫn đổi text ngay.
         UpdateSkipHintText();
 
         if (isSkipped)
             return;
 
-        // 2 giây đầu cutscene: khóa toàn bộ input skip.
         if (!canSkip)
             return;
 
-        bool settingOpen =
-            SettingManager.Instance != null &&
-            SettingManager.Instance.IsSettingBlockingInput;
+        bool settingOpen = SettingManager.Instance != null && SettingManager.Instance.IsSettingBlockingInput;
 
-        // Setting đang mở thì không cho bàn phím
-        // hoặc nút B/Circle skip cutscene.
         if (settingOpen)
         {
             waitSkipReleaseAfterSetting = true;
             return;
         }
 
-        // Sau khi đóng Setting, phải nhả toàn bộ nút skip.
-        // Tránh nút B/Circle dùng để đóng Setting
-        // làm skip luôn cutscene.
         if (waitSkipReleaseAfterSetting)
         {
-            bool skipInputHeld =
-                Input.GetKey(KeyCode.Space) ||
-                Input.GetKey(KeyCode.Return) ||
-                IsControllerSkipHeld();
+            bool skipInputHeld = Input.GetKey(KeyCode.Space) ||
+                                 Input.GetKey(KeyCode.Return) ||
+                                 IsControllerSkipHeld();
 
             if (!skipInputHeld)
             {
@@ -232,12 +213,9 @@ public class CutSceneEndGame : MonoBehaviour
             return;
         }
 
-        bool keyboardSkipDown =
-            Input.GetKeyDown(KeyCode.Space) ||
-            Input.GetKeyDown(KeyCode.Return);
+        bool keyboardSkipDown = Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return);
 
-        if (keyboardSkipDown ||
-            IsControllerSkipDown())
+        if (keyboardSkipDown || IsControllerSkipDown())
         {
             SkipCutscene();
         }
@@ -245,41 +223,22 @@ public class CutSceneEndGame : MonoBehaviour
 
     private bool IsControllerSkipDown()
     {
-        ControllerManager controller =
-            ControllerManager.Instance;
-
+        ControllerManager controller = ControllerManager.Instance;
         if (controller == null)
             return false;
 
-        bool console1Skip =
-            controller.IsConsole1Connected() &&
-            controller.GetConsoleButtonDown(
-                1,
-                controllerSkipButtonIndex
-            );
-
-        bool console2Skip =
-            controller.IsConsole2Connected() &&
-            controller.GetConsoleButtonDown(
-                2,
-                controllerSkipButtonIndex
-            );
+        bool console1Skip = controller.IsConsole1Connected() && controller.GetConsoleButtonDown(1, controllerSkipButtonIndex);
+        bool console2Skip = controller.IsConsole2Connected() && controller.GetConsoleButtonDown(2, controllerSkipButtonIndex);
 
         return console1Skip || console2Skip;
     }
 
     private void UpdateSkipHintText(bool force = false)
     {
-        ControllerManager controller =
-            ControllerManager.Instance;
+        ControllerManager controller = ControllerManager.Instance;
+        bool hasController = controller != null && controller.HasAnyController();
 
-        bool hasController =
-            controller != null &&
-            controller.HasAnyController();
-
-        if (!force &&
-            skipHintStateInitialized &&
-            hasController == previousHasController)
+        if (!force && skipHintStateInitialized && hasController == previousHasController)
         {
             return;
         }
@@ -289,9 +248,7 @@ public class CutSceneEndGame : MonoBehaviour
 
         if (skipHintText != null)
         {
-            skipHintText.text = hasController
-                ? controllerSkipHint
-                : keyboardSkipHint;
+            skipHintText.text = hasController ? controllerSkipHint : keyboardSkipHint;
         }
 
         if (controllerBHintObject != null)
@@ -302,33 +259,18 @@ public class CutSceneEndGame : MonoBehaviour
 
     private bool IsControllerSkipHeld()
     {
-        ControllerManager controller =
-            ControllerManager.Instance;
-
+        ControllerManager controller = ControllerManager.Instance;
         if (controller == null)
             return false;
 
-        bool console1SkipHeld =
-            controller.IsConsole1Connected() &&
-            controller.GetConsoleButton(
-                1,
-                controllerSkipButtonIndex
-            );
+        bool console1SkipHeld = controller.IsConsole1Connected() && controller.GetConsoleButton(1, controllerSkipButtonIndex);
+        bool console2SkipHeld = controller.IsConsole2Connected() && controller.GetConsoleButton(2, controllerSkipButtonIndex);
 
-        bool console2SkipHeld =
-            controller.IsConsole2Connected() &&
-            controller.GetConsoleButton(
-                2,
-                controllerSkipButtonIndex
-            );
-
-        return console1SkipHeld ||
-               console2SkipHeld;
+        return console1SkipHeld || console2SkipHeld;
     }
 
     private void SkipCutscene()
     {
-        // Khóa cả trường hợp SkipCutscene() được gọi từ nơi khác/UI.
         if (!canSkip || isSkipped)
             return;
 
@@ -359,25 +301,24 @@ public class CutSceneEndGame : MonoBehaviour
             if (audio.specialSource != null)
                 audio.specialSource.Stop();
         }
+
         var setting = SettingManager.Instance;
         if (setting != null)
         {
-            // setting.ResetEscSetting();
             setting.canOpenSettingByEsc = false;
             setting.canOpenSettingByController = false;
         }
+
         if (LoadingManager.Instance != null)
         {
-            yield return StartCoroutine(
-                LoadingManager.Instance.ShowLoading()
-            );
+            yield return StartCoroutine(LoadingManager.Instance.ShowLoading());
         }
+
         SceneManager.LoadScene(6);
     }
 
     private IEnumerator EnableSkipAfterDelay()
     {
-        // Dùng realtime để thời gian khóa skip không bị ảnh hưởng bởi Time.timeScale.
         if (skipEnableDelay > 0f)
         {
             yield return new WaitForSecondsRealtime(skipEnableDelay);
@@ -387,13 +328,15 @@ public class CutSceneEndGame : MonoBehaviour
             yield break;
 
         canSkip = true;
-
-        // Chỉ sau khi đã được phép skip mới hiện hướng dẫn.
-        yield return StartCoroutine(ShowSkipHint());
     }
 
     private IEnumerator ShowSkipHint()
     {
+        if (skipEnableDelay > 0f)
+        {
+            yield return new WaitForSecondsRealtime(skipEnableDelay);
+        }
+
         if (isSkipped || !canSkip)
             yield break;
 
@@ -421,17 +364,29 @@ public class CutSceneEndGame : MonoBehaviour
         skipHintText.alpha = 1f;
     }
 
-    //==================================================
-    // PLAY CUTSCENE
-    //==================================================
     public void PlayCutScene()
     {
         StartCoroutine(CutSceneRoutine());
     }
 
-    //==================================================
-    // MAIN CUTSCENE
-    //==================================================
+    private IEnumerator WaitForSecondsWhilePaused(float duration)
+    {
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            if (isSkipped) yield break;
+
+            bool isPaused = SettingManager.Instance != null && SettingManager.Instance.IsSettingBlockingInput;
+
+            if (!isPaused)
+            {
+                elapsed += Time.deltaTime;
+            }
+
+            yield return null;
+        }
+    }
+
     private IEnumerator CutSceneRoutine()
     {
         if (isSkipped)
@@ -443,220 +398,101 @@ public class CutSceneEndGame : MonoBehaviour
         }
 
         AudioManager audio = AudioManager.Instance;
-
         if (audio != null)
         {
             audio.PlayEnvironment(audio.javaLoopClip);
         }
 
-        //==================================================
-        // 1. MỞ CỔNG + PHỤ ĐỀ CÂU 0
-        //==================================================
-        ShowSubtitleImmediate(
-            storyLines[0],
-            0,
-            false
-        );
+        StartCoroutine(ShowFirstSubtitleWithDelay(storyLines[0], 0, false, 0.2f));
 
         if (audio != null)
         {
             audio.PlaySFX(audio.openTeleportClip);
         }
 
-        yield return StartCoroutine(
-            ScaleTeleport(
-                teleportOriginalScale,
-                teleportOpenTime
-            )
-        );
+        yield return StartCoroutine(ScaleTeleport(teleportOriginalScale, teleportOpenTime));
 
-        yield return new WaitForSeconds(2f);
+        yield return StartCoroutine(WaitForSecondsWhilePaused(2f));
 
-        //==================================================
-        // 2. PLAYER ĐI TỚI WALK 0 + PHỤ ĐỀ CÂU 1
-        //==================================================
-        if (transPlayerToWalk != null &&
-            transPlayerToWalk.Length > 0 &&
-            transPlayerToWalk[0] != null)
+        if (transPlayerToWalk != null && transPlayerToWalk.Length > 0 && transPlayerToWalk[0] != null)
         {
-            StartCoroutine(
-                 ShowSubtitleWithVoice(
-                     storyLines[1],
-                     1,
-                     false
-                 )
-             );
+            StartCoroutine(ShowSubtitleWithVoice(storyLines[1], 1, false));
 
-            PlayerVFX playerVFX =
-                player.GetComponent<PlayerVFX>();
-
+            PlayerVFX playerVFX = player.GetComponent<PlayerVFX>();
             if (playerVFX != null)
             {
-                StartCoroutine(
-                    playerVFX.DissolveInNoParticleRoutine()
-                );
+                StartCoroutine(playerVFX.DissolveInNoParticleRoutine());
             }
 
             Coroutine playerMoveRoutine = StartCoroutine(
-                MovePlayerToPoint(
-                    player,
-                    transPlayerToWalk[0].position,
-                    playerMoveSpeed
-                )
+                MovePlayerToPoint(player, transPlayerToWalk[0].position, playerMoveSpeed)
             );
 
-            yield return new WaitForSeconds(3f);
+            yield return StartCoroutine(WaitForSecondsWhilePaused(3f));
 
             if (audio != null)
             {
                 audio.PlaySFX(audio.closeTeleportClip);
             }
 
-            yield return StartCoroutine(
-                ScaleTeleport(
-                    Vector3.zero,
-                    1f
-                )
-            );
+            yield return StartCoroutine(ScaleTeleport(Vector3.zero, 1f));
 
             yield return playerMoveRoutine;
         }
 
-        //==================================================
-        // 3. CAMERA CUT 0 -> 3 + PHỤ ĐỀ CÂU 2
-        //==================================================
         SetCameraToPoint(0);
+        StartCoroutine(ShowSubtitleWithVoice(storyLines[2], 2, false));
 
-        StartCoroutine(
-            ShowSubtitleWithVoice(
-                storyLines[2],
-                2,
-                false
-            )
-        );
+        yield return StartCoroutine(MoveCameraToPoint(1));
+        yield return StartCoroutine(MoveCameraToPoint(2));
+        yield return StartCoroutine(MoveCameraToPoint(3));
 
-        yield return StartCoroutine(
-            MoveCameraToPoint(1)
-        );
-
-        yield return StartCoroutine(
-            MoveCameraToPoint(2)
-        );
-
-        yield return StartCoroutine(
-            MoveCameraToPoint(3)
-        );
-
-        //==================================================
-        // CAMERA CUT 4 -> 7 + PHỤ ĐỀ CÂU 3
-        //==================================================
         SetCameraToPoint(4);
+        StartCoroutine(ShowSubtitleWithVoice(storyLines[3], 3, false));
 
-        StartCoroutine(
-           ShowSubtitleWithVoice(
-               storyLines[3],
-               3,
-               false
-           )
-       );
-
-        yield return StartCoroutine(
-            MoveCameraToPoint(5)
-        );
-
-        yield return new WaitForSeconds(waitTime);
+        yield return StartCoroutine(MoveCameraToPoint(5));
+        yield return StartCoroutine(WaitForSecondsWhilePaused(waitTime));
 
         SetCameraToPoint(6);
+        yield return StartCoroutine(MoveCameraToPoint(7));
 
-        yield return StartCoroutine(
-            MoveCameraToPoint(7)
-        );
-
-        //==================================================
-        // CAMERA CUT 8 -> 12 + PHỤ ĐỀ CÂU 4
-        //==================================================
         SetCameraToPoint(8);
+        StartCoroutine(ShowSubtitleWithVoice(storyLines[4], 4, false));
 
-        StartCoroutine(
-             ShowSubtitleWithVoice(
-                 storyLines[4],
-                 4,
-                 false
-             )
-         );
-
-        yield return StartCoroutine(
-            MoveCameraToPoint(9)
-        );
-
+        yield return StartCoroutine(MoveCameraToPoint(9));
         SetCameraToPoint(10);
 
-        yield return new WaitForSeconds(waitTime);
+        yield return StartCoroutine(WaitForSecondsWhilePaused(waitTime));
+        yield return StartCoroutine(MoveCameraToPoint(11));
 
-        yield return StartCoroutine(
-            MoveCameraToPoint(11)
-        );
-
-        yield return new WaitForSeconds(waitTime);
-
+        yield return StartCoroutine(WaitForSecondsWhilePaused(waitTime));
         SetCameraToPoint(12);
 
-        //==================================================
-        // 4. PLAYER ĐI CHẬM + CÂU CUỐI
-        //==================================================
-        if (transPlayerToWalk != null &&
-            transPlayerToWalk.Length > 1 &&
-            transPlayerToWalk[1] != null)
+        if (transPlayerToWalk != null && transPlayerToWalk.Length > 1 && transPlayerToWalk[1] != null)
         {
             Coroutine playerMoveRoutine = StartCoroutine(
-                MovePlayerToPoint(
-                    player,
-                    transPlayerToWalk[1].position,
-                    playerSlowMoveSpeed
-                )
+                MovePlayerToPoint(player, transPlayerToWalk[1].position, playerSlowMoveSpeed)
             );
 
-            // Camera 12 -> 13
-            yield return StartCoroutine(
-                MoveCameraToPoint(13)
-            );
-
-            // Dịch chuyển tới camera 14
+            yield return StartCoroutine(MoveCameraToPoint(13));
             SetCameraToPoint(14);
+            yield return StartCoroutine(MoveCameraToPoint(15));
 
-            // Hiện câu cuối
-
-
-            // Camera 14 -> 15
-            yield return StartCoroutine(
-                MoveCameraToPoint(15)
-            );
-
-            yield return new WaitForSeconds(0.2f);
-
-            // Dịch chuyển tới camera 16
+            yield return StartCoroutine(WaitForSecondsWhilePaused(0.2f));
             SetCameraToPoint(16);
 
-            // Đợi player đi xong
             yield return playerMoveRoutine;
 
             PlayerAnimator aniPlayer = player.GetComponent<PlayerAnimator>();
-            if(aniPlayer != null)
+            if (aniPlayer != null)
             {
                 aniPlayer.playerAnimator.SetTrigger("Win");
             }
-            yield return StartCoroutine(
-             ShowSubtitleWithVoice(
-                 storyLines[5],
-                 5,
-                 true
-             )
-         );
+
+            yield return StartCoroutine(ShowSubtitleWithVoice(storyLines[5], 5, true));
 
             if (skipHintObject != null)
                 skipHintObject.SetActive(false);
-
-
 
             HideSubtitleImmediate();
             StopNarratorVoice();
@@ -667,225 +503,152 @@ public class CutSceneEndGame : MonoBehaviour
             if (audio != null)
                 audio.FadeOutAllAudio(endAudioFadeTime);
 
-            yield return new WaitForSeconds(endAudioFadeTime);
+            yield return StartCoroutine(WaitForSecondsWhilePaused(endAudioFadeTime));
+
             var setting = SettingManager.Instance;
             if (setting != null)
             {
-                // setting.ResetEscSetting();
                 setting.canOpenSettingByEsc = false;
                 setting.canOpenSettingByController = false;
             }
+
             if (LoadingManager.Instance != null)
             {
-                yield return StartCoroutine(
-                    LoadingManager.Instance.ShowLoading()
-                );
+                yield return StartCoroutine(LoadingManager.Instance.ShowLoading());
             }
-            yield return new WaitForSeconds(5f);
+
+            yield return StartCoroutine(WaitForSecondsWhilePaused(5f));
             SceneManager.LoadScene(6);
         }
         else
         {
-            yield return StartCoroutine(
-                MoveCameraToPoint(13)
-            );
-
+            yield return StartCoroutine(MoveCameraToPoint(13));
             SetCameraToPoint(14);
 
-            yield return StartCoroutine(
-                ShowSubtitleWithVoice(
-                    storyLines[5],
-                    5,
-                    true
-                )
-            );
+            yield return StartCoroutine(ShowSubtitleWithVoice(storyLines[5], 5, true));
 
-            yield return StartCoroutine(
-                MoveCameraToPoint(15)
-            );
-
+            yield return StartCoroutine(MoveCameraToPoint(15));
             HideSubtitleImmediate();
         }
     }
 
-    //==================================================
-    // HIỆN PHỤ ĐỀ + GIỌNG KỂ
-    //==================================================
-    private IEnumerator ShowSubtitleWithVoice(
-        string line,
-        int voiceIndex,
-        bool isFinal
-    )
+    private IEnumerator ShowFirstSubtitleWithDelay(string line, int voiceIndex, bool isFinal, float delaySeconds)
     {
         if (isSkipped)
             yield break;
 
-        int requestId = ++subtitleRequestId;
+        yield return StartCoroutine(WaitForSecondsWhilePaused(delaySeconds));
+
+        if (isSkipped)
+            yield break;
+
+        yield return StartCoroutine(ShowSubtitleWithVoice(line, voiceIndex, isFinal));
+    }
+
+    private IEnumerator ShowSubtitleWithVoice(string line, int voiceIndex, bool isFinal)
+    {
+        if (isSkipped)
+            yield break;
+
+        int mySubtitleRequestId = ++subtitleRequestId;
 
         StopNarratorVoice();
 
-        // Nếu câu cũ còn hiện thì fade ra
-        if (subtitleText != null &&
-            subtitleText.text != "")
+        if (subtitleText != null && !string.IsNullOrEmpty(subtitleText.text))
         {
-            yield return StartCoroutine(
-                FadeOutLine(requestId)
-            );
-
-            yield return new WaitForSeconds(
-                betweenLineFade
-            );
+            yield return StartCoroutine(FadeOutLine());
+            yield return StartCoroutine(WaitForSecondsWhilePaused(betweenLineFade));
         }
 
-        if (isSkipped || requestId != subtitleRequestId)
+        if (isSkipped || mySubtitleRequestId != subtitleRequestId)
             yield break;
 
         if (subtitlePanel != null)
-        {
             subtitlePanel.SetActive(true);
-        }
 
         if (subtitleText != null)
         {
             subtitleText.alpha = 1f;
             subtitleText.text = "";
-        }
-
-        ApplyGradient(isFinal);
-
-        PlayVoice(voiceIndex);
-
-        // Hiệu ứng chữ chạy
-        foreach (char character in line)
-        {
-            if (isSkipped || requestId != subtitleRequestId)
-                yield break;
-
-            if (subtitleText != null)
-            {
-                subtitleText.text += character;
-            }
-
-            yield return new WaitForSeconds(typeSpeed);
-        }
-
-        AudioManager audioManager = AudioManager.Instance;
-        if (audioManager != null && audioManager.specialSource != null)
-        {
-            yield return new WaitWhile(
-                () =>
-                    !isSkipped &&
-                    AudioManager.Instance != null &&
-                    AudioManager.Instance.specialSource != null &&
-                    AudioManager.Instance.specialSource.isPlaying
-            );
-        }
-
-        if (isSkipped || requestId != subtitleRequestId)
-            yield break;
-
-        yield return new WaitForSeconds(subtitleHideDelay);
-
-        if (isSkipped || requestId != subtitleRequestId)
-            yield break;
-
-        HideSubtitleImmediate();
-    }
-
-    //==================================================
-    // HIỆN PHỤ ĐỀ NGAY
-    //==================================================
-    private void ShowSubtitleImmediate(
-        string line,
-        int voiceIndex,
-        bool isFinal
-    )
-    {
-        int requestId = ++subtitleRequestId;
-
-        if (subtitlePanel != null)
-        {
-            subtitlePanel.SetActive(true);
-        }
-
-        if (subtitleText != null)
-        {
-            subtitleText.alpha = 1f;
-            subtitleText.text = line;
-        }
-
-        ApplyGradient(isFinal);
-
-        PlayVoice(voiceIndex);
-        StartCoroutine(HideSubtitleAfterVoice(requestId));
-    }
-
-    private IEnumerator HideSubtitleAfterVoice(int requestId)
-    {
-        AudioManager audio = AudioManager.Instance;
-
-        if (audio != null && audio.specialSource != null)
-        {
-            yield return new WaitWhile(
-                () =>
-                    !isSkipped &&
-                    requestId == subtitleRequestId &&
-                    AudioManager.Instance != null &&
-                    AudioManager.Instance.specialSource != null &&
-                    AudioManager.Instance.specialSource.isPlaying
-            );
-        }
-
-        if (isSkipped || requestId != subtitleRequestId)
-            yield break;
-
-        yield return new WaitForSeconds(subtitleHideDelay);
-
-        if (isSkipped || requestId != subtitleRequestId)
-            yield break;
-
-        HideSubtitleImmediate();
-    }
-
-    //==================================================
-    // ÁP DỤNG GRADIENT VÀ OUTLINE
-    //==================================================
-    private void ApplyGradient(bool isFinal)
-    {
-        if (subtitleText != null)
-        {
             subtitleText.enableVertexGradient = true;
-
-            subtitleText.colorGradientPreset =
-                isFinal
-                    ? finalGradient
-                    : normalGradient;
+            subtitleText.colorGradientPreset = isFinal ? finalGradient : normalGradient;
         }
 
         if (subtitleOutline != null)
         {
-            subtitleOutline.effectColor =
-                isFinal
-                    ? finalOutlineColor
-                    : normalOutlineColor;
+            subtitleOutline.effectColor = isFinal ? finalOutlineColor : normalOutlineColor;
         }
+
+        PlayVoice(voiceIndex);
+
+        AudioManager audio = AudioManager.Instance;
+        float voiceDuration = 3f;
+        if (audio != null && narratorVoices != null && voiceIndex >= 0 && voiceIndex < narratorVoices.Length && narratorVoices[voiceIndex] != null)
+        {
+            voiceDuration = narratorVoices[voiceIndex].length;
+        }
+
+        // --- HIỆU ỨNG CHẠY CHỮ (TYPEWRITER) CÓ HỖ TRỢ PAUSE ---
+        if (subtitleText != null && !string.IsNullOrEmpty(line))
+        {
+            float targetDuration = Mathf.Max(0.1f, voiceDuration - textSpeedOffset);
+            float calculatedSpeed = line.Length / targetDuration;
+            float actualSpeed = Mathf.Max(subtitleSpeed, calculatedSpeed);
+
+            float t = 0f;
+            int charsToShow = 0;
+
+            while (charsToShow < line.Length && !isSkipped && mySubtitleRequestId == subtitleRequestId)
+            {
+                bool isPaused = SettingManager.Instance != null && SettingManager.Instance.IsSettingBlockingInput;
+                if (!isPaused)
+                {
+                    t += Time.deltaTime * actualSpeed;
+                    charsToShow = Mathf.Clamp(Mathf.FloorToInt(t), 0, line.Length);
+                    subtitleText.text = line.Substring(0, charsToShow);
+                }
+                yield return null;
+            }
+            subtitleText.text = line;
+        }
+
+        if (audio != null && audio.specialSource != null)
+        {
+            while (!isSkipped && mySubtitleRequestId == subtitleRequestId && audio.specialSource != null && audio.specialSource.clip != null)
+            {
+                bool isPaused = SettingManager.Instance != null && SettingManager.Instance.IsSettingBlockingInput;
+
+                if (isPaused && audio.specialSource.isPlaying)
+                {
+                    audio.specialSource.Pause();
+                }
+                else if (!isPaused && !audio.specialSource.isPlaying && audio.specialSource.time > 0 && audio.specialSource.time < audio.specialSource.clip.length)
+                {
+                    audio.specialSource.UnPause();
+                }
+
+                if (!isPaused && !audio.specialSource.isPlaying)
+                {
+                    break;
+                }
+
+                yield return null;
+            }
+        }
+
+        if (!isSkipped && mySubtitleRequestId == subtitleRequestId)
+            yield return StartCoroutine(WaitForSecondsWhilePaused(subtitleHideDelay));
+
+        if (!isSkipped && mySubtitleRequestId == subtitleRequestId)
+            HideSubtitleImmediate();
     }
 
-    //==================================================
-    // PHÁT GIỌNG KỂ
-    //==================================================
     private void PlayVoice(int index)
     {
-        if (AudioManager.Instance == null)
+        if (AudioManager.Instance == null || narratorVoices == null)
             return;
 
-        if (narratorVoices == null)
-            return;
-
-        if (index < 0 || index >= narratorVoices.Length)
-            return;
-
-        if (narratorVoices[index] == null)
+        if (index < 0 || index >= narratorVoices.Length || narratorVoices[index] == null)
             return;
 
         AudioManager.Instance.PlaySpecial(narratorVoices[index]);
@@ -894,20 +657,30 @@ public class CutSceneEndGame : MonoBehaviour
     private void StopNarratorVoice()
     {
         AudioManager audio = AudioManager.Instance;
-
         if (audio != null && audio.specialSource != null)
             audio.specialSource.Stop();
     }
 
-    //==================================================
-    // FADE OUT PHỤ ĐỀ
-    //==================================================
-    private IEnumerator FadeOutLine(int requestId = -1)
+    private void HideSubtitleImmediate()
+    {
+        StopNarratorVoice();
+
+        if (subtitleText != null)
+        {
+            subtitleText.alpha = 1f;
+            subtitleText.text = "";
+        }
+
+        if (subtitlePanel != null)
+        {
+            subtitlePanel.SetActive(false);
+        }
+    }
+
+    private IEnumerator FadeOutLine()
     {
         if (subtitleText == null)
-        {
             yield break;
-        }
 
         float duration = Mathf.Max(0.01f, fadeOutDuration);
         float startAlpha = subtitleText.alpha;
@@ -915,25 +688,18 @@ public class CutSceneEndGame : MonoBehaviour
 
         while (time < duration)
         {
-            if (isSkipped ||
-                (requestId >= 0 && requestId != subtitleRequestId))
-            {
+            if (isSkipped)
                 yield break;
+
+            bool isPaused = SettingManager.Instance != null && SettingManager.Instance.IsSettingBlockingInput;
+            if (!isPaused)
+            {
+                time += Time.deltaTime;
+                subtitleText.alpha = Mathf.Lerp(startAlpha, 0f, time / duration);
             }
-
-            time += Time.deltaTime;
-
-            subtitleText.alpha = Mathf.Lerp(
-                startAlpha,
-                0f,
-                time / duration
-            );
 
             yield return null;
         }
-
-        if (requestId >= 0 && requestId != subtitleRequestId)
-            yield break;
 
         subtitleText.alpha = 1f;
         subtitleText.text = "";
@@ -944,33 +710,7 @@ public class CutSceneEndGame : MonoBehaviour
         }
     }
 
-    //==================================================
-    // ẨN PHỤ ĐỀ NGAY
-    //==================================================
-    private void HideSubtitleImmediate()
-    {
-        subtitleRequestId++;
-        StopNarratorVoice();
-
-        if (subtitleText != null)
-        {
-            subtitleText.alpha = 1f;
-            subtitleText.text = "";
-        }
-
-        if (subtitlePanel != null)
-        {
-            subtitlePanel.SetActive(false);
-        }
-    }
-
-    //==================================================
-    // TELEPORT SCALE
-    //==================================================
-    private IEnumerator ScaleTeleport(
-        Vector3 targetScale,
-        float duration
-    )
+    private IEnumerator ScaleTeleport(Vector3 targetScale, float duration)
     {
         if (teleport == null)
         {
@@ -983,9 +723,7 @@ public class CutSceneEndGame : MonoBehaviour
             yield break;
         }
 
-        Vector3 startScale =
-            teleport.transform.localScale;
-
+        Vector3 startScale = teleport.transform.localScale;
         float time = 0f;
 
         while (time < duration)
@@ -993,14 +731,12 @@ public class CutSceneEndGame : MonoBehaviour
             if (isSkipped)
                 yield break;
 
-            time += Time.deltaTime;
-
-            teleport.transform.localScale =
-                Vector3.Lerp(
-                    startScale,
-                    targetScale,
-                    time / duration
-                );
+            bool isPaused = SettingManager.Instance != null && SettingManager.Instance.IsSettingBlockingInput;
+            if (!isPaused)
+            {
+                time += Time.deltaTime;
+                teleport.transform.localScale = Vector3.Lerp(startScale, targetScale, time / duration);
+            }
 
             yield return null;
         }
@@ -1008,30 +744,17 @@ public class CutSceneEndGame : MonoBehaviour
         teleport.transform.localScale = targetScale;
     }
 
-    //==================================================
-    // PLAYER MOVE
-    //==================================================
-    private IEnumerator MovePlayerToPoint(
-        GameObject playerObj,
-        Vector3 targetPos,
-        float speed
-    )
+    private IEnumerator MovePlayerToPoint(GameObject playerObj, Vector3 targetPos, float speed)
     {
         if (playerObj == null)
         {
             yield break;
         }
 
-        PlayerManager playerManager =
-            playerObj.GetComponent<PlayerManager>();
+        PlayerManager playerManager = playerObj.GetComponent<PlayerManager>();
+        NavMeshAgent agent = playerObj.GetComponent<NavMeshAgent>();
 
-        NavMeshAgent agent =
-            playerObj.GetComponent<NavMeshAgent>();
-
-        // Giữ nguyên Y của player
-        targetPos.y =
-            playerObj.transform.position.y;
-
+        targetPos.y = playerObj.transform.position.y;
         SetPlayerWalk(playerManager, 1f);
 
         if (agent != null)
@@ -1043,20 +766,24 @@ public class CutSceneEndGame : MonoBehaviour
 
             agent.isStopped = false;
             agent.speed = speed;
-
             agent.SetDestination(targetPos);
 
-            while (agent.pathPending ||
-                   agent.remainingDistance >
-                   agent.stoppingDistance)
+            while (agent.pathPending || agent.remainingDistance > agent.stoppingDistance)
             {
                 if (isSkipped)
                     yield break;
 
-                SetPlayerWalk(
-                    playerManager,
-                    agent.velocity.magnitude
-                );
+                bool isPaused = SettingManager.Instance != null && SettingManager.Instance.IsSettingBlockingInput;
+                if (isPaused)
+                {
+                    if (!agent.isStopped) agent.isStopped = true;
+                    SetPlayerWalk(playerManager, 0f);
+                }
+                else
+                {
+                    if (agent.isStopped) agent.isStopped = false;
+                    SetPlayerWalk(playerManager, agent.velocity.magnitude);
+                }
 
                 yield return null;
             }
@@ -1066,78 +793,46 @@ public class CutSceneEndGame : MonoBehaviour
         }
         else
         {
-            while (Vector3.Distance(
-                       playerObj.transform.position,
-                       targetPos
-                   ) > 0.05f)
+            while (Vector3.Distance(playerObj.transform.position, targetPos) > 0.05f)
             {
                 if (isSkipped)
                     yield break;
 
-                Vector3 direction =
-                    targetPos -
-                    playerObj.transform.position;
-
-                direction.y = 0f;
-
-                if (direction != Vector3.zero)
+                bool isPaused = SettingManager.Instance != null && SettingManager.Instance.IsSettingBlockingInput;
+                if (!isPaused)
                 {
-                    direction.Normalize();
+                    Vector3 direction = targetPos - playerObj.transform.position;
+                    direction.y = 0f;
 
-                    playerObj.transform.position +=
-                        direction *
-                        speed *
-                        Time.deltaTime;
+                    if (direction != Vector3.zero)
+                    {
+                        direction.Normalize();
+                        playerObj.transform.position += direction * speed * Time.deltaTime;
 
-                    Quaternion targetRotation =
-                        Quaternion.LookRotation(direction);
-
-                    playerObj.transform.rotation =
-                        Quaternion.Slerp(
-                            playerObj.transform.rotation,
-                            targetRotation,
-                            Time.deltaTime * 5f
-                        );
+                        Quaternion targetRotation = Quaternion.LookRotation(direction);
+                        playerObj.transform.rotation = Quaternion.Slerp(playerObj.transform.rotation, targetRotation, Time.deltaTime * 5f);
+                    }
                 }
 
                 yield return null;
             }
 
-            playerObj.transform.position =
-                new Vector3(
-                    targetPos.x,
-                    playerObj.transform.position.y,
-                    targetPos.z
-                );
+            playerObj.transform.position = new Vector3(targetPos.x, playerObj.transform.position.y, targetPos.z);
         }
 
         SetPlayerWalk(playerManager, 0f);
     }
 
-    //==================================================
-    // PLAYER WALK ANIMATION
-    //==================================================
-    private void SetPlayerWalk(
-        PlayerManager playerManager,
-        float value
-    )
+    private void SetPlayerWalk(PlayerManager playerManager, float value)
     {
         if (playerManager != null &&
             playerManager.playerAnimator != null &&
             playerManager.playerAnimator.playerAnimator != null)
         {
-            playerManager.playerAnimator
-                .playerAnimator
-                .SetFloat(
-                    "Walk",
-                    value
-                );
+            playerManager.playerAnimator.playerAnimator.SetFloat("Walk", value);
         }
     }
 
-    //==================================================
-    // SET CAMERA NGAY
-    //==================================================
     private void SetCameraToPoint(int index)
     {
         if (!IsValidCameraPoint(index))
@@ -1145,20 +840,12 @@ public class CutSceneEndGame : MonoBehaviour
             return;
         }
 
-        StartCoroutine(
-            ShowBlackPanelRoutine()
-        );
+        StartCoroutine(ShowBlackPanelRoutine());
 
-        Camera.main.transform.position =
-            transCameraCutSceneList[index].position;
-
-        Camera.main.transform.rotation =
-            transCameraCutSceneList[index].rotation;
+        Camera.main.transform.position = transCameraCutSceneList[index].position;
+        Camera.main.transform.rotation = transCameraCutSceneList[index].rotation;
     }
 
-    //==================================================
-    // CAMERA DI CHUYỂN MƯỢT
-    //==================================================
     private IEnumerator MoveCameraToPoint(int index)
     {
         if (!IsValidCameraPoint(index))
@@ -1166,26 +853,16 @@ public class CutSceneEndGame : MonoBehaviour
             yield break;
         }
 
-        Transform cameraTransform =
-            Camera.main.transform;
+        Transform cameraTransform = Camera.main.transform;
+        Transform target = transCameraCutSceneList[index];
 
-        Transform target =
-            transCameraCutSceneList[index];
-
-        Vector3 startPosition =
-            cameraTransform.position;
-
-        Quaternion startRotation =
-            cameraTransform.rotation;
+        Vector3 startPosition = cameraTransform.position;
+        Quaternion startRotation = cameraTransform.rotation;
 
         if (cameraMoveTime <= 0f)
         {
-            cameraTransform.position =
-                target.position;
-
-            cameraTransform.rotation =
-                target.rotation;
-
+            cameraTransform.position = target.position;
+            cameraTransform.rotation = target.rotation;
             yield break;
         }
 
@@ -1196,38 +873,23 @@ public class CutSceneEndGame : MonoBehaviour
             if (isSkipped)
                 yield break;
 
-            time += Time.deltaTime;
+            bool isPaused = SettingManager.Instance != null && SettingManager.Instance.IsSettingBlockingInput;
+            if (!isPaused)
+            {
+                time += Time.deltaTime;
+                float percent = Mathf.Clamp01(time / cameraMoveTime);
 
-            float percent =
-                time / cameraMoveTime;
-
-            cameraTransform.position =
-                Vector3.Lerp(
-                    startPosition,
-                    target.position,
-                    percent
-                );
-
-            cameraTransform.rotation =
-                Quaternion.Slerp(
-                    startRotation,
-                    target.rotation,
-                    percent
-                );
+                cameraTransform.position = Vector3.Lerp(startPosition, target.position, percent);
+                cameraTransform.rotation = Quaternion.Slerp(startRotation, target.rotation, percent);
+            }
 
             yield return null;
         }
 
-        cameraTransform.position =
-            target.position;
-
-        cameraTransform.rotation =
-            target.rotation;
+        cameraTransform.position = target.position;
+        cameraTransform.rotation = target.rotation;
     }
 
-    //==================================================
-    // KIỂM TRA CAMERA POINT
-    //==================================================
     private bool IsValidCameraPoint(int index)
     {
         return transCameraCutSceneList != null &&
@@ -1237,9 +899,6 @@ public class CutSceneEndGame : MonoBehaviour
                Camera.main != null;
     }
 
-    //==================================================
-    // BLACK PANEL CAMERA CUT
-    //==================================================
     private IEnumerator ShowBlackPanelRoutine()
     {
         if (blackPanel == null)
@@ -1248,9 +907,7 @@ public class CutSceneEndGame : MonoBehaviour
         }
 
         blackPanel.SetActive(true);
-
-        yield return new WaitForSeconds(1.6f);
-
+        yield return StartCoroutine(WaitForSecondsWhilePaused(1.6f));
         blackPanel.SetActive(false);
     }
 
@@ -1269,9 +926,6 @@ public class CutSceneEndGame : MonoBehaviour
         SetPlayerWalk(player.GetComponent<PlayerManager>(), 0f);
     }
 
-    //==================================================
-    // FIND PLAYER WINNER
-    //==================================================
     public void FindPlayerWinner()
     {
         player = GameObject.FindGameObjectWithTag("Player");

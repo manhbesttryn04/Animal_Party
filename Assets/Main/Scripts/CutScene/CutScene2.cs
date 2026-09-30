@@ -21,9 +21,7 @@ public class CutScene2 : MonoBehaviour
     public float rotateSpeed = 5f;
 
     [Header("Ship Stop Position")]
-    public Vector3 shipStopPosition =
-        new Vector3(-42.9f, 0.2f, 16f);
-
+    public Vector3 shipStopPosition = new Vector3(-42.9f, 0.2f, 16f);
     public float shipStopDistance = 0.5f;
 
     [Header("Panels")]
@@ -48,17 +46,12 @@ public class CutScene2 : MonoBehaviour
 
     [Header("--- SKIP HINT TEXT ---")]
     [SerializeField]
-    private string keyboardSkipHint =
-        "Press Space to Skip";
+    private string keyboardSkipHint = "Press Space to Skip";
 
     [SerializeField]
-    private string controllerSkipHint =
-        "Press Space or B to Skip";
+    private string controllerSkipHint = "Press Space or B to Skip";
 
-    [Tooltip(
-        "Button index dùng để skip bằng tay cầm.\n" +
-        "Legacy Input thường dùng Button 1 cho Xbox B / PlayStation Circle."
-    )]
+    [Tooltip("Button index dùng để skip bằng tay cầm.\nLegacy Input thường dùng Button 1 cho Xbox B / PlayStation Circle.")]
     [Range(0, 19)]
     [SerializeField] private int controllerSkipButtonIndex = 1;
 
@@ -75,26 +68,25 @@ public class CutScene2 : MonoBehaviour
     public TMP_ColorGradient finalGradient;
 
     [Header("--- OUTLINE COLOR ---")]
-    public Color normalOutlineColor =
-        new Color(1f, 1f, 1f, 0.2f);
-
-    public Color finalOutlineColor =
-        new Color(1f, 1f, 1f, 0.31f);
+    public Color normalOutlineColor = new Color(1f, 1f, 1f, 0.2f);
+    public Color finalOutlineColor = new Color(1f, 1f, 1f, 0.31f);
 
     [Header("--- NARRATOR VOICE ---")]
     [Tooltip("Kéo file voice vào đây theo đúng thứ tự câu")]
     public AudioClip[] narratorVoices;
 
-    [Header("--- TIMING ---")]
-    public float typeSpeed = 0.05f;
+    [Header("--- TIMING & SPEED ---")]
     public float fadeOutDuration = 0.4f;
     public float betweenLineFade = 0.5f;
 
     [Tooltip("Sau khi narrator thực sự nói xong, chờ thêm thời gian này rồi tắt subtitle.")]
     public float subtitleHideDelay = 0.2f;
 
-    [Tooltip("Riêng câu 3: thời điểm (giây) tính từ lúc voice bắt đầu để cắt ngay sau từ 'mini-games'.")]
-    public float voice3CutTime = 2.1f;
+    [Tooltip("Tốc độ chạy chữ (số ký tự trên mỗi giây).")]
+    [SerializeField] private float subtitleSpeed = 40f;
+
+    [Tooltip("Độ trễ thời gian (giây) để chữ chạy nhanh hơn voice một chút.")]
+    [SerializeField] private float textSpeedOffset = 0.2f;
 
     [Header("--- END AUDIO FADE ---")]
     public float endAudioFadeTime = 4.5f;
@@ -102,19 +94,8 @@ public class CutScene2 : MonoBehaviour
     private bool isSkipped;
     private bool canSkip;
 
-    // Xác định câu subtitle mới nhất để coroutine câu cũ
-    // không thể tắt nhầm câu mới.
     private int subtitleRequestId;
-
-    // Câu 4 sẽ được gọi ngay khi câu 3 bị cắt ở mốc 2.1 giây.
-    // Cờ này tránh câu 4 bị phát lại lần nữa ở mốc cutscene cũ.
-    private bool line4Started;
-
-    // Sau khi đóng Setting, phải nhả Space/Enter/B/Circle
-    // rồi mới cho phép skip cutscene.
     private bool waitSkipReleaseAfterSetting;
-
-    // Cache để chỉ đổi text khi trạng thái tay cầm thay đổi.
     private bool previousHasController;
     private bool skipHintStateInitialized;
 
@@ -163,9 +144,6 @@ public class CutScene2 : MonoBehaviour
         {
             audio.SetupMainGameAudio();
             audio.PlayMusic(audio.musicCutScene2Clip);
-            // Nếu muốn thêm hiệu ứng môi trường:
-            // audio.PlayEnvironment(audio.theNightClip);
-            // audio.PlaySFX(audio.seaGullClip);
         }
     }
 
@@ -174,15 +152,15 @@ public class CutScene2 : MonoBehaviour
         var setting = SettingManager.Instance;
         if (setting != null)
         {
+            setting.enableSettingMusic = false;
             setting.ResetSetting();
-            setting.canOpenSettingByEsc = true;
-            setting.canOpenSettingByController = true;
+            setting.canOpenSettingByEsc = false;
+            setting.canOpenSettingByController = false;
         }
     }
 
     private void SetupUI()
     {
-        // Nếu có UIManager thì có thể cấu hình ở đây
         var ui = UIManager.Instance;
         if (ui != null)
         {
@@ -192,36 +170,27 @@ public class CutScene2 : MonoBehaviour
 
     private void Update()
     {
-        // Luôn cập nhật trước mọi lệnh return.
-        // Cắm/rút tay cầm trong Setting vẫn đổi text ngay.
         UpdateSkipHintText();
 
         if (isSkipped)
             return;
 
-        // 2 giây đầu cutscene chưa cho phép skip.
         if (!canSkip)
             return;
 
-        bool settingOpen =
-            SettingManager.Instance != null &&
-            SettingManager.Instance.IsSettingBlockingInput;
+        bool settingOpen = SettingManager.Instance != null && SettingManager.Instance.IsSettingBlockingInput;
 
-        // Setting đang mở thì không cho phím hoặc tay cầm skip.
         if (settingOpen)
         {
             waitSkipReleaseAfterSetting = true;
             return;
         }
 
-        // Sau khi đóng Setting, phải nhả phím/nút trước.
-        // Tránh nút dùng để đóng Setting làm skip luôn cutscene.
         if (waitSkipReleaseAfterSetting)
         {
-            bool skipInputHeld =
-                Input.GetKey(KeyCode.Space) ||
-                Input.GetKey(KeyCode.Return) ||
-                IsControllerSkipHeld();
+            bool skipInputHeld = Input.GetKey(KeyCode.Space) ||
+                                 Input.GetKey(KeyCode.Return) ||
+                                 IsControllerSkipHeld();
 
             if (!skipInputHeld)
             {
@@ -231,12 +200,8 @@ public class CutScene2 : MonoBehaviour
             return;
         }
 
-        bool keyboardSkipDown =
-            Input.GetKeyDown(KeyCode.Space) ||
-            Input.GetKeyDown(KeyCode.Return);
-
-        bool controllerSkipDown =
-            IsControllerSkipDown();
+        bool keyboardSkipDown = Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return);
+        bool controllerSkipDown = IsControllerSkipDown();
 
         if (keyboardSkipDown || controllerSkipDown)
         {
@@ -246,7 +211,6 @@ public class CutScene2 : MonoBehaviour
 
     private IEnumerator EnableSkipAfterDelay()
     {
-        // Dùng thời gian thực để Setting/timeScale không làm sai mốc 2 giây.
         yield return new WaitForSecondsRealtime(skipEnableDelay);
 
         if (isSkipped)
@@ -257,16 +221,11 @@ public class CutScene2 : MonoBehaviour
 
     private void UpdateSkipHintText(bool force = false)
     {
-        ControllerManager controller =
-            ControllerManager.Instance;
+        ControllerManager controller = ControllerManager.Instance;
 
-        bool hasController =
-            controller != null &&
-            controller.HasAnyController();
+        bool hasController = controller != null && controller.HasAnyController();
 
-        if (!force &&
-            skipHintStateInitialized &&
-            hasController == previousHasController)
+        if (!force && skipHintStateInitialized && hasController == previousHasController)
         {
             return;
         }
@@ -276,9 +235,7 @@ public class CutScene2 : MonoBehaviour
 
         if (skipHintText != null)
         {
-            skipHintText.text = hasController
-                ? controllerSkipHint
-                : keyboardSkipHint;
+            skipHintText.text = hasController ? controllerSkipHint : keyboardSkipHint;
         }
 
         if (controllerBHintObject != null)
@@ -289,50 +246,22 @@ public class CutScene2 : MonoBehaviour
 
     private bool IsControllerSkipDown()
     {
-        ControllerManager controller =
-            ControllerManager.Instance;
+        ControllerManager controller = ControllerManager.Instance;
+        if (controller == null) return false;
 
-        if (controller == null)
-            return false;
-
-        bool console1Skip =
-            controller.IsConsole1Connected() &&
-            controller.GetConsoleButtonDown(
-                1,
-                controllerSkipButtonIndex
-            );
-
-        bool console2Skip =
-            controller.IsConsole2Connected() &&
-            controller.GetConsoleButtonDown(
-                2,
-                controllerSkipButtonIndex
-            );
+        bool console1Skip = controller.IsConsole1Connected() && controller.GetConsoleButtonDown(1, controllerSkipButtonIndex);
+        bool console2Skip = controller.IsConsole2Connected() && controller.GetConsoleButtonDown(2, controllerSkipButtonIndex);
 
         return console1Skip || console2Skip;
     }
 
     private bool IsControllerSkipHeld()
     {
-        ControllerManager controller =
-            ControllerManager.Instance;
+        ControllerManager controller = ControllerManager.Instance;
+        if (controller == null) return false;
 
-        if (controller == null)
-            return false;
-
-        bool console1SkipHeld =
-            controller.IsConsole1Connected() &&
-            controller.GetConsoleButton(
-                1,
-                controllerSkipButtonIndex
-            );
-
-        bool console2SkipHeld =
-            controller.IsConsole2Connected() &&
-            controller.GetConsoleButton(
-                2,
-                controllerSkipButtonIndex
-            );
+        bool console1SkipHeld = controller.IsConsole1Connected() && controller.GetConsoleButton(1, controllerSkipButtonIndex);
+        bool console2SkipHeld = controller.IsConsole2Connected() && controller.GetConsoleButton(2, controllerSkipButtonIndex);
 
         return console1SkipHeld || console2SkipHeld;
     }
@@ -354,8 +283,8 @@ public class CutScene2 : MonoBehaviour
             setting.canOpenSettingByEsc = false;
             setting.canOpenSettingByController = false;
         }
-        AudioManager audio = AudioManager.Instance;
 
+        AudioManager audio = AudioManager.Instance;
         if (audio != null)
             audio.PauseAudio();
 
@@ -372,9 +301,7 @@ public class CutScene2 : MonoBehaviour
         if (blackClosePanel != null)
             blackClosePanel.SetActive(true);
 
-        // Skip thì tắt âm thanh ngay, không cần fade.
         AudioManager audio = AudioManager.Instance;
-
         if (audio != null)
         {
             audio.ZeroAllAudio();
@@ -383,27 +310,20 @@ public class CutScene2 : MonoBehaviour
             if (audio.specialSource != null)
                 audio.specialSource.Stop();
         }
+
         var maincharacterandmap = MapAndCharacterManager.Instance;
         if (maincharacterandmap != null)
         {
             var map = maincharacterandmap.mainMap;
-            if (map != null)
-            {
-                map.SetActive(false);
-            }
+            if (map != null) map.SetActive(false);
 
             var characters = maincharacterandmap.mainCharacters;
-            if (characters != null)
-            {
-                characters.SetActive(false);
-            }
-
+            if (characters != null) characters.SetActive(false);
         }
+
         if (LoadingManager.Instance != null)
         {
-            yield return StartCoroutine(
-                LoadingManager.Instance.ShowLoading()
-            );
+            yield return StartCoroutine(LoadingManager.Instance.ShowLoading());
         }
 
         SceneManager.LoadScene("Main Scene");
@@ -433,13 +353,7 @@ public class CutScene2 : MonoBehaviour
                 yield break;
 
             time += Time.deltaTime;
-
-            skipHintText.alpha = Mathf.Lerp(
-                0f,
-                1f,
-                time / duration
-            );
-
+            skipHintText.alpha = Mathf.Lerp(0f, 1f, time / duration);
             yield return null;
         }
 
@@ -451,15 +365,12 @@ public class CutScene2 : MonoBehaviour
         if (!CheckReferences())
             yield break;
 
-        // Move tới point 0 và hiện câu đầu.
-        ShowSubtitleImmediate(storyLines[0], false);
-        PlayVoice(0);
+        yield return new WaitForSeconds(0.1f);
 
-        yield return StartCoroutine(
-            MoveToTransform(transVideos[0])
-        );
+        StartCoroutine(ShowFirstSubtitleWithDelay(storyLines[0], 0, false, 0.2f));
 
-        // Teleport tới point 1.
+        yield return StartCoroutine(MoveToTransform(transVideos[0]));
+
         TeleportToTransform(transVideos[1]);
 
         if (nameMapPanel != null)
@@ -467,47 +378,20 @@ public class CutScene2 : MonoBehaviour
 
         yield return new WaitForSeconds(0.1f);
 
-        yield return StartCoroutine(
-            ShowSubtitleWithVoice(
-                storyLines[1],
-                1,
-                false
-            )
-        );
+        yield return StartCoroutine(ShowSubtitleWithVoice(storyLines[1], 1, false));
 
-        // Teleport tới point 2.
         TeleportToTransform(transVideos[2]);
 
-        // Move tới point 3 và câu số 2.
-        StartCoroutine(
-            ShowSubtitleWithVoice(
-                storyLines[2],
-                2,
-                false
-            )
-        );
+        StartCoroutine(ShowSubtitleWithVoice(storyLines[2], 2, false));
 
-        yield return StartCoroutine(
-            MoveToTransform(transVideos[3])
-        );
+        yield return StartCoroutine(MoveToTransform(transVideos[3]));
 
-        // Teleport tới point 4.
         TeleportToTransform(transVideos[4]);
 
-        // Move tới point 5 và câu số 3.
-        StartCoroutine(
-            ShowSubtitleWithVoice(
-                storyLines[3],
-                3,
-                false
-            )
-        );
+        StartCoroutine(ShowSubtitleWithVoice(storyLines[3], 3, false));
 
-        yield return StartCoroutine(
-            MoveToTransform(transVideos[5])
-        );
+        yield return StartCoroutine(MoveToTransform(transVideos[5]));
 
-        // Teleport tới point 6.
         TeleportToTransform(transVideos[6]);
 
         if (ship != null)
@@ -515,48 +399,28 @@ public class CutScene2 : MonoBehaviour
 
         if (set != null)
             set.StartCutScene();
+
         var audio = AudioManager.Instance;
-        if(audio != null)
+        if (audio != null)
         {
             audio.PlaySFX(audio.seaGullClip);
         }
 
-        // Move tới point 7 và câu số 4.
-        // Bình thường câu 4 đã được gọi ngay lúc câu 3 bị cắt ở 2.1 giây.
-        // Chỉ gọi ở đây nếu vì lý do nào đó câu 4 chưa được chạy.
-        if (!line4Started)
-        {
-            line4Started = true;
+        StartCoroutine(ShowSubtitleWithVoice(storyLines[4], 4, false));
 
-            StartCoroutine(
-                ShowSubtitleWithVoice(
-                    storyLines[4],
-                    4,
-                    false
-                )
-            );
-        }
+        yield return StartCoroutine(MoveToTransform(transVideos[7]));
 
-        yield return StartCoroutine(
-            MoveToTransform(transVideos[7])
-        );
-
-        // Teleport tới point 8 và câu số 5.
         if (teleport != null)
             teleport.SetActive(true);
-        if(audio != null)
+
+        if (audio != null)
         {
             audio.PlaySFX(audio.llamaVoiceClip);
         }
+
         TeleportToTransform(transVideos[8]);
 
-        StartCoroutine(
-            ShowSubtitleWithVoice(
-                storyLines[5],
-                5,
-                false
-            )
-        );
+        StartCoroutine(ShowSubtitleWithVoice(storyLines[5], 5, false));
 
         if (nameMapPanel != null)
             nameMapPanel.SetActive(false);
@@ -568,31 +432,14 @@ public class CutScene2 : MonoBehaviour
         if (skipHintObject != null)
             skipHintObject.SetActive(false);
 
-        // Câu cuối.
         yield return new WaitForSeconds(2f);
 
-        typeSpeed = 0.08f;
+        StartCoroutine(ShowSubtitleWithVoice(storyLines[6], 6, true));
 
-        StartCoroutine(
-            ShowSubtitleWithVoice(
-                storyLines[6],
-                6,
-                true
-            )
-        );
-
-        yield return StartCoroutine(
-            MoveToTransform(transVideos[9])
-        );
+        yield return StartCoroutine(MoveToTransform(transVideos[9]));
 
         yield return new WaitForSeconds(5f);
-        /* var setting = SettingManager.Instance;
-         if (setting != null)
-         {
-             setting.ResetEscSetting();
-             setting.canOpenSettingByEsc = false;
-             setting.canOpenSettingByController = false;
-         }*/
+
         HideSubtitleImmediate();
         StopNarratorVoice();
 
@@ -604,67 +451,61 @@ public class CutScene2 : MonoBehaviour
 
         TeleportToTransform(transVideos[10]);
 
-        // Giảm 4 nguồn âm thanh chính theo thời gian.
         if (AudioManager.Instance != null)
         {
-            AudioManager.Instance.FadeOutAllAudio(
-                endAudioFadeTime
-            );
+            AudioManager.Instance.FadeOutAllAudio(endAudioFadeTime);
         }
 
-        yield return new WaitForSeconds(
-            endAudioFadeTime
-        );
+        yield return new WaitForSeconds(endAudioFadeTime);
+
         var setting = SettingManager.Instance;
         if (setting != null)
         {
-            //setting.ResetEscSetting();
             setting.canOpenSettingByEsc = false;
             setting.canOpenSettingByController = false;
         }
+
         var maincharacterandmap = MapAndCharacterManager.Instance;
         if (maincharacterandmap != null)
         {
             var mainmap = maincharacterandmap.mainMap;
-            if (mainmap != null)
-            {
-                mainmap.SetActive(false);
-            }
+            if (mainmap != null) mainmap.SetActive(false);
 
             var maincharacter = maincharacterandmap.mainCharacters;
-            if (maincharacter != null)
-            {
-                maincharacter.SetActive(false);
-            }
-
+            if (maincharacter != null) maincharacter.SetActive(false);
         }
+
         if (LoadingManager.Instance != null)
         {
-            yield return StartCoroutine(
-                LoadingManager.Instance.ShowLoading()
-            );
+            yield return StartCoroutine(LoadingManager.Instance.ShowLoading());
         }
 
         SceneManager.LoadScene("Main Scene");
     }
 
-    private IEnumerator ShowSubtitleWithVoice(
-        string line,
-        int voiceIndex,
-        bool isFinal)
+    private IEnumerator ShowFirstSubtitleWithDelay(string line, int voiceIndex, bool isFinal, float delaySeconds)
     {
         if (isSkipped)
             yield break;
 
-        // Mỗi câu mới bắt đầu sẽ thay ID.
-        // Quan trọng: vẫn giữ StopNarratorVoice() ngay bên dưới,
-        // nên câu 3 vẫn có thể bị câu 4 cắt giữa chừng đúng như logic cũ.
+        yield return new WaitForSeconds(delaySeconds);
+
+        if (isSkipped)
+            yield break;
+
+        yield return StartCoroutine(ShowSubtitleWithVoice(line, voiceIndex, isFinal));
+    }
+
+    private IEnumerator ShowSubtitleWithVoice(string line, int voiceIndex, bool isFinal)
+    {
+        if (isSkipped)
+            yield break;
+
         int mySubtitleRequestId = ++subtitleRequestId;
 
         StopNarratorVoice();
 
-        if (subtitleText != null &&
-            !string.IsNullOrEmpty(subtitleText.text))
+        if (subtitleText != null && !string.IsNullOrEmpty(subtitleText.text))
         {
             yield return StartCoroutine(FadeOutLine());
             yield return new WaitForSeconds(betweenLineFade);
@@ -681,155 +522,92 @@ public class CutScene2 : MonoBehaviour
             subtitleText.alpha = 1f;
             subtitleText.text = "";
             subtitleText.enableVertexGradient = true;
-
-            subtitleText.colorGradientPreset =
-                isFinal
-                    ? finalGradient
-                    : normalGradient;
+            subtitleText.colorGradientPreset = isFinal ? finalGradient : normalGradient;
         }
 
         if (subtitleOutline != null)
         {
-            subtitleOutline.effectColor =
-                isFinal
-                    ? finalOutlineColor
-                    : normalOutlineColor;
+            subtitleOutline.effectColor = isFinal ? finalOutlineColor : normalOutlineColor;
         }
 
         PlayVoice(voiceIndex);
 
-        // RIÊNG CÂU 3:
-        // Cắt theo THỜI GIAN AUDIO, không phụ thuộc tốc độ hiện chữ.
-        // Như vậy câu 3 vẫn nói bình thường tới đúng chữ "mini-games",
-        // rồi mới ngắt phần voice dư như "this island".
-        if (voiceIndex == 3)
-        {
-            StartCoroutine(CutVoice3AtTime(mySubtitleRequestId));
-        }
-
-        foreach (char character in line)
-        {
-            if (isSkipped)
-                yield break;
-
-            if (subtitleText != null)
-                subtitleText.text += character;
-
-            yield return new WaitForSeconds(typeSpeed);
-        }
-
-        // RIÊNG CÂU 3:
-        // Voice đã được coroutine CutVoice3AtTime() cắt đúng mốc audio.
-        // Không tự tắt subtitle câu 3 ở đây; giữ nó tới khi câu 4 bắt đầu.
-        if (voiceIndex == 3)
-        {
-            yield break;
-        }
-
         AudioManager audio = AudioManager.Instance;
+        float voiceDuration = 3f;
+        if (audio != null && narratorVoices != null && voiceIndex >= 0 && voiceIndex < narratorVoices.Length && narratorVoices[voiceIndex] != null)
+        {
+            voiceDuration = narratorVoices[voiceIndex].length;
+        }
+
+        // --- HIỆU ỨNG CHẠY CHỮ (TYPEWRITER) ---
+        if (subtitleText != null && !string.IsNullOrEmpty(line))
+        {
+            float targetDuration = Mathf.Max(0.1f, voiceDuration - textSpeedOffset);
+            float calculatedSpeed = line.Length / targetDuration;
+            float actualSpeed = Mathf.Max(subtitleSpeed, calculatedSpeed);
+
+            float t = 0f;
+            int charsToShow = 0;
+
+            while (charsToShow < line.Length && !isSkipped && mySubtitleRequestId == subtitleRequestId)
+            {
+                bool isPaused = SettingManager.Instance != null && SettingManager.Instance.IsSettingBlockingInput;
+                if (!isPaused)
+                {
+                    t += Time.deltaTime * actualSpeed;
+                    charsToShow = Mathf.Clamp(Mathf.FloorToInt(t), 0, line.Length);
+                    subtitleText.text = line.Substring(0, charsToShow);
+                }
+                yield return null;
+            }
+            subtitleText.text = line;
+        }
 
         if (audio != null && audio.specialSource != null)
         {
-            yield return new WaitWhile(
-                () =>
-                    !isSkipped &&
-                    AudioManager.Instance != null &&
-                    AudioManager.Instance.specialSource != null &&
-                    AudioManager.Instance.specialSource.isPlaying
-            );
+            while (!isSkipped && mySubtitleRequestId == subtitleRequestId && audio.specialSource != null && audio.specialSource.clip != null)
+            {
+                bool isPaused = SettingManager.Instance != null && SettingManager.Instance.IsSettingBlockingInput;
+
+                if (isPaused && audio.specialSource.isPlaying)
+                {
+                    audio.specialSource.Pause();
+                }
+                else if (!isPaused && !audio.specialSource.isPlaying && audio.specialSource.time > 0 && audio.specialSource.time < audio.specialSource.clip.length)
+                {
+                    audio.specialSource.UnPause();
+                }
+
+                if (!isPaused && !audio.specialSource.isPlaying)
+                {
+                    break;
+                }
+
+                yield return null;
+            }
         }
 
-        // Các câu khác: voice nói xong -> chờ 0.2 giây -> tắt subtitle.
-        if (!isSkipped)
+        if (!isSkipped && mySubtitleRequestId == subtitleRequestId)
             yield return new WaitForSeconds(subtitleHideDelay);
 
-        // Nếu trong lúc đó câu mới đã bắt đầu,
-        // coroutine câu cũ không được phép tắt subtitle của câu mới.
         if (!isSkipped && mySubtitleRequestId == subtitleRequestId)
             HideSubtitleImmediate();
     }
 
-    private IEnumerator CutVoice3AtTime(int requestId)
-    {
-        // Chờ đúng 2.1 giây kể từ lúc voice câu 3 bắt đầu.
-        yield return new WaitForSeconds(voice3CutTime);
-
-        if (isSkipped)
-            yield break;
-
-        // Chỉ xử lý nếu câu 3 vẫn đang là câu hiện tại.
-        if (requestId != subtitleRequestId)
-            yield break;
-
-        // Cắt câu 3 ngay sau "mini-games".
-        StopNarratorVoice();
-
-        // Qua câu 4 NGAY LẬP TỨC, không chờ camera tới mốc cũ.
-        if (!line4Started)
-        {
-            line4Started = true;
-
-            StartCoroutine(
-                ShowSubtitleWithVoice(
-                    storyLines[4],
-                    4,
-                    false
-                )
-            );
-        }
-    }
-
-    private void ShowSubtitleImmediate(
-        string line,
-        bool isFinal)
-    {
-        if (subtitlePanel != null)
-            subtitlePanel.SetActive(true);
-
-        if (subtitleText != null)
-        {
-            subtitleText.alpha = 1f;
-            subtitleText.text = line;
-            subtitleText.enableVertexGradient = true;
-
-            subtitleText.colorGradientPreset =
-                isFinal
-                    ? finalGradient
-                    : normalGradient;
-        }
-
-        if (subtitleOutline != null)
-        {
-            subtitleOutline.effectColor =
-                isFinal
-                    ? finalOutlineColor
-                    : normalOutlineColor;
-        }
-    }
-
     private void PlayVoice(int index)
     {
-        if (AudioManager.Instance == null)
+        if (AudioManager.Instance == null || narratorVoices == null)
             return;
 
-        if (narratorVoices == null)
+        if (index < 0 || index >= narratorVoices.Length || narratorVoices[index] == null)
             return;
 
-        if (index < 0 || index >= narratorVoices.Length)
-            return;
-
-        if (narratorVoices[index] == null)
-            return;
-
-        AudioManager.Instance.PlaySpecial(
-            narratorVoices[index]
-        );
+        AudioManager.Instance.PlaySpecial(narratorVoices[index]);
     }
 
     private void StopNarratorVoice()
     {
         AudioManager audio = AudioManager.Instance;
-
         if (audio != null && audio.specialSource != null)
             audio.specialSource.Stop();
     }
@@ -853,11 +631,7 @@ public class CutScene2 : MonoBehaviour
         if (subtitleText == null)
             yield break;
 
-        float duration = Mathf.Max(
-            0.01f,
-            fadeOutDuration
-        );
-
+        float duration = Mathf.Max(0.01f, fadeOutDuration);
         float startAlpha = subtitleText.alpha;
         float time = 0f;
 
@@ -867,13 +641,7 @@ public class CutScene2 : MonoBehaviour
                 yield break;
 
             time += Time.deltaTime;
-
-            subtitleText.alpha = Mathf.Lerp(
-                startAlpha,
-                0f,
-                time / duration
-            );
-
+            subtitleText.alpha = Mathf.Lerp(startAlpha, 0f, time / duration);
             yield return null;
         }
 
@@ -889,11 +657,7 @@ public class CutScene2 : MonoBehaviour
         if (ship == null)
             yield break;
 
-        while (
-            Vector3.Distance(
-                ship.transform.position,
-                shipStopPosition
-            ) > shipStopDistance)
+        while (Vector3.Distance(ship.transform.position, shipStopPosition) > shipStopDistance)
         {
             if (isSkipped)
                 yield break;
@@ -904,38 +668,19 @@ public class CutScene2 : MonoBehaviour
         ship.isStop = true;
     }
 
-    private IEnumerator MoveToTransform(
-        Transform target)
+    private IEnumerator MoveToTransform(Transform target)
     {
         if (cam == null || target == null)
             yield break;
 
-        while (
-            Vector3.Distance(
-                cam.transform.position,
-                target.position
-            ) > 0.05f ||
-            Quaternion.Angle(
-                cam.transform.rotation,
-                target.rotation
-            ) > 0.5f)
+        while (Vector3.Distance(cam.transform.position, target.position) > 0.05f ||
+               Quaternion.Angle(cam.transform.rotation, target.rotation) > 0.5f)
         {
             if (isSkipped)
                 yield break;
 
-            cam.transform.position =
-                Vector3.MoveTowards(
-                    cam.transform.position,
-                    target.position,
-                    moveSpeed * Time.deltaTime
-                );
-
-            cam.transform.rotation =
-                Quaternion.Slerp(
-                    cam.transform.rotation,
-                    target.rotation,
-                    rotateSpeed * Time.deltaTime
-                );
+            cam.transform.position = Vector3.MoveTowards(cam.transform.position, target.position, moveSpeed * Time.deltaTime);
+            cam.transform.rotation = Quaternion.Slerp(cam.transform.rotation, target.rotation, rotateSpeed * Time.deltaTime);
 
             yield return null;
         }
@@ -944,8 +689,7 @@ public class CutScene2 : MonoBehaviour
         cam.transform.rotation = target.rotation;
     }
 
-    private void TeleportToTransform(
-        Transform target)
+    private void TeleportToTransform(Transform target)
     {
         if (cam == null || target == null)
             return;
@@ -956,40 +700,25 @@ public class CutScene2 : MonoBehaviour
         cam.transform.rotation = target.rotation;
     }
 
-    private IEnumerator ShowBlackPanel(
-        float time = 1f)
+    private IEnumerator ShowBlackPanel(float time = 1f)
     {
         if (blackPanel == null)
             yield break;
 
         blackPanel.SetActive(true);
-
         yield return new WaitForSeconds(time);
-
         blackPanel.SetActive(false);
     }
 
     private bool CheckReferences()
     {
-        if (cam == null)
-        {
-
+        if (cam == null || transVideos == null || transVideos.Count < 11)
             return false;
-        }
-
-        if (transVideos == null ||
-            transVideos.Count < 11)
-        {
-
-            return false;
-        }
 
         for (int i = 0; i < 11; i++)
         {
             if (transVideos[i] == null)
-            {
                 return false;
-            }
         }
 
         return true;
