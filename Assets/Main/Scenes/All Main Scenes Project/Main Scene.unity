@@ -14836,7 +14836,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3227384075747728264, guid: 6cd3bb2139fa5a343b8190b7e4583736, type: 3}
       propertyPath: m_Name
-      value: Volume Manager
+      value: Graphic Manager
       objectReference: {fileID: 0}
     - target: {fileID: 3227384075747728264, guid: 6cd3bb2139fa5a343b8190b7e4583736, type: 3}
       propertyPath: m_IsActive
