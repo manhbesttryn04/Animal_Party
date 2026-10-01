@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b6d2a1e98f88564d8df9f3c4d10b17b, type: 3}
-  m_Name: MiniGame 5
+  m_Name: MiniGame_6
   m_EditorClassIdentifier: Assembly-CSharp::AudioSetup
-  musicVolume: 0.2
+  musicVolume: 0.5
   sfxVolume: 0.7
   environmentVolume: 0.7
   specialVolume: 1
