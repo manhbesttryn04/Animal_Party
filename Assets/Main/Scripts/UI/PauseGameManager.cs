@@ -139,9 +139,9 @@ public class PauseGameManager : MonoBehaviour
             pausePanel.SetActive(true);
         }
 
-        if (VolumeManager.Instance != null)
+        if (GraphicManager.Instance != null)
         {
-            VolumeManager.Instance.StartDepthBlur();
+            GraphicManager.Instance.StartDepthBlur();
         }
 
         if (AudioManager.Instance != null)
@@ -182,9 +182,9 @@ public class PauseGameManager : MonoBehaviour
 
     private IEnumerator ResumeGameRoutine()
     {
-        if (VolumeManager.Instance != null)
+        if (GraphicManager.Instance != null)
         {
-            VolumeManager.Instance.ResetDepthBlur();
+            GraphicManager.Instance.ResetDepthBlur();
         }
 
         float startTimeScale = Time.timeScale;
@@ -257,9 +257,9 @@ public class PauseGameManager : MonoBehaviour
             pausePanel.SetActive(false);
         }
 
-        if (VolumeManager.Instance != null)
+        if (GraphicManager.Instance != null)
         {
-            VolumeManager.Instance.ResetDepthBlur();
+            GraphicManager.Instance.ResetDepthBlur();
         }
     }
 

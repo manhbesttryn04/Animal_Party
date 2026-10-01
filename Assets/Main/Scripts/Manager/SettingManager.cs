@@ -271,10 +271,10 @@ public class SettingManager : MonoBehaviour
         }
 
         if (qualityGraphicDropDown != null &&
-            VolumeManager.Instance != null)
+            GraphicManager.Instance != null)
         {
             qualityGraphicDropDown.SetValueWithoutNotify(
-                VolumeManager.Instance.GetCurrentQuality()
+                GraphicManager.Instance.GetCurrentQuality()
             );
 
             qualityGraphicDropDown.RefreshShownValue();
@@ -846,9 +846,9 @@ public class SettingManager : MonoBehaviour
 
         value = Mathf.Clamp(value, 0, 2);
 
-        if (VolumeManager.Instance != null)
+        if (GraphicManager.Instance != null)
         {
-            VolumeManager.Instance.SetGraphicsQuality(
+            GraphicManager.Instance.SetGraphicsQuality(
                 value
             );
         }
@@ -871,10 +871,10 @@ public class SettingManager : MonoBehaviour
             );
         }
 
-        if (VolumeManager.Instance != null &&
+        if (GraphicManager.Instance != null &&
             qualityGraphicDropDown != null)
         {
-            VolumeManager.Instance.SetGraphicsQuality(
+            GraphicManager.Instance.SetGraphicsQuality(
                 qualityGraphicDropDown.value
             );
         }
@@ -2311,10 +2311,10 @@ public class SettingManager : MonoBehaviour
             yield return LoadingManager.Instance.ShowLoading();
         }
 
-        if (VolumeManager.Instance != null)
+        if (GraphicManager.Instance != null)
         {
-            VolumeManager.Instance.SetGraphicsQuality(
-                VolumeManager.Instance.currentQuality
+            GraphicManager.Instance.SetGraphicsQuality(
+                GraphicManager.Instance.currentQuality
             );
         }
 

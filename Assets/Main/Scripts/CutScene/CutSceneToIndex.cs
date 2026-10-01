@@ -72,7 +72,7 @@ public class CutSceneToIndex : MonoBehaviour
             yield break;
 
         // 1. Bắt đầu vignette
-        VolumeManager.Instance.StartVignette();
+        GraphicManager.Instance.StartVignette();
 
         // 2. Camera đi tới point 0 trước
         if (transformsCutScene != null &&

@@ -70,12 +70,8 @@ public class CreditScroll : MonoBehaviour
         isEnding = false;
         canSkip = false;
 
-        var volume = VolumeManager.Instance;
-        if (volume != null)
-        {
-            volume.ResetVignette();
-        }
 
+        SetupGraphic();
         SetupAudio();
         SetupCursor();
         SetupSetting();
@@ -91,6 +87,15 @@ public class CreditScroll : MonoBehaviour
         StartCoroutine(EnableSkipAfterDelay());
     }
 
+    public void SetupGraphic()
+    {
+        var graphic = GraphicManager.Instance;
+
+        if (graphic != null)
+        {
+            graphic.ResetVignette();
+        }
+    }
     private void SetupAudio()
     {
         var audio = AudioManager.Instance;

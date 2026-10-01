@@ -1045,9 +1045,9 @@ public class DebuffManager : MonoBehaviour
             yield break;
         }
 
-        if (VolumeManager.Instance != null)
+        if (GraphicManager.Instance != null)
         {
-            VolumeManager.Instance
+            GraphicManager.Instance
                 .SetMotionBlurIntensity(0.1f);
         }
 
@@ -1091,9 +1091,9 @@ public class DebuffManager : MonoBehaviour
                      !trapState.isTrapActive)
             );
 
-            if (VolumeManager.Instance != null)
+            if (GraphicManager.Instance != null)
             {
-                VolumeManager.Instance.ResetMotionBlur();
+                GraphicManager.Instance.ResetMotionBlur();
             }
 
             // Teleport đã hoàn tất và đã trả quyền camera.
@@ -1112,9 +1112,9 @@ public class DebuffManager : MonoBehaviour
             yield break;
         }
 
-        if (VolumeManager.Instance != null)
+        if (GraphicManager.Instance != null)
         {
-            VolumeManager.Instance.ResetMotionBlur();
+            GraphicManager.Instance.ResetMotionBlur();
         }
 
         if (CameraManager.Instance != null)

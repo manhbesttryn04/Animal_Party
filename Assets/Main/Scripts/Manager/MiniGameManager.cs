@@ -125,7 +125,7 @@ public class MiniGameManager : MonoBehaviour
         var loading = LoadingManager.Instance;
         var character = CharacterManager.Instance;
         var gameManager = GameManager.Instance;
-        var volume = VolumeManager.Instance;
+        var graphic = GraphicManager.Instance;
         var maincharacterandmap = MapAndCharacterManager.Instance;
 
         // =====================================================
@@ -162,7 +162,7 @@ public class MiniGameManager : MonoBehaviour
             yield break;
         }
 
-        if(volume == null)
+        if(graphic == null)
         {
             yield break;
         }
@@ -943,7 +943,7 @@ public class MiniGameManager : MonoBehaviour
                 countDownTime =
                     timeMinigame.timeMinigame2;
 
-                VolumeManager.Instance
+                GraphicManager.Instance
                     .SetBloomIntensity(0.5f);
                 break;
 
@@ -961,7 +961,7 @@ public class MiniGameManager : MonoBehaviour
                 countDownTime =
                     timeMinigame.timeMinigame5;
 
-                VolumeManager.Instance
+                GraphicManager.Instance
                     .SetBloomIntensity(1f);
                 break;
 
@@ -995,7 +995,7 @@ public class MiniGameManager : MonoBehaviour
 
     public void ResetLight()
     {
-        VolumeManager.Instance
+        GraphicManager.Instance
             .SetBloomIntensity(4);
     }
 

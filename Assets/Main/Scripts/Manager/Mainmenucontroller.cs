@@ -143,7 +143,7 @@ public class MainMenuController : MonoBehaviour
         SetupCursor();
         SetupAudio();
         SetupSetting();
-        SetupVolume();
+        SetupGraphic();
         SetupUI();
 
         InitializeControllerState();
@@ -593,15 +593,15 @@ public class MainMenuController : MonoBehaviour
         }
     }
 
-    private void SetupVolume()
+    private void SetupGraphic()
     {
-        VolumeManager volume = VolumeManager.Instance;
+        GraphicManager graphic = GraphicManager.Instance;
 
-        if (volume != null)
+        if (graphic != null)
         {
-            volume.ResetVignette();
-            volume.ResetDepthBlur();
-            volume.ResetBloom();
+            graphic.ResetVignette();
+            graphic.ResetDepthBlur();
+            graphic.ResetBloom();
         }
     }
 

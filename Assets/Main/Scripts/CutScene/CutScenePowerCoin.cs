@@ -73,7 +73,9 @@ public class CutScenePowerCoin : MonoBehaviour
     {
         if (playerWinner == null || teleport == null || playerLoser == null)
             yield break;
-        VolumeManager.Instance.StartVignette();
+
+        GraphicManager.Instance.StartVignette();
+
         // 1. Camera tới điểm đầu
         if (transformsCutScene.Length > 0 && transformsCutScene[0] != null)
         {

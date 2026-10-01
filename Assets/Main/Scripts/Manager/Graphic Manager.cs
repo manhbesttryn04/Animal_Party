@@ -4,9 +4,9 @@ using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 
-public class VolumeManager : MonoBehaviour
+public class GraphicManager : MonoBehaviour
 {
-    public static VolumeManager Instance;
+    public static GraphicManager Instance;
 
     [Header("Volume")]
     public Volume volume;
