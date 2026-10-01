@@ -2635,7 +2635,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize2D: {x: 0.5, y: 0.5}
   m_Shadows:
-    m_Type: 1
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -2679,7 +2679,7 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
   m_ShapeRadius: 0
-  m_ShadowAngle: 0
+  m_ShadowAngle: 50
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
@@ -14884,6 +14884,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5710423095885255608, guid: 6cd3bb2139fa5a343b8190b7e4583736, type: 3}
       propertyPath: currentQuality
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251787048832134038, guid: 6cd3bb2139fa5a343b8190b7e4583736, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
