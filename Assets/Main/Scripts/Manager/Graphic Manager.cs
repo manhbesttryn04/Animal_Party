@@ -1,5 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.ProBuilder.MeshOperations;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
@@ -7,6 +10,9 @@ using UnityEngine.SceneManagement;
 public class GraphicManager : MonoBehaviour
 {
     public static GraphicManager Instance;
+
+    [Header("Graphic Configuration")]
+    public UniversalRenderPipelineAsset urpAsset;
 
     [Header("Volume")]
     public Volume volume;
@@ -233,8 +239,6 @@ public class GraphicManager : MonoBehaviour
 
     public void SetGraphicsQuality(int quality)
     {
-       
-
         currentQuality = Mathf.Clamp(
             quality,
             0,
@@ -247,11 +251,10 @@ public class GraphicManager : MonoBehaviour
             // LOW
             // Tắt Post Processing trên tất cả Camera
             //==================================================
-
             case 0:
                 {
+                    ApplyURPQualitySettings(0);
                     SetAllCameraPostProcessing(false);
-
                     break;
                 }
 
@@ -259,22 +262,19 @@ public class GraphicManager : MonoBehaviour
             // MEDIUM
             // Post Processing ON
             // Neutral
-            // Motion Blur OFF
+            // Motion Blur ON
             //==================================================
-
             case 1:
                 {
+                    ApplyURPQualitySettings(1);
                     SetAllCameraPostProcessing(true);
 
-                    SetTonemapping(
-                        TonemappingMode.Neutral
-                    );
+                    SetTonemapping(TonemappingMode.Neutral);
 
                     SetBloomActive(true);
                     SetMotionBlurActive(true);
                     SetColorAdjustmentsActive(true);
                     SetDepthOfFieldActive(true);
-
                     break;
                 }
 
@@ -284,23 +284,62 @@ public class GraphicManager : MonoBehaviour
             // ACES
             // Motion Blur ON
             //==================================================
-
             case 2:
                 {
+                    ApplyURPQualitySettings(2);
                     SetAllCameraPostProcessing(true);
 
-                    SetTonemapping(
-                        TonemappingMode.ACES
-                    );
+                    SetTonemapping(TonemappingMode.ACES);
 
                     SetBloomActive(true);
                     SetMotionBlurActive(true);
                     SetColorAdjustmentsActive(true);
                     SetDepthOfFieldActive(true);
+                    break;
+                }
+        }
+    }
+    public void ApplyURPQualitySettings(int quality)
+    {
+        // Kiểm tra an toàn xem urpAsset đã được gán chưa
+        if (urpAsset == null)
+        {
+            //Debug.LogWarning("URP Asset chưa được gán!");
+            return;
+        }
 
-                 
+        // Giới hạn giá trị quality trong khoảng từ 0 đến 2
+        int currentQuality = Mathf.Clamp(quality, 0, 2);
 
+        switch (currentQuality)
+        {
+            // LOW
+            case 0:
+                {
+                    urpAsset.msaaSampleCount = 2;
+                    urpAsset.mainLightShadowmapResolution = 2048;
+                    urpAsset.additionalLightsShadowmapResolution = 2048; // Hoặc dùng Tier tương ứng nếu Unity 6 yêu cầu
+                    urpAsset.colorGradingMode = ColorGradingMode.LowDynamicRange;
+                    break;
+                }
 
+            // MEDIUM
+            case 1:
+                {
+                    urpAsset.msaaSampleCount = 4;
+                    urpAsset.mainLightShadowmapResolution = 4096;
+                    urpAsset.additionalLightsShadowmapResolution = 4096;
+                    urpAsset.colorGradingMode = ColorGradingMode.HighDynamicRange;
+                    break;
+                }
+
+            // HIGH
+            case 2:
+                {
+                    urpAsset.msaaSampleCount = 8;
+                    urpAsset.mainLightShadowmapResolution = 8192;
+                    urpAsset.additionalLightsShadowmapResolution = 8192;
+                    urpAsset.colorGradingMode = ColorGradingMode.HighDynamicRange; // Có thể giữ hoặc đổi tùy ý
                     break;
                 }
         }

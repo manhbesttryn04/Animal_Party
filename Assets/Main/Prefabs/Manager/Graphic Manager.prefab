@@ -45,11 +45,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 533a42c58a47e164b9ce7d8532bfda75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  urpAsset: {fileID: 11400000, guid: 4b83569d67af61e458304325a23e5dfd, type: 2}
   volume: {fileID: 2442015973995779430}
   defaultBloomIntensity: 4
   defaultMotionBlurIntensity: 0.5
   vignetteTargetIntensity: 0.25
   vignetteMoveTime: 0.5
+  defaultFocusDistance: 2.2
+  pauseFocusDistance: 0
+  depthMoveTime: 0.5
   currentQuality: 2
 --- !u!1 &8251787048832134038
 GameObject:
