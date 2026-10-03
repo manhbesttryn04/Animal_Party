@@ -17642,18 +17642,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4073895445946916361, guid: 50c9760a63ee4574986bf76912301202, type: 3}
-      propertyPath: m_Volume
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4179340222992171316, guid: 50c9760a63ee4574986bf76912301202, type: 3}
-      propertyPath: theNightClip
+      propertyPath: musicMainClip
       value: 
-      objectReference: {fileID: 8300000, guid: 601bd3774aceb90429922d00ac95f9dc, type: 3}
+      objectReference: {fileID: 8300000, guid: 82ab8dbae1933de40913cdbd89a3b7ec, type: 3}
     - target: {fileID: 4179340222992171316, guid: 50c9760a63ee4574986bf76912301202, type: 3}
       propertyPath: musicMainMenuClip
       value: 
       objectReference: {fileID: 8300000, guid: d5360c49d57f0904eb2a3abf793d8c42, type: 3}
+    - target: {fileID: 4179340222992171316, guid: 50c9760a63ee4574986bf76912301202, type: 3}
+      propertyPath: musicChooseSceneClip
+      value: 
+      objectReference: {fileID: 8300000, guid: bbad73316f54e68438f025f36091b979, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
