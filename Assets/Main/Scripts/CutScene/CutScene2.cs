@@ -146,6 +146,14 @@ public class CutScene2 : MonoBehaviour
             audio.PlayMusic(audio.musicCutScene2Clip);
         }
     }
+    public void SetupGraphic()
+    {
+        var graphic = GraphicManager.Instance;
+        if (graphic != null)
+        {
+            graphic.ResetVignette();
+        }
+    }
 
     private void SetupSetting()
     {
@@ -321,6 +329,8 @@ public class CutScene2 : MonoBehaviour
             if (characters != null) characters.SetActive(false);
         }
 
+        SetupGraphic();
+
         if (LoadingManager.Instance != null)
         {
             yield return StartCoroutine(LoadingManager.Instance.ShowLoading());
@@ -474,6 +484,8 @@ public class CutScene2 : MonoBehaviour
             var maincharacter = maincharacterandmap.mainCharacters;
             if (maincharacter != null) maincharacter.SetActive(false);
         }
+
+        SetupGraphic();
 
         if (LoadingManager.Instance != null)
         {

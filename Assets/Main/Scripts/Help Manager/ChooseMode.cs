@@ -159,7 +159,14 @@ public class ChooseMode : MonoBehaviour
             cursor.SetSceneCursorVisible(true);
         }
     }
-
+    public void SetupGraphic()
+    {
+        var graphic = GraphicManager.Instance;
+        if (graphic != null)
+        {
+            graphic.StartVignette();
+        }
+    }
     private void SetupAudio()
     {
         var audio = AudioManager.Instance;
@@ -1527,6 +1534,8 @@ public IEnumerator DisPlayerChoose(int index, List<Button> listButtonChoose)
 
         }
 
+        SetupGraphic();
+
         if (LoadingManager.Instance != null)
         {     
             yield return StartCoroutine(
@@ -1534,10 +1543,11 @@ public IEnumerator DisPlayerChoose(int index, List<Button> listButtonChoose)
                     .ShowLoading()
             );
         }
+       
 
         SceneManager.LoadScene("CutScene 1");
     }
-
+   
     // =========================================================
     // EFFECTS
     // =========================================================

@@ -126,7 +126,7 @@ public class CutScene1 : MonoBehaviour
             cursor.SetSettingCursorActive(false);
         }
     }
-
+   
     private void SetupSubtitleUI()
     {
         if (subtitlePanel != null)
