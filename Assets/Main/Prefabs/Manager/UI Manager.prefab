@@ -5102,7 +5102,7 @@ GameObject:
   - component: {fileID: 8829293299420731097}
   - component: {fileID: 2244803019759759082}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: 'Focus Image '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5316,8 +5316,7 @@ RectTransform:
   m_Children:
   - {fileID: 1222549245556593101}
   - {fileID: 1615468112024965947}
-  - {fileID: 5755593814432382473}
-  - {fileID: 8791419925696509038}
+  - {fileID: 1746925863575337260}
   - {fileID: 4456924166234655852}
   m_Father: {fileID: 132919367267180452}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -35265,6 +35264,43 @@ MonoBehaviour:
   itemIndex: 2
   image: {fileID: 8200721074965999808}
   spriteStar: {fileID: 1812441902, guid: f46184d732f8a4b4ca85dddd97075161, type: 3}
+--- !u!1 &4687754081619264259
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1746925863575337260}
+  m_Layer: 5
+  m_Name: Particle Effects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1746925863575337260
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4687754081619264259}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5755593814432382473}
+  - {fileID: 8791419925696509038}
+  m_Father: {fileID: 5902754850806428669}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.5, y: 6.3499985}
+  m_SizeDelta: {x: 284.01987, y: 251.31987}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4688292011612501068
 GameObject:
   m_ObjectHideFlags: 0
@@ -41512,7 +41548,7 @@ GameObject:
   - component: {fileID: 4505848406590599634}
   - component: {fileID: 8410972585469081096}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68663,11 +68699,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1132210096759283140, guid: 3b2183ae1519ecc45b1a5f2bbb20a899, type: 3}
       propertyPath: m_Name
-      value: Instruct Console Button Setting
+      value: Instruct Console Button Setting Image
       objectReference: {fileID: 0}
     - target: {fileID: 1132210096759283140, guid: 3b2183ae1519ecc45b1a5f2bbb20a899, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1483803270703429265, guid: 3b2183ae1519ecc45b1a5f2bbb20a899, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -70800,7 +70836,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 5902754850806428669}
+    m_TransformParent: {fileID: 1746925863575337260}
     m_Modifications:
     - target: {fileID: 1740981106159466113, guid: 66cf2d3b3ced843ac983d078202ab38d, type: 3}
       propertyPath: m_Materials.Array.size
@@ -70876,11 +70912,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1740981106159466114, guid: 66cf2d3b3ced843ac983d078202ab38d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -37.5
+      value: -37.000126
       objectReference: {fileID: 0}
     - target: {fileID: 1740981106159466114, guid: 66cf2d3b3ced843ac983d078202ab38d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -14.3
+      value: -20.650053
       objectReference: {fileID: 0}
     - target: {fileID: 1740981106159466114, guid: 66cf2d3b3ced843ac983d078202ab38d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -72288,7 +72324,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 5902754850806428669}
+    m_TransformParent: {fileID: 1746925863575337260}
     m_Modifications:
     - target: {fileID: 1740981106159466113, guid: 66cf2d3b3ced843ac983d078202ab38d, type: 3}
       propertyPath: m_Materials.Array.size
@@ -72364,11 +72400,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1740981106159466114, guid: 66cf2d3b3ced843ac983d078202ab38d, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 36.5
+      value: 36.999874
       objectReference: {fileID: 0}
     - target: {fileID: 1740981106159466114, guid: 66cf2d3b3ced843ac983d078202ab38d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 27
+      value: 20.650013
       objectReference: {fileID: 0}
     - target: {fileID: 1740981106159466114, guid: 66cf2d3b3ced843ac983d078202ab38d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
