@@ -170,7 +170,7 @@ Material:
     - _WindStrength: 1
     - _Wind_Direction: 0
     - _Wind_Speed: 0.14
-    - _Wind_Strength: 0.25
+    - _Wind_Strength: 0.3
     - _Wind_Variation: 1
     - _WorkflowMode: 0
     - _ZTest: 4
