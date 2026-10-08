@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8351912362384593854}
   - component: {fileID: -1968484127701247495}
   m_Layer: 0
-  m_Name: Spam Laser Prefab
+  m_Name: Spam Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -255,7 +255,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1811209286029239207, guid: 438ce91a55fb40742ae6a722bcb670dd, type: 3}
       propertyPath: m_Name
-      value: LaserImpact
+      value: Laser Impact
       objectReference: {fileID: 0}
     - target: {fileID: 8125279161852693506, guid: 438ce91a55fb40742ae6a722bcb670dd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -322,7 +322,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1811209286029239207, guid: 438ce91a55fb40742ae6a722bcb670dd, type: 3}
       propertyPath: m_Name
-      value: LaserImpact (1)
+      value: Laser Impact 1
       objectReference: {fileID: 0}
     - target: {fileID: 8125279161852693506, guid: 438ce91a55fb40742ae6a722bcb670dd, type: 3}
       propertyPath: m_LocalPosition.x

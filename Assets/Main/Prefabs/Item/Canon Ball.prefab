@@ -156,6 +156,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BulletCanon
   speed: 15
   lifeTime: 4
+  reflectAngle: 45
+  reflectCooldown: 0.15
+  pushOutDistance: 0.3
   explosionPrefab: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
   explosionDestroyTime: 2
   explosionSound: {fileID: 8300000, guid: 7c2349e3a147bde46bdab3b43c610195, type: 3}
@@ -170,7 +173,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1216866610694126383, guid: 63cf1f97862a05845b0d9d12ed09bd6a, type: 3}
       propertyPath: m_Name
-      value: SmokeEffect
+      value: Smoke Effect
       objectReference: {fileID: 0}
     - target: {fileID: 1222638791995186407, guid: 63cf1f97862a05845b0d9d12ed09bd6a, type: 3}
       propertyPath: m_LocalPosition.x

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1060214246652129303}
   - component: {fileID: 496208758883559771}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,12 +26,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455287403929064737}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.344, z: 0}
   m_LocalScale: {x: 0.19240978, y: 0.19240978, z: 0.19240978}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3087007639635778787}
+  m_Father: {fileID: 7817257946742026882}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1060214246652129303
 MeshFilter:
@@ -90,6 +90,40 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &2753032525345935748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7817257946742026882}
+  m_Layer: 0
+  m_Name: Body
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7817257946742026882
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2753032525345935748}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4619625814141509391}
+  - {fileID: 8656312476262379667}
+  - {fileID: 7328993066860300779}
+  m_Father: {fileID: 3087007639635778787}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8105440391608858613
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +137,7 @@ GameObject:
   - component: {fileID: 6850697406706372795}
   - component: {fileID: 1428517956894486218}
   m_Layer: 0
-  m_Name: Boom
+  m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,9 +156,7 @@ Transform:
   m_LocalScale: {x: 6.0657544, y: 6.0657544, z: 6.0657544}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4619625814141509391}
-  - {fileID: 8656312476262379667}
-  - {fileID: 7328993066860300779}
+  - {fileID: 7817257946742026882}
   - {fileID: 2772044568303785178}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -227,12 +259,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8373384856047488347}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.23, z: 0}
-  m_LocalScale: {x: 0.28405, y: 0.28405, z: 0.28405}
+  m_LocalScale: {x: 0.28405002, y: 0.28405002, z: 0.28405002}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3087007639635778787}
+  m_Father: {fileID: 7817257946742026882}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7649822150815632124
 MeshFilter:
@@ -303,7 +335,7 @@ GameObject:
   - component: {fileID: 2571644383270919071}
   - component: {fileID: 5368806245573136767}
   m_Layer: 0
-  m_Name: Cylinder (2)
+  m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -319,10 +351,10 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.17588788, y: -0, z: -0, w: 0.9844102}
   m_LocalPosition: {x: 0, y: 0.52400005, z: 0}
-  m_LocalScale: {x: 0.057151206, y: 0.16946475, z: 0.057151206}
+  m_LocalScale: {x: 0.05715121, y: 0.16946477, z: 0.057151213}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3087007639635778787}
+  m_Father: {fileID: 7817257946742026882}
   m_LocalEulerAnglesHint: {x: -20.261, y: 0, z: 0}
 --- !u!33 &2571644383270919071
 MeshFilter:
@@ -389,9 +421,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3087007639635778787}
     m_Modifications:
+    - target: {fileID: 1866692896978666, guid: a990e3ac1318b834488c784d851f42a9, type: 3}
+      propertyPath: m_Name
+      value: Fire Embers
+      objectReference: {fileID: 0}
     - target: {fileID: 1947871717301538, guid: a990e3ac1318b834488c784d851f42a9, type: 3}
       propertyPath: m_Name
-      value: FireBall
+      value: Fire Ball
       objectReference: {fileID: 0}
     - target: {fileID: 4209731392266258, guid: a990e3ac1318b834488c784d851f42a9, type: 3}
       propertyPath: m_LocalScale.x

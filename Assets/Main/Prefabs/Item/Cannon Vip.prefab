@@ -130,7 +130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8703637828986668593, guid: 78bb6d18c3b442849b6c57fb07f3636c, type: 3}
       propertyPath: m_Name
-      value: TinyExplosion
+      value: Tiny Explosion
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -197,7 +197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fa39a909ae50d1244a91c25ee6707094, type: 3}
       propertyPath: m_Name
-      value: Prop_Cannon
+      value: Body
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
