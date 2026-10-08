@@ -9911,7 +9911,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1254219776345852410, guid: 28e7991bfb86ae040bec61c073b09ef0, type: 3}
       propertyPath: m_Name
-      value: SeaGull
+      value: Sea Gull
       objectReference: {fileID: 0}
     - target: {fileID: 1254219776345852410, guid: 28e7991bfb86ae040bec61c073b09ef0, type: 3}
       propertyPath: m_StaticEditorFlags

@@ -299,7 +299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5222564037590101379}
   m_Layer: 0
-  m_Name: TransCameraFollow 3
+  m_Name: ' Trans Camera Follow 2 '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2820,7 +2820,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4545787375821315378}
   m_Layer: 3
-  m_Name: TransCameraFollow 1
+  m_Name: ' Trans Camera Follow'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2917,7 +2917,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3762765025572285474}
   m_Layer: 3
-  m_Name: TransCameraFollow 2
+  m_Name: ' Trans Camera Follow 1'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

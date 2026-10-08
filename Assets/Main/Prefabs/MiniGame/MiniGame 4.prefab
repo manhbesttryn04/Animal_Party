@@ -138,7 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8657454517041474278}
   m_Layer: 0
-  m_Name: Camera Point 1
+  m_Name: Point Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2604,7 +2604,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4318461169655706659}
   m_Layer: 0
-  m_Name: Camera Point 3
+  m_Name: Point Camera 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2745,8 +2745,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6270898720316312774}
-  - {fileID: 6856585735341914920}
   - {fileID: 8657454517041474278}
+  - {fileID: 6856585735341914920}
   - {fileID: 4318461169655706659}
   m_Father: {fileID: 5713975560798368372}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13533,7 +13533,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6856585735341914920}
   m_Layer: 0
-  m_Name: Camera Point 2
+  m_Name: Point Camera 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

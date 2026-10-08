@@ -998,10 +998,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7010898193553947106}
   - {fileID: 239387509106703050}
   - {fileID: 28412441593050139}
   - {fileID: 8523714134225164326}
-  - {fileID: 7010898193553947106}
   m_Father: {fileID: 4066926193493249985}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1038967747082500293
@@ -1727,7 +1727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8523714134225164326}
   m_Layer: 0
-  m_Name: Point Camera 3
+  m_Name: Point Camera 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3157,7 +3157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 28412441593050139}
   m_Layer: 0
-  m_Name: Point Camera  2
+  m_Name: Point Camera 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4300,7 +4300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 239387509106703050}
   m_Layer: 0
-  m_Name: Point Camera 1
+  m_Name: Point Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
