@@ -534,7 +534,7 @@ GameObject:
   m_Component:
   - component: {fileID: 11036826}
   m_Layer: 0
-  m_Name: TransCameraPoint (6)
+  m_Name: Trans Camera CutScene 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2952,6 +2952,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1832060111}
+  - {fileID: 1318127582}
   m_Father: {fileID: 1139520841}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &146939407
@@ -12678,7 +12679,7 @@ GameObject:
   m_Component:
   - component: {fileID: 650047237}
   m_Layer: 0
-  m_Name: TransPlayerToWalk
+  m_Name: ' Trans Player To Walk'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12693,11 +12694,11 @@ Transform:
   m_GameObject: {fileID: 650047236}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 3.9710007, y: 0, z: -0.548}
+  m_LocalPosition: {x: 3.9710007, y: -0, z: -0.5479996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1832060111}
+  m_Father: {fileID: 1318127582}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1001 &650892371
 PrefabInstance:
@@ -16067,7 +16068,7 @@ GameObject:
   m_Component:
   - component: {fileID: 787199481}
   m_Layer: 0
-  m_Name: TransCameraPoint (13)
+  m_Name: Trans Camera CutScene 13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16409,7 +16410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 791172619}
   m_Layer: 0
-  m_Name: TransCameraPoint (11)
+  m_Name: Trans Camera CutScene 11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17447,7 +17448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 853102417}
   m_Layer: 0
-  m_Name: TransCameraPoint (7)
+  m_Name: Trans Camera CutScene 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18186,7 +18187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 894497377}
   m_Layer: 0
-  m_Name: TransCameraPoint (10)
+  m_Name: Trans Camera CutScene 10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19080,7 +19081,7 @@ GameObject:
   m_Component:
   - component: {fileID: 956717243}
   m_Layer: 0
-  m_Name: TransCameraPoint (3)
+  m_Name: Trans Camera CutScene 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22402,7 +22403,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1105017887}
   m_Layer: 0
-  m_Name: TransCameraPoint (4)
+  m_Name: Trans Camera CutScene 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23024,7 +23025,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1157022967}
   m_Layer: 0
-  m_Name: TransCameraPoint
+  m_Name: Trans Camera CutScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23850,7 +23851,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1181205832}
   m_Layer: 0
-  m_Name: TransCameraPoint (9)
+  m_Name: Trans Camera CutScene 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24840,7 +24841,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1245864404}
   m_Layer: 0
-  m_Name: TransCameraPoint (15)
+  m_Name: Trans Camera CutScene 15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24871,7 +24872,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1246907266}
   m_Layer: 0
-  m_Name: TransCameraPoint (16)
+  m_Name: Trans Camera CutScene 16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26795,7 +26796,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1313826968}
   m_Layer: 0
-  m_Name: TransPlayerToWalk (1)
+  m_Name: ' Trans Player To Walk 1'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26810,11 +26811,11 @@ Transform:
   m_GameObject: {fileID: 1313826967}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1832060111}
+  m_Father: {fileID: 1318127582}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1316697835
 PrefabInstance:
@@ -26895,6 +26896,39 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4952073662891507353, guid: 5a3c6b41be0f936498ac3aca08394a07, type: 3}
   m_PrefabInstance: {fileID: 1316697835}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1318127581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1318127582}
+  m_Layer: 0
+  m_Name: Trans Player To Walks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1318127582
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318127581}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.7900009, y: 0.12999916, z: -0.010000229}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 650047237}
+  - {fileID: 1313826968}
+  m_Father: {fileID: 146939406}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1320670451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32746,7 +32780,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1605163690}
   m_Layer: 0
-  m_Name: TransCameraPoint (8)
+  m_Name: Trans Camera CutScene 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36117,7 +36151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1818437801}
   m_Layer: 0
-  m_Name: TransCameraPoint (1)
+  m_Name: Trans Camera CutScene 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36613,7 +36647,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1832060111}
   m_Layer: 0
-  m_Name: TransCamera
+  m_Name: Trans Cameras  CutScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36649,8 +36683,6 @@ Transform:
   - {fileID: 2138878941}
   - {fileID: 1245864404}
   - {fileID: 1246907266}
-  - {fileID: 650047237}
-  - {fileID: 1313826968}
   m_Father: {fileID: 146939406}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1832821729
@@ -40058,7 +40090,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1983774184}
   m_Layer: 0
-  m_Name: TransCameraPoint (12)
+  m_Name: 'Trans Camera CutScene 12 '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40547,7 +40579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2023610423}
   m_Layer: 0
-  m_Name: TransCameraPoint (5)
+  m_Name: Trans Camera CutScene 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40852,7 +40884,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2057900964}
   m_Layer: 0
-  m_Name: TransCameraPoint (2)
+  m_Name: Trans Camera CutScene 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41955,7 +41987,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2138878941}
   m_Layer: 0
-  m_Name: TransCameraPoint (14)
+  m_Name: Trans Camera CutScene 14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

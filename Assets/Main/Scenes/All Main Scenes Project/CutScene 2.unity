@@ -1350,7 +1350,7 @@ GameObject:
   m_Component:
   - component: {fileID: 322711228}
   m_Layer: 0
-  m_Name: Trans 9
+  m_Name: Trans Camera CutScene 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1482,7 +1482,7 @@ GameObject:
   m_Component:
   - component: {fileID: 347823251}
   m_Layer: 0
-  m_Name: Trans 10
+  m_Name: Trans Camera CutScene 10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1641,7 +1641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 383318644}
   m_Layer: 0
-  m_Name: Trans 1
+  m_Name: Trans Camera CutScene 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1934,7 +1934,7 @@ GameObject:
   m_Component:
   - component: {fileID: 573759604}
   m_Layer: 0
-  m_Name: Trans 7
+  m_Name: Trans Camera CutScene 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2115,7 +2115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 659909003}
   m_Layer: 0
-  m_Name: Trans 5
+  m_Name: Trans Camera CutScene 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4966,7 +4966,7 @@ GameObject:
   m_Component:
   - component: {fileID: 806315596}
   m_Layer: 0
-  m_Name: Trans 8
+  m_Name: Trans Camera CutScene 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8103,7 +8103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4984177965433441110, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
       propertyPath: m_Name
-      value: Ship
+      value: Main Ship
       objectReference: {fileID: 0}
     - target: {fileID: 4984177965433441110, guid: 48c3ad13977f20a4095fce6c0186711c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -8959,7 +8959,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1441710638}
   m_Layer: 0
-  m_Name: Trans 4
+  m_Name: Trans Camera CutScene 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9573,7 +9573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1493470827}
   m_Layer: 0
-  m_Name: Trans 11
+  m_Name: Trans Camera CutScene 11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9739,7 +9739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1574575512}
   m_Layer: 0
-  m_Name: Transpoint Camera
+  m_Name: Trans Cameras CutScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9766,9 +9766,9 @@ Transform:
   - {fileID: 1822648172}
   - {fileID: 573759604}
   - {fileID: 806315596}
+  - {fileID: 322711228}
   - {fileID: 347823251}
   - {fileID: 1493470827}
-  - {fileID: 322711228}
   m_Father: {fileID: 322993516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1582558519
@@ -9930,7 +9930,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1625981340}
   m_Layer: 0
-  m_Name: Trans 3
+  m_Name: Trans Camera CutScene 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10035,7 +10035,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2331138156605812007, guid: 5179fd597ba994f25944443e397b7357, type: 3}
       propertyPath: m_Name
-      value: Ship 2
+      value: Main Ship 1
       objectReference: {fileID: 0}
     - target: {fileID: 2331138156605812007, guid: 5179fd597ba994f25944443e397b7357, type: 3}
       propertyPath: m_IsActive
@@ -10194,7 +10194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1746983741}
   m_Layer: 0
-  m_Name: Trans 2
+  m_Name: Trans Camera CutScene 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10441,7 +10441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1822648172}
   m_Layer: 0
-  m_Name: Trans 6
+  m_Name: Trans Camera CutScene 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
