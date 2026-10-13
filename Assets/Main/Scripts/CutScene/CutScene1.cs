@@ -293,7 +293,7 @@ public class CutScene1 : MonoBehaviour
         if (skipHintObject != null)
             skipHintObject.SetActive(false);
 
-        StartCoroutine(LoadScene("CutScene 2"));
+        StartCoroutine(LoadScene("CutScene_2_Scene"));
     }
 
     private IEnumerator ShowSkipHint()
@@ -613,7 +613,7 @@ public class CutScene1 : MonoBehaviour
 
         yield return new WaitForSeconds(waitTime);
 
-        yield return StartCoroutine(LoadScene("CutScene 2"));
+        yield return StartCoroutine(LoadScene("CutScene_2_Scene"));
     }
 
     private IEnumerator LoadScene(string sceneName)

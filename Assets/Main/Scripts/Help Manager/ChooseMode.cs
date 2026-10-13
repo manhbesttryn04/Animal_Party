@@ -1545,7 +1545,7 @@ public IEnumerator DisPlayerChoose(int index, List<Button> listButtonChoose)
         }
        
 
-        SceneManager.LoadScene("CutScene 1");
+        SceneManager.LoadScene("CutScene_1_Scene");
     }
    
     // =========================================================

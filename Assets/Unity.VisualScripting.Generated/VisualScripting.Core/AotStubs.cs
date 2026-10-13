@@ -1356,6 +1356,9 @@ namespace Unity.VisualScripting.Generated.Aot
 	// AnimalParty.Obstacles.DamegeTrap.op_Implicit
 	// AnimalParty.Obstacles.DamegeTrap.op_Equality
 	// AnimalParty.Obstacles.DamegeTrap.op_Inequality
+	// ZakhanSpellsPack2.SP2_VFXParticleCollision.op_Implicit
+	// ZakhanSpellsPack2.SP2_VFXParticleCollision.op_Equality
+	// ZakhanSpellsPack2.SP2_VFXParticleCollision.op_Inequality
 	// UnityTemplateProjects.SimpleCameraController.op_Implicit
 	// UnityTemplateProjects.SimpleCameraController.op_Equality
 	// UnityTemplateProjects.SimpleCameraController.op_Inequality
@@ -1365,9 +1368,6 @@ namespace Unity.VisualScripting.Generated.Aot
 	// Assets.VFXPACK_IMPACT_WALLCOEUR.Scripts.VfxController.op_Implicit
 	// Assets.VFXPACK_IMPACT_WALLCOEUR.Scripts.VfxController.op_Equality
 	// Assets.VFXPACK_IMPACT_WALLCOEUR.Scripts.VfxController.op_Inequality
-	// ZakhanSpellsPack2.SP2_VFXParticleCollision.op_Implicit
-	// ZakhanSpellsPack2.SP2_VFXParticleCollision.op_Equality
-	// ZakhanSpellsPack2.SP2_VFXParticleCollision.op_Inequality
 	// LayerLab.CasualGame.PanelView.op_Implicit
 	// LayerLab.CasualGame.PanelView.op_Equality
 	// LayerLab.CasualGame.PanelView.op_Inequality
@@ -17188,6 +17188,41 @@ namespace Unity.VisualScripting.Generated.Aot
 			optimized.Invoke(default(object[]));
 		}
 		
+		// ZakhanSpellsPack2.SP2_VFXParticleCollision.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void ZakhanSpellsPack2_SP2_VFXParticleCollision_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// ZakhanSpellsPack2.SP2_VFXParticleCollision.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void ZakhanSpellsPack2_SP2_VFXParticleCollision_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// ZakhanSpellsPack2.SP2_VFXParticleCollision.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void ZakhanSpellsPack2_SP2_VFXParticleCollision_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
 		// UnityTemplateProjects.SimpleCameraController.op_Implicit
 		[global::UnityEngine.Scripting.PreserveAttribute()]
 		public static void UnityTemplateProjects_SimpleCameraController_op_Implicit()
@@ -17284,41 +17319,6 @@ namespace Unity.VisualScripting.Generated.Aot
 		// Assets.VFXPACK_IMPACT_WALLCOEUR.Scripts.VfxController.op_Inequality
 		[global::UnityEngine.Scripting.PreserveAttribute()]
 		public static void Assets_VFXPACK_IMPACT_WALLCOEUR_Scripts_VfxController_op_Inequality()
-		{
-			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
-			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
-			bool @operator = (arg0 != arg1);
-			global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
-			optimized.Invoke(null, arg0, arg1);
-			optimized.Invoke(default(object[]));
-		}
-		
-		// ZakhanSpellsPack2.SP2_VFXParticleCollision.op_Implicit
-		[global::UnityEngine.Scripting.PreserveAttribute()]
-		public static void ZakhanSpellsPack2_SP2_VFXParticleCollision_op_Implicit()
-		{
-			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
-			bool conversion = ((bool)(arg0));
-			global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
-			optimized.Invoke(null, arg0);
-			optimized.Invoke(default(object[]));
-		}
-		
-		// ZakhanSpellsPack2.SP2_VFXParticleCollision.op_Equality
-		[global::UnityEngine.Scripting.PreserveAttribute()]
-		public static void ZakhanSpellsPack2_SP2_VFXParticleCollision_op_Equality()
-		{
-			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
-			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
-			bool @operator = (arg0 == arg1);
-			global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
-			optimized.Invoke(null, arg0, arg1);
-			optimized.Invoke(default(object[]));
-		}
-		
-		// ZakhanSpellsPack2.SP2_VFXParticleCollision.op_Inequality
-		[global::UnityEngine.Scripting.PreserveAttribute()]
-		public static void ZakhanSpellsPack2_SP2_VFXParticleCollision_op_Inequality()
 		{
 			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
 			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);

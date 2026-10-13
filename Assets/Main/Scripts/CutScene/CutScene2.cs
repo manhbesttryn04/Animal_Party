@@ -336,7 +336,7 @@ public class CutScene2 : MonoBehaviour
             yield return StartCoroutine(LoadingManager.Instance.ShowLoading());
         }
 
-        SceneManager.LoadScene("Main Scene");
+        SceneManager.LoadScene("Main_Scene");
     }
 
     private IEnumerator ShowSkipHint()
@@ -492,7 +492,7 @@ public class CutScene2 : MonoBehaviour
             yield return StartCoroutine(LoadingManager.Instance.ShowLoading());
         }
 
-        SceneManager.LoadScene("Main Scene");
+        SceneManager.LoadScene("Main_Scene");
     }
 
     private IEnumerator ShowFirstSubtitleWithDelay(string line, int voiceIndex, bool isFinal, float delaySeconds)
